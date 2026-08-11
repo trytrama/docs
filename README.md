@@ -1,55 +1,44 @@
-# Mintlify Starter Kit
+# Trama — Documentación
 
-Use the starter kit to get your docs deployed and ready to customize.
+La documentación pública de [Trama](https://trama.so), servida en
+**[docs.trama.so](https://docs.trama.so)** con [Mintlify](https://mintlify.com).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## Estructura
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+Tres idiomas, mismo árbol de archivos en los tres. Inglés es el default y vive
+en la raíz (es el `DEFAULT_LOCALE` y el `x-default` del sitio de marketing, así
+que las docs no lo contradicen):
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+```
+introduction.mdx  quickstart.mdx  agent/  channels/  operations/ ...   → en
+es/                                                                    → español
+pt-BR/                                                                 → portugués (Brasil)
+```
 
-## AI-assisted writing
+La navegación, los colores y los idiomas salen de `docs.json`. Cada idioma tiene
+dos tabs: **Documentación** y **API**.
 
-Set up your AI coding tool to work with Mintlify:
+## La API Reference se genera sola
+
+El tab de API NO se escribe a mano: sale del OpenAPI que publica `apps/api`
+(`@hono/zod-openapi`) en <https://api.trama.so/v1/openapi.json>.
+
+> 🔴 Mintlify baja esa spec **en tiempo de build**. Un cambio en la API no
+> redeploya estas docs solo: hay que llamar al endpoint *Trigger deployment* de
+> Mintlify desde el CI que la publica (`deploy-api.yml` en el monorepo).
+
+## Editar
+
+El contenido son MDX planos. Para previsualizar:
 
 ```bash
-npx skills add https://mintlify.com/docs
+bunx mint dev            # servidor local
+bunx mint broken-links   # validar links antes de pushear
 ```
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+Un push a `main` deploya. No hay staging: lo que se mergea, sale.
 
-See the [AI tools guides](/ai-tools) for tool-specific setup.
+## Ojo
 
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+Este repo es **público**. Nada interno acá — la documentación de arquitectura
+vive en `docs/` del monorepo, que es privado.

@@ -1,0 +1,36 @@
+---
+title: "Acompanhamentos automáticos"
+description: "Trama analisa o status de todas as suas oportunidades todos os dias e avisa cada vendedor o que ele precisa fazer."
+---
+
+Trama analisa o status de todas as suas oportunidades todos os dias e avisa cada vendedor o que ele precisa fazer.
+
+## Como funciona
+
+Toda manhã (por volta das 9:00, horário local do negócio), o sistema revisa todas as oportunidades ativas e gera uma única mensagem por vendedor com as ações pendentes do dia. Se um vendedor não tem nada pendente, não recebe mensagem.
+
+## Tipos de acompanhamento
+
+**Leads não atendidos:**
+- Você tem um lead novo que ninguém entrou em contato há mais de 4 horas (urgente)
+- Você tem um lead novo que ninguém entrou em contato há mais de 24 horas (crítico)
+
+**Contato sem avanço:**
+- Um cliente respondeu para você e você não respondeu nas últimas 24 horas
+- Você está em contato há mais de 5 dias sem enviar uma cotação
+
+**Pós-cotação (protocolo de 3 toques):**
+- **Toque 1 (48 horas):** "Você cotou para Lucia há 2 dias e ela não respondeu. É um bom momento para lembrá-la e oferecer ajustar algo."
+- **Toque 2 (7 dias):** "Lucia não respondeu à sua cotação há 7 dias. Você pode dar a ela uma razão para decidir agora: preços subindo, disponibilidade caindo."
+- **Toque 3 (15 dias):** "Última tentativa com Lucia. Pergunte se algo mudou e ofereça re-cotar. Se não responder, fecha."
+
+**Após o terceiro toque:** Se não houver resposta, a oportunidade é movida automaticamente para PERDIDO.
+
+## Como você recebe os acompanhamentos
+
+- **E-mail diário:** Um resumo agrupado com todas as ações do dia, organizado por prioridade.
+- **Consultando o agente:** Você pode perguntar ao agente Trama "O que tenho pendente para hoje?" e ele responde com os detalhes.
+
+## Tempos configuráveis
+
+Os tempos de cada toque são configuráveis por negócio. Os valores padrão (2 dias, 7 dias, 15 dias) são baseados na análise de conversas reais do setor, mas cada negócio pode ajustá-los à sua operação.

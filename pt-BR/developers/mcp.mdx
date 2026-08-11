@@ -1,0 +1,82 @@
+---
+title: "Conectar com Claude e ChatGPT (MCP)"
+description: "Trama expõe um servidor MCP (Model Context Protocol) que permite consultar o Agente Operacional da sua organização a partir de clientes externos como…"
+---
+
+Trama expõe um servidor MCP (Model Context Protocol) que permite consultar o Agente Operacional da sua organização a partir de clientes externos como Claude.ai e ChatGPT. As consultas respeitam o seu papel e as permissões que você tem dentro do negócio.
+
+## O que é MCP
+
+MCP é um padrão aberto que conecta assistentes de IA a ferramentas e dados externos. Quando você adicioem Trama como conector MCP, seu cliente de IA pode perguntar ao Agente de Trama sobre sua operação (oportunidades, clientes, acompanhamentos) usando linguagem natural, sem precisar copiar e colar entre apps.
+
+## O que você pode fazer
+
+O servidor MCP de Trama expõe ferramentas específicas para cada coisa que seu assistente pode precisar, e elas devolvem dados estruturados (não texto), então se combinam entre si e com o que seu assistente já sabe fazer:
+
+- **Oportunidades** — listar e filtrar, ver o painel, abrir o detalhe de uma, criá-las, editá-las, movê-las de coluna, registrar acompanhamentos, arquivar e restaurar, e ver as adormecidas.
+- **Analítica** — contar e somar valores agrupando por vendedor, dia, origem, coluna ou temperatura; e o desempenho por vendedor.
+- **Clientes** — listar, buscar, ver o perfil completo e o que a organização sabe de cada um; criá-los e editá-los.
+- **Conversas** — listá-las, abrir uma com suas mensagens e ver métricas agregadas.
+- **Catálogo** — listar produtos e ver o detalhe de um.
+- **Suas pendências** — acompanhamentos pendentes e lembretes, com criar, reagendar e concluir.
+- **Organização** — o panorama operacional: integrantes, canais, inbox e métricas.
+
+Além disso continua `ask_trama`, que pergunta em linguagem natural ao Agente Operacional. É para o que nenhuma ferramenta específica cobre: pedidos compostos, ações encadeadas ou perguntas sobre como Trama funciona.
+
+Exemplos:
+
+- "Mostra as oportunidades qualificadas desta semana"
+- "Quantos clientes novos chegaram pela campanha de Bariloche"
+- "Resume os acompanhamentos pendentes da Maria"
+
+<Note>
+  Importante: **seu papel decide quais ferramentas você vê.** O servidor não te oferece as que você não pode usar: um vendedor não vê desempenho por vendedor nem métricas de equipe, e sem permissão para tirar oportunidades do funil não aparecem arquivar nem restaurar. Editar o catálogo, convidar pessoas e disputar oportunidades não se expõem por MCP de propósito: vão pelo painel.
+</Note>
+
+## URL do servidor
+
+`https://ai.trama.so/mcp`
+
+Essa é a única URL que você vai precisar. A autenticação acontece via OAuth 2.1: quando você adiciona o conector, seu cliente te leva a entrar em Trama e autorizar o acesso à organização ativa.
+
+## Antes de começar
+
+- Tenha uma conta ativa em Trama e tenha entrado no painel pelo menos uma vez.
+- Tenha selecionada a organização sobre a qual você quer operar (se pertence a várias, o conector usa a ativa no momento da autorização).
+- Use um cliente MCP que suporte OAuth com Dynamic Client Registration. Claude.ai e ChatGPT já suportam.
+
+<Note>
+  O caminho mais curto é entrar em **Configurações → Conectar com IA** no painel de Trama: lá você tem um botão que abre o Claude com o conector já carregado, e o endereço pronto para copiar no ChatGPT.
+</Note>
+
+## Conectar pelo Claude
+
+1. Abra **Settings** → **Connectors** no Claude.ai ou no app de desktop.
+2. Clique em **Add custom connector**.
+3. Cole a URL `https://ai.trama.so/mcp` e confirme.
+4. O Claude redireciona você para Trama para entrar. Use a mesma conta com a qual você acessa o painel.
+5. Autorize o acesso à sua organização ativa.
+6. Pronto. Em qualquer conversa você já pode pedir ao Claude para usar a ferramenta de Trama.
+
+Você precisa de um plano pago do Claude (Pro, Max, Team ou Enterprise): contas Free não permitem adicionar conectores.
+
+## Conectar pelo ChatGPT
+
+1. No ChatGPT, vá em **Settings** → **Connectors** (disponível nos planos pagos).
+2. Abra **Advanced settings** e ative o **Developer mode**. Em contas de equipe, quem habilita é um administrador do workspace.
+3. Escolha **Create** e insira a URL `https://ai.trama.so/mcp`, com autenticação **OAuth**.
+4. O ChatGPT abre o fluxo OAuth contra Trama. Entre e autorize.
+5. Uma vez conectado, a ferramenta `ask_trama` fica disponível em qualquer chat ou como parte de um GPT personalizado.
+
+## Permissões e segurança
+
+- O acesso usa OAuth 2.1: você nunca compartilha sua senha com Claude ou ChatGPT.
+- O token vive somente no cliente que você conectou e pode ser revogado a qualquer momento nas configurações de Trama.
+- Cada resposta é executada com seu papel na organização ativa. Se reduzirem suas permissões, o agente reflete imediatamente.
+- Se você for convidado para uma nova organização ou trocar de organização ativa, desconecte e reconecte o MCP para atualizar o contexto.
+
+## Limitações atuais
+
+- Editar o catálogo, convidar integrantes e disputar oportunidades não se expõem por MCP: são ações de muito alcance e vão pelo painel.
+- O servidor MCP não faz streaming: cada resposta chega completa.
+- Se seu cliente MCP não suporta OAuth dinâmico (Dynamic Client Registration), você não vai conseguir conectar. Claude.ai e ChatGPT já suportam.

@@ -1,0 +1,36 @@
+---
+title: "Web widget"
+description: "Add the Trama widget to your site: the same agent that handles WhatsApp answers inquiries, captures visitor data, and creates opportunities."
+---
+
+<Info>
+  **Beta.** We're refining this feature with our first businesses.
+</Info>
+
+Add the Trama widget to your site: the same agent that handles WhatsApp answers inquiries, captures visitor data, and creates opportunities.
+
+## How to install it
+
+1. Go to **Channels → Web** (Owner or Admin only).
+2. Copy the code with the **Copy snippet** button.
+3. Paste it before the `</body>` tag on your site. It works on HTML, WordPress, Wix, Shopify, Webflow, and sites built with React or Vue.
+
+The snippet loads the widget from our CDN, so you don't need to paste it again when you change the appearance: changes apply on their own.
+
+## What you can customize
+
+- **Primary color** (presets or your own color).
+- **Shape** of the bubble and buttons: round, soft, or square.
+- **Position**: left or right.
+- **Theme**: system (follows the visitor's), light, or dark.
+- The bubble **icon**: the Trama logo, your organization's logo, or your own image (PNG, JPG, WebP, or SVG, up to 1 MB).
+
+The **agent name** shown in the chat comes from your inbound agent (you configure it under **Agents**). Appearance changes are **saved automatically**.
+
+## Preview vs. real widget
+
+The **preview** on the configuration screen is only for testing the look: no leads or conversations are recorded there and no data is captured. On your real site, the widget captures IP, browser, and referring page, records the conversation, and creates the opportunity with source "Web widget".
+
+## If your site has a CSP
+
+If your site uses a Content Security Policy, allow the Trama domain from the snippet in `script-src`, `connect-src`, and `img-src` (plus `style-src 'unsafe-inline'`; the widget isolates its styles in a Shadow DOM, so it doesn't affect your page).

@@ -1,53 +1,318 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Trama",
+  "description": "Tu negocio vende por WhatsApp. Trama hace el resto.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#FDC700",
+    "light": "#F0B100",
+    "dark": "#733E0A"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://trama.so"
+  },
+  "navigation": {
+    "languages": [
+      {
+        "language": "en",
+        "default": true,
+        "tabs": [
+          {
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "introduction",
+                  "quickstart"
+                ]
+              },
+              {
+                "group": "The agent",
+                "pages": [
+                  "agent/how-it-works",
+                  "agent/handoff",
+                  "agent/catalog",
+                  "agent/scheduling"
+                ]
+              },
+              {
+                "group": "Channels",
+                "pages": [
+                  "channels/overview",
+                  "channels/whatsapp-setup",
+                  "channels/whatsapp-troubleshooting",
+                  "channels/whatsapp-costs",
+                  "channels/web-widget",
+                  "channels/offers-link"
+                ]
+              },
+              {
+                "group": "Operations",
+                "pages": [
+                  "operations/mission-control",
+                  "operations/opportunities",
+                  "operations/conversations",
+                  "operations/out-of-funnel",
+                  "operations/my-day",
+                  "operations/follow-ups",
+                  "operations/customers",
+                  "operations/campaigns",
+                  "operations/broadcasts"
+                ]
+              },
+              {
+                "group": "Sales tracking",
+                "pages": [
+                  "tracking/sales-reps",
+                  "tracking/auto-status"
+                ]
+              },
+              {
+                "group": "Team",
+                "pages": [
+                  "team/managing",
+                  "team/roles",
+                  "team/visibility"
+                ]
+              },
+              {
+                "group": "Plans & billing",
+                "pages": [
+                  "plans/overview",
+                  "plans/add-ons",
+                  "plans/faq"
+                ]
+              },
+              {
+                "group": "Developers",
+                "pages": [
+                  "developers/mcp"
+                ]
+              },
+              {
+                "group": "Reference",
+                "pages": [
+                  "reference/faq",
+                  "reference/glossary",
+                  "reference/support"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API Reference",
+            "openapi": "https://api.trama.so/v1/openapi.json"
+          }
+        ]
+      },
+      {
+        "language": "es",
+        "default": false,
+        "tabs": [
+          {
+            "tab": "Documentación",
+            "groups": [
+              {
+                "group": "Empezar",
+                "pages": [
+                  "es/introduction",
+                  "es/quickstart"
+                ]
+              },
+              {
+                "group": "El agente",
+                "pages": [
+                  "es/agent/how-it-works",
+                  "es/agent/handoff",
+                  "es/agent/catalog",
+                  "es/agent/scheduling"
+                ]
+              },
+              {
+                "group": "Canales",
+                "pages": [
+                  "es/channels/overview",
+                  "es/channels/whatsapp-setup",
+                  "es/channels/whatsapp-troubleshooting",
+                  "es/channels/whatsapp-costs",
+                  "es/channels/web-widget",
+                  "es/channels/offers-link"
+                ]
+              },
+              {
+                "group": "Operación",
+                "pages": [
+                  "es/operations/mission-control",
+                  "es/operations/opportunities",
+                  "es/operations/conversations",
+                  "es/operations/out-of-funnel",
+                  "es/operations/my-day",
+                  "es/operations/follow-ups",
+                  "es/operations/customers",
+                  "es/operations/campaigns",
+                  "es/operations/broadcasts"
+                ]
+              },
+              {
+                "group": "Tracking",
+                "pages": [
+                  "es/tracking/sales-reps",
+                  "es/tracking/auto-status"
+                ]
+              },
+              {
+                "group": "Equipo",
+                "pages": [
+                  "es/team/managing",
+                  "es/team/roles",
+                  "es/team/visibility"
+                ]
+              },
+              {
+                "group": "Planes",
+                "pages": [
+                  "es/plans/overview",
+                  "es/plans/add-ons",
+                  "es/plans/faq"
+                ]
+              },
+              {
+                "group": "Desarrolladores",
+                "pages": [
+                  "es/developers/mcp"
+                ]
+              },
+              {
+                "group": "Referencia",
+                "pages": [
+                  "es/reference/faq",
+                  "es/reference/glossary",
+                  "es/reference/support"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API",
+            "openapi": "https://api.trama.so/v1/openapi.json"
+          }
+        ]
+      },
+      {
+        "language": "pt-BR",
+        "default": false,
+        "tabs": [
+          {
+            "tab": "Documentação",
+            "groups": [
+              {
+                "group": "Começar",
+                "pages": [
+                  "pt-BR/introduction",
+                  "pt-BR/quickstart"
+                ]
+              },
+              {
+                "group": "O agente",
+                "pages": [
+                  "pt-BR/agent/how-it-works",
+                  "pt-BR/agent/handoff",
+                  "pt-BR/agent/catalog",
+                  "pt-BR/agent/scheduling"
+                ]
+              },
+              {
+                "group": "Canais",
+                "pages": [
+                  "pt-BR/channels/overview",
+                  "pt-BR/channels/whatsapp-setup",
+                  "pt-BR/channels/whatsapp-troubleshooting",
+                  "pt-BR/channels/whatsapp-costs",
+                  "pt-BR/channels/web-widget",
+                  "pt-BR/channels/offers-link"
+                ]
+              },
+              {
+                "group": "Operação",
+                "pages": [
+                  "pt-BR/operations/mission-control",
+                  "pt-BR/operations/opportunities",
+                  "pt-BR/operations/conversations",
+                  "pt-BR/operations/out-of-funnel",
+                  "pt-BR/operations/my-day",
+                  "pt-BR/operations/follow-ups",
+                  "pt-BR/operations/customers",
+                  "pt-BR/operations/campaigns",
+                  "pt-BR/operations/broadcasts"
+                ]
+              },
+              {
+                "group": "Tracking",
+                "pages": [
+                  "pt-BR/tracking/sales-reps",
+                  "pt-BR/tracking/auto-status"
+                ]
+              },
+              {
+                "group": "Equipe",
+                "pages": [
+                  "pt-BR/team/managing",
+                  "pt-BR/team/roles",
+                  "pt-BR/team/visibility"
+                ]
+              },
+              {
+                "group": "Planos",
+                "pages": [
+                  "pt-BR/plans/overview",
+                  "pt-BR/plans/add-ons",
+                  "pt-BR/plans/faq"
+                ]
+              },
+              {
+                "group": "Desenvolvedores",
+                "pages": [
+                  "pt-BR/developers/mcp"
+                ]
+              },
+              {
+                "group": "Referência",
+                "pages": [
+                  "pt-BR/reference/faq",
+                  "pt-BR/reference/glossary",
+                  "pt-BR/reference/support"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API",
+            "openapi": "https://api.trama.so/v1/openapi.json"
+          }
+        ]
+      }
+    ]
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Soporte",
+        "href": "mailto:soporte@trama.so"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Ir al panel",
+      "href": "https://app.trama.so"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.trama.so"
     }
   },
   "contextual": {
@@ -64,9 +329,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://trama.so",
+      "linkedin": "https://linkedin.com/company/trama-so"
     }
   }
 }

@@ -1,0 +1,36 @@
+---
+title: "Widget web"
+description: "Sumá el widget de Trama a tu sitio: el mismo agente que atiende por WhatsApp responde las consultas, capta los datos del visitante y crea oportunidades."
+---
+
+<Info>
+  **Beta.** Estamos afinando esta función con las primeros negocios turísticos.
+</Info>
+
+Sumá el widget de Trama a tu sitio: el mismo agente que atiende por WhatsApp responde las consultas, capta los datos del visitante y crea oportunidades.
+
+## Cómo instalarlo
+
+1. Entrá a **Canales → Web** (solo Owner o Admin).
+2. Copiá el código con el botón **Copiar snippet**.
+3. Pegalo antes de la etiqueta `</body>` en tu sitio. Funciona en HTML, WordPress, Wix, Shopify, Webflow y sitios hechos en React o Vue.
+
+El snippet carga el widget desde nuestra CDN, así que no hace falta volver a pegarlo cuando cambiás la apariencia: los cambios se aplican solos.
+
+## Qué podés personalizar
+
+- **Color primario** (presets o color propio).
+- **Forma** de la burbuja y los botones: redonda, suave o cuadrada.
+- **Posición**: a la izquierda o a la derecha.
+- **Tema**: sistema (sigue el del visitante), claro u oscuro.
+- **Ícono** de la burbuja: el logo de Trama, el logo de tu organización o una imagen propia (PNG, JPG, WebP o SVG, hasta 1 MB).
+
+El **nombre del agente** que aparece en el chat sale de tu agente inbound (lo configurás en **Agentes**). Los cambios de apariencia se **guardan solos**.
+
+## Vista previa vs. widget real
+
+La **vista previa** de la pantalla de configuración es solo para probar el aspecto: ahí no se registran leads ni conversaciones ni se capturan datos. En tu sitio real, el widget captura IP, navegador y página de origen, registra la conversación y crea la oportunidad con origen "Widget web".
+
+## Si tu sitio tiene CSP
+
+Si tu sitio usa Content Security Policy, permití el dominio de Trama del snippet en `script-src`, `connect-src` e `img-src` (más `style-src 'unsafe-inline'`; el widget aísla sus estilos en un Shadow DOM, así que no afecta tu página).

@@ -1,33 +1,28 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# Instrucciones para agentes
 
-# Documentation project instructions
+Documentación pública de Trama, en Mintlify. Repo **público**: nada interno acá.
 
-## About this project
+## Reglas
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+- **Tres idiomas en paridad.** `en` (raíz), `es/`, `pt-BR/`. Toda página existe
+  en los tres con el MISMO path. Si agregás una, agregá las tres y sumá las tres
+  entradas a `docs.json`.
+- **`docs.json` es la única fuente de la navegación.** Un `.mdx` que no está
+  referenciado ahí no aparece en el sitio.
+- **No escribas páginas de API a mano.** El tab de API se genera del OpenAPI de
+  `apps/api` (`https://api.trama.so/v1/openapi.json`). Si falta un endpoint, se
+  arregla en el monorepo, no acá.
+- **Colores: no toques `colors` sin mirar el contraste.** El amarillo de marca
+  (`#FDC700`) da 1.57:1 sobre blanco — es un color de RELLENO, no de texto. Por
+  eso `dark` (el color sobre fondo claro) usa `#733E0A`, que es el token
+  `--primary-foreground` de `@trama/ui`.
+- **Validá antes de pushear:** `bunx mint broken-links`. Un push a `main` deploya
+  directo a producción.
 
-## Terminology
+## Convenciones de contenido
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
-
-## Style preferences
-
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
-
-## Content boundaries
-
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Español rioplatense (vos, no tú). El `es/` es el canónico del tono; `en` y
+  `pt-BR` son traducciones.
+- Callouts: `<Note>` para aclaraciones, `<Info>` para features en beta.
+- Los links internos llevan el prefijo del idioma: `/es/...`, `/pt-BR/...`, y
+  sin prefijo para inglés.

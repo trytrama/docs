@@ -1,0 +1,26 @@
+---
+title: "Atualização automática do status"
+description: "Disponível nos planos Pro e Business (requer rastreamento de vendedores)."
+---
+
+Disponível nos planos **Pro** e **Business** (requer rastreamento de vendedores).
+
+## Como funciona
+
+Quando os WhatsApps dos seus vendedores estão conectados, Trama lê as conversas e detecta mudanças de status automaticamente:
+
+| O que acontece | O que Trama faz |
+|---|---|
+| Vendedor envia sua primeira mensagem ao cliente | Move de A ATENDER para EM CONTATO |
+| Vendedor envia um PDF de cotação | Move de EM CONTATO para COTADO |
+| Vendedor envia um preço na conversa | Move de EM CONTATO para COTADO |
+| Cliente diz "já reservei com outro negócio" | Move para PERDIDO (motivo: concorrência) |
+| 15 dias passam sem resposta após 3 toques | Move para PERDIDO (motivo: sem resposta) |
+
+## Transições que requerem confirmação
+
+Nem tudo se move automaticamente. As vendas ganhas sempre requerem confirmação do vendedor, seja no Mission Control ou dizendo ao agente "fechamos a venda de Lucia".
+
+## Sem rastreamento
+
+Sem os WhatsApps conectados (plano Starter), o vendedor move as oportunidades manualmente no Mission Control ou informa ao agente Trama pelo chat.
