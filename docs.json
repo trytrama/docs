@@ -198,7 +198,7 @@
           },
           {
             "tab": "API",
-            "openapi": "https://api.trama.so/v1/openapi.json"
+            "href": "https://docs.trama.so/api-reference"
           }
         ]
       },
@@ -291,7 +291,7 @@
           },
           {
             "tab": "API",
-            "openapi": "https://api.trama.so/v1/openapi.json"
+            "href": "https://docs.trama.so/api-reference"
           }
         ]
       }
