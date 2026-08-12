@@ -2,6 +2,12 @@
 # .git, .github, .claude, .agents, .idea, node_modules,
 # README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
 
-# Draft content
+# Instrucciones para agentes: no son contenido del sitio.
+AGENTS.md
+CLAUDE.md
+
+# Borradores. Ojo: esto aplica también a `mint dev` — un archivo acá da 404 en el
+# preview local, no sólo en producción. Para documentar algo que todavía no salió
+# y poder verlo, la vía es dejar la página fuera de `navigation` en docs.json.
 drafts/
 *.draft.mdx

@@ -42,11 +42,20 @@ que dispara el rebuild.
 El contenido son MDX planos. Para previsualizar:
 
 ```bash
-bunx mint dev            # servidor local
+bunx mint dev            # servidor local, con hot reload
 bunx mint broken-links   # validar links antes de pushear
 ```
 
-Un push a `main` deploya. No hay staging: lo que se mergea, sale.
+Un push a `main` deploya. **No hay entorno de staging y es a propósito**: un
+proyecto de Mintlify es un repo + una sola branch, así que un segundo site
+obligaría a una branch por entorno y a mantener dos `docs.json` que conflictúan
+en cada merge.
+
+Para documentar algo que todavía no salió, la página se escribe pero **no se
+agrega a `navigation`** en `docs.json`: buildea y responde por su URL, fuera del
+menú. Publicarla después es agregar la entrada. El porqué y el otro mecanismo
+(`drafts/`, que ni siquiera se ve en local) están en
+[`AGENTS.md`](./AGENTS.md).
 
 ## Ojo
 
