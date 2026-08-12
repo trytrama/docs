@@ -68,8 +68,10 @@
               {
                 "group": "Automations",
                 "pages": [
-                  "operations/follow-ups",
-                  "operations/out-of-funnel"
+                  "automations/lead-routing",
+                  "automations/reminders",
+                  "automations/lifecycle",
+                  "automations/agent-replies"
                 ]
               },
               {
@@ -175,8 +177,10 @@
               {
                 "group": "Automatizaciones",
                 "pages": [
-                  "es/operations/follow-ups",
-                  "es/operations/out-of-funnel"
+                  "es/automations/lead-routing",
+                  "es/automations/reminders",
+                  "es/automations/lifecycle",
+                  "es/automations/agent-replies"
                 ]
               },
               {
@@ -282,8 +286,10 @@
               {
                 "group": "Automações",
                 "pages": [
-                  "pt-BR/operations/follow-ups",
-                  "pt-BR/operations/out-of-funnel"
+                  "pt-BR/automations/lead-routing",
+                  "pt-BR/automations/reminders",
+                  "pt-BR/automations/lifecycle",
+                  "pt-BR/automations/agent-replies"
                 ]
               },
               {
@@ -399,6 +405,30 @@
     {
       "source": "/pt-BR/agent/handoff",
       "destination": "/pt-BR/agent/how-it-works"
+    },
+    {
+      "source": "/operations/follow-ups",
+      "destination": "/automations/reminders"
+    },
+    {
+      "source": "/es/operations/follow-ups",
+      "destination": "/es/automations/reminders"
+    },
+    {
+      "source": "/pt-BR/operations/follow-ups",
+      "destination": "/pt-BR/automations/reminders"
+    },
+    {
+      "source": "/operations/out-of-funnel",
+      "destination": "/automations/lifecycle"
+    },
+    {
+      "source": "/es/operations/out-of-funnel",
+      "destination": "/es/automations/lifecycle"
+    },
+    {
+      "source": "/pt-BR/operations/out-of-funnel",
+      "destination": "/pt-BR/automations/lifecycle"
     }
   ]
 }

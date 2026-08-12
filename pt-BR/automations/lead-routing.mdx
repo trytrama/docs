@@ -1,0 +1,42 @@
+---
+title: "Distribuição de leads"
+description: "As três decisões que definem qual vendedor recebe uma consulta nova, e o diagrama que mostra o caminho que elas produzem."
+---
+
+Quando entra uma consulta nova, alguém precisa atendê-la. Em **Automações → Distribuição** você define quem, em três passos avaliados em ordem.
+
+<img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Aba Distribuição, com as três decisões à esquerda e o caminho resultante à direita" />
+<img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Aba Distribuição, com as três decisões à esquerda e o caminho resultante à direita" />
+
+O painel da direita não é uma ilustração: é o caminho que a sua configuração atual produz. Você muda uma opção e o caminho é redesenhado.
+
+## 1. Um cliente que já comprou volta a escrever
+
+É a primeira coisa avaliada e, se aplicar, a distribuição para aí.
+
+- **Continua com o vendedor dele** — a consulta nova vai para quem já o atendia. **Ignora a especialidade**: quem vendeu um cruzeiro recebe também a consulta sobre a Disney.
+- **Só se cobrir o tema** — fica com o vendedor dele apenas se ele também cobrir a especialidade e o idioma. Se não, vai para distribuição.
+- **Distribui do zero** — a relação anterior não pesa. Pode acabar falando com alguém que não conhece a história dele.
+
+## 2. Quem pode receber
+
+Como especialidade e idioma se combinam para formar o grupo de candidatos.
+
+| Opção | O que faz |
+|---|---|
+| **Primeiro o idioma** | Busca o especialista que também fale o idioma; se não houver, manda o idioma |
+| **Primeiro a especialidade** | O mesmo, ao contrário |
+| **Só o idioma** | Ignora as especialidades. Se ninguém fala o idioma, distribui para a equipe toda |
+| **Só a especialidade** | Ignora o idioma. Se ninguém cobre o tema, distribui para a equipe toda |
+| **Os dois, sem exceção** | Exige especialidade *e* idioma. **Se ninguém cumprir, a consulta fica sem atribuição** |
+
+As especialidades e os idiomas de cada vendedor são carregados em [Equipe](/pt-BR/team/managing).
+
+## 3. Qual deles recebe
+
+- **O que está mais leve** — olha carga ativa, leads de hoje e o que deixou esfriar. As cotações abertas contam como carga.
+- **Um a um, por rodízio** — vai para quem há mais tempo não recebe. Não olha a carga.
+
+<Note>
+Se uma consulta ficar sem atribuição, um processo a resgata dentro de uma hora. Ela não fica lá para sempre — mas fica por até uma hora, e essa é a razão para pensar duas vezes antes de usar "Os dois, sem exceção".
+</Note>

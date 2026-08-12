@@ -1,0 +1,42 @@
+---
+title: "Reparto de leads"
+description: "Las tres decisiones que definen a qué vendedor le toca una consulta nueva, y el diagrama que muestra el camino que producen."
+---
+
+Cuando entra una consulta nueva, alguien la tiene que atender. En **Automatizaciones → Reparto** definís quién, en tres pasos que se evalúan en orden.
+
+<img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Pestaña Reparto, con las tres decisiones a la izquierda y el camino resultante a la derecha" />
+<img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Pestaña Reparto, con las tres decisiones a la izquierda y el camino resultante a la derecha" />
+
+El panel de la derecha no es una ilustración: es el camino que produce tu configuración de hoy. Cambiás una opción y el camino se redibuja.
+
+## 1. Un cliente que ya te compró vuelve a escribir
+
+Es lo primero que se evalúa, y si aplica, el reparto corta ahí.
+
+- **Sigue con su vendedor** — la consulta nueva va a quien ya lo atendía. **Ignora la especialidad**: quien le vendió un crucero recibe también su consulta de Disney.
+- **Sólo si cubre el tema** — se queda con su vendedor únicamente si además cubre la especialidad y el idioma. Si no, se reparte.
+- **Se reparte de cero** — la relación previa no pesa. Puede terminar hablando con alguien que no conoce su historia.
+
+## 2. Quiénes pueden recibirla
+
+Cómo se combinan la especialidad y el idioma para armar el grupo de candidatos.
+
+| Opción | Qué hace |
+|---|---|
+| **Primero el idioma** | Busca al especialista que además hable el idioma; si no hay, manda el idioma |
+| **Primero la especialidad** | Lo mismo, al revés |
+| **Sólo el idioma** | Ignora las especialidades. Si nadie habla el idioma, se reparte entre todo el equipo |
+| **Sólo la especialidad** | Ignora el idioma. Si nadie cubre el tema, se reparte entre todo el equipo |
+| **Los dos, sin excepción** | Exige especialidad *e* idioma. **Si nadie cumple, la consulta queda sin asignar** |
+
+Las especialidades y los idiomas de cada vendedor se cargan en [Equipo](/es/team/managing).
+
+## 3. A cuál de ellos le toca
+
+- **Al que está más liviano** — mira carga activa, leads de hoy y lo que dejó enfriar. Las cotizaciones abiertas cuentan como carga.
+- **Uno y uno, por turnos** — le toca a quien hace más tiempo que no recibe. No mira la carga.
+
+<Note>
+Si una consulta queda sin asignar, un proceso la rescata dentro de la hora. No se queda ahí para siempre — pero se queda hasta una hora, y esa es la razón para pensarlo dos veces antes de usar «Los dos, sin excepción».
+</Note>

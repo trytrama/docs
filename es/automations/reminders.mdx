@@ -1,0 +1,30 @@
+---
+title: "Recordatorios"
+description: "Trama revisa el tablero cada hora y le avisa al vendedor cuando una oportunidad se quedó quieta. Vos definís cuánto es quieta."
+---
+
+Una oportunidad que nadie toca no avisa. **Automatizaciones → Recordatorios** es Trama mirando por vos: cada hora barre el tablero, calcula en qué etapa está cada oportunidad y hace cuánto, y le avisa al vendedor cuando algo se quedó quieto demasiado tiempo.
+
+<img className="block dark:hidden" src="/images/automatizaciones/recordatorios-light.png" alt="Pestaña Recordatorios, con los plazos por etapa y cuándo sale cada aviso" />
+<img className="hidden dark:block" src="/images/automatizaciones/recordatorios-dark.png" alt="Pestaña Recordatorios, con los plazos por etapa y cuándo sale cada aviso" />
+
+El interruptor de arriba apaga todo de una. Con eso apagado no sale ningún aviso hasta que lo vuelvas a prender.
+
+## Por dónde salen
+
+- **Trama Agent** — texto dentro de la conversación abierta. Fuera de la ventana de 24 h de WhatsApp cae al template de Meta.
+- **Template de Meta** — siempre un template aprobado. Llega aunque la conversación esté cerrada, pero no se personaliza.
+
+## Los plazos
+
+Tres etapas, cada una con su reloj. Los valores de abajo son los que vienen por defecto; todos se cambian.
+
+**Por atender · nadie la contestó** — 2 días por defecto. Es el único tramo donde el aviso se repite *todos los días*: es el más crítico y no tiene tope.
+
+**En contacto · habló, pero no avanza** — 2 días sin seguimiento del vendedor.
+
+**Cotizada · falta el seguimiento** — tres toques después de mandar la cotización, a los 3, 7 y 15 días por defecto.
+
+<Note>
+Estos plazos no son comportamiento fijo del producto: son configuración. Si tu ciclo de venta es más largo o más corto que los valores por defecto, cambialos acá en vez de trabajar alrededor de ellos.
+</Note>

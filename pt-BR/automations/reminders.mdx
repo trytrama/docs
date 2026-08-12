@@ -1,0 +1,30 @@
+---
+title: "Lembretes"
+description: "A Trama revisa o quadro a cada hora e avisa o vendedor quando uma oportunidade fica parada. Você define quanto é parada."
+---
+
+Uma oportunidade em que ninguém toca não avisa. **Automações → Lembretes** é a Trama olhando por você: a cada hora varre o quadro, calcula em que etapa está cada oportunidade e há quanto tempo, e avisa o vendedor quando algo ficou parado tempo demais.
+
+<img className="block dark:hidden" src="/images/automatizaciones/recordatorios-light.png" alt="Aba Lembretes, com os prazos por etapa e quando cada aviso dispara" />
+<img className="hidden dark:block" src="/images/automatizaciones/recordatorios-dark.png" alt="Aba Lembretes, com os prazos por etapa e quando cada aviso dispara" />
+
+A chave do topo desliga tudo de uma vez. Com ela desligada, nenhum aviso sai até você ligar de novo.
+
+## Por onde saem
+
+- **Trama Agent** — texto dentro da conversa aberta. Fora da janela de 24 h do WhatsApp, cai no template do Meta.
+- **Template do Meta** — sempre um template aprovado. Chega mesmo se a conversa estiver fechada, mas não é personalizável.
+
+## Os prazos
+
+Três etapas, cada uma com o seu relógio. Os valores abaixo são os padrões; todos podem ser alterados.
+
+**A atender · ninguém respondeu** — 2 dias por padrão. É o único trecho em que o aviso se repete *todos os dias*: é o mais crítico e não tem teto.
+
+**Em contato · falou, mas não avança** — 2 dias sem acompanhamento do vendedor.
+
+**Cotada · falta o acompanhamento** — três toques depois de enviar a cotação, aos 3, 7 e 15 dias por padrão.
+
+<Note>
+Esses prazos não são comportamento fixo do produto: são configuração. Se o seu ciclo de venda é mais longo ou mais curto que os padrões, mude aqui em vez de trabalhar em volta deles.
+</Note>
