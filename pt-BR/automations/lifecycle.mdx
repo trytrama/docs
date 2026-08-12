@@ -5,8 +5,10 @@ description: "Quando uma oportunidade deixa de ocupar espaço no quadro — e po
 
 Um quadro do qual nada nunca sai deixa de servir. **Automações → Ciclo de vida** decide quando uma oportunidade sai de cena — e para onde vai, que não é o mesmo em todos os casos.
 
-<img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Aba Ciclo de vida, com a linha do tempo de uma oportunidade em escala" />
-<img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Aba Ciclo de vida, com a linha do tempo de uma oportunidade em escala" />
+<Frame>
+  <img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Aba Ciclo de vida, com a linha do tempo de uma oportunidade em escala" />
+  <img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Aba Ciclo de vida, com a linha do tempo de uma oportunidade em escala" />
+</Frame>
 
 A linha do tempo da direita é desenhada **em escala** com os prazos que você escolheu, então dá para ver de relance se ficaram espaçados como você pretendia.
 
@@ -23,6 +25,19 @@ A linha do tempo da direita é desenhada **em escala** com os prazos que você e
 **Mover sozinha para "Em contato"** vem ligado: quando o vendedor escreve para o cliente, ou risca o pendente em Meu dia, o cartão se move sozinho. Se você desligar, alguém tem que arrastar cada cartão à mão — o que na prática significa que o quadro se descola da realidade.
 
 ## Onde elas terminam
+
+```mermaid
+flowchart LR
+    P([Pipeline]) --> U[Não qualificada<br/>o agente continua falando]
+    P --> N[Sem resposta<br/>apagou sozinha]
+    P --> A[Arquivada<br/>alguém a descartou]
+
+    U -.quando os dados aparecem.-> P
+    N -.o cliente escreve · ou Reativar.-> P
+    A -.Passar para o pipeline.-> P
+    A ==>|depois de 30 dias| DEL[Excluída de vez]
+```
+
 
 As oportunidades que saem do quadro ficam em **Oportunidades → Fora do funil**, divididas em três grupos que se comportam de formas diferentes:
 

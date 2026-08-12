@@ -5,8 +5,37 @@ description: "Three decisions that determine which sales rep gets a new inquiry,
 
 When a new inquiry comes in, somebody has to get it. **Automations → Routing** is where you decide who, in three steps that run in order.
 
-<img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Routing tab, with the three decisions on the left and the resulting path on the right" />
-<img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Routing tab, with the three decisions on the left and the resulting path on the right" />
+<Frame>
+  <img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Routing tab, with the three decisions on the left and the resulting path on the right" />
+  <img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Routing tab, with the three decisions on the left and the resulting path on the right" />
+</Frame>
+
+```mermaid
+flowchart TD
+    A([An inquiry arrives]) --> B{Have they bought before?}
+    B -->|No| POOL
+    B -->|Yes| C{What you chose in step 1}
+    C -->|Stays with their rep| D[Goes to whoever handled them]
+    C -->|Only if they cover it| E{Does that rep cover<br/>specialty and language?}
+    C -->|Routed from scratch| POOL
+    E -->|Yes| D
+    E -->|No| POOL
+
+    POOL{{Step 2 · who's eligible}}
+    POOL -->|Language or specialty first| P[Candidate pool]
+    POOL -->|Both, no exceptions| X{Does anyone cover both?}
+    X -->|Yes| P
+    X -->|No| Z[Stays unassigned]
+
+    P --> Q{Step 3 · which one}
+    Q -->|Lightest| R[Lowest active load]
+    Q -->|Round robin| S[Longest without one]
+
+    D --> F([Rep assigned])
+    R --> F
+    S --> F
+    Z -.rescued within the hour.-> F
+```
 
 The panel on the right isn't an illustration — it's the path your current settings produce. Change an option and the path redraws.
 
@@ -37,6 +66,6 @@ Each rep's specialties and languages are set in [Team](/team/managing).
 - **Whoever's lightest** — looks at active load, today's leads, and what they've let go cold. Open quotes count as load.
 - **Round robin** — goes to whoever hasn't received one in longest. Doesn't look at load at all.
 
-<Note>
+<Warning>
 If an inquiry ends up unassigned, a process rescues it within the hour. It won't sit there forever — but it will sit there for up to an hour, which is a reason to be careful with "Both, no exceptions".
-</Note>
+</Warning>

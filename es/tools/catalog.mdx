@@ -5,13 +5,17 @@ description: "Subís un flyer, la IA extrae todos los productos que tenga, vos r
 
 El catálogo es lo que tu agente sabe vender. Todo lo que puede cotizar, describir o mostrar en una foto sale de acá — y nada más que de acá.
 
-<img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Lista del catálogo con ítems, tipo, estado, precio y duración" />
-<img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Lista del catálogo con ítems, tipo, estado, precio y duración" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Lista del catálogo con ítems, tipo, estado, precio y duración" />
+  <img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Lista del catálogo con ítems, tipo, estado, precio y duración" />
+</Frame>
 
 ## La carga: el flyer hace el trabajo
 
-<img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="Panel de nuevo ítem, con el dropzone para el flyer o la lista de precios" />
-<img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="Panel de nuevo ítem, con el dropzone para el flyer o la lista de precios" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="Panel de nuevo ítem, con el dropzone para el flyer o la lista de precios" />
+  <img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="Panel de nuevo ítem, con el dropzone para el flyer o la lista de precios" />
+</Frame>
 
 <Steps>
 <Step title="Soltás el archivo">
@@ -19,7 +23,7 @@ Un flyer, una lista de precios, la planilla del operador. **JPG, PNG o WebP hast
 </Step>
 
 <Step title="Extrae todo, en segundo plano">
-No resume: **si el flyer tiene veinte opciones, te quedan veinte productos.** Podés seguir trabajando mientras corre; te avisa cuando están listos, y sobrevive a un F5.
+No resume: **si el flyer tiene veinte opciones, te quedan veinte productos.** Podés seguir trabajando mientras corre. Te avisa cuando están listos, y si cerrás la pestaña y volvés, sigue trabajando igual.
 </Step>
 
 <Step title="Quedan como borradores">
@@ -31,7 +35,7 @@ El borrador abre en el mismo editor que cualquier ítem. Corregís lo que salió
 </Step>
 </Steps>
 
-También está **Cargar a mano**, al lado del dropzone, para uno suelto. Ese nace activo.
+También está **Cargar a mano**, al lado del recuadro donde soltás el archivo, para uno suelto. Ese nace activo.
 
 <Note>
 Un flyer, dos fechas de salida y el mismo hotel es **un producto con variantes**, no dos productos. Otro destino u otro tipo de viaje sí es un producto nuevo. La extracción ya funciona así — conviene saberlo para no "arreglar" algo que no está roto.
@@ -39,8 +43,10 @@ Un flyer, dos fechas de salida y el mismo hotel es **un producto con variantes**
 
 ## Qué cambia cada campo
 
-<img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detalle de un ítem del catálogo" />
-<img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detalle de un ítem del catálogo" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detalle de un ítem del catálogo" />
+  <img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detalle de un ítem del catálogo" />
+</Frame>
 
 El único campo obligatorio es el título. Pero los campos no son todos iguales: algunos gobiernan cómo vende el agente y otros son decoración.
 
@@ -50,7 +56,7 @@ El único campo obligatorio es el título. Pero los campos no son todos iguales:
 |---|---|
 | **Título** | Es el ancla principal de la búsqueda. Un producto nombrado como la gente lo pide, se encuentra |
 | **Destinos** | El otro eje de la búsqueda. Matchea por nombre y por país |
-| **Precio, moneda y modalidad** | Crítico. **Sin precio el agente no tiene número para dar** — y si lo inventa, una guarda reescribe el mensaje antes de que salga |
+| **Precio, moneda y modalidad** | Crítico. **Sin precio el agente no tiene número para dar** — y si lo inventa, el sistema lo frena y reescribe el mensaje antes de que se envíe |
 | **Base del precio** ("por persona, base doble") | Se cita pegado al monto. Si lo dejás vacío, el número sale desnudo |
 | **Nivel de presupuesto** (económico / medio / premium) | Filtra según lo que el cliente dijo que puede gastar |
 | **Tags temáticos** (`caribe`, `all-inclusive`) | Filtro por tema. Son temas, no lugares |
@@ -82,7 +88,11 @@ Tres capas, y conocerlas explica comportamientos que si no parecen aleatorios:
 | **Borrador** | No | No |
 | **Archivado** | No | No |
 
-Pausar es para algo que seguís vendiendo pero ahora no. Archivar es el botón de borrar: se puede recuperar durante **30 días** y después se va para siempre.
+Pausar es para algo que seguís vendiendo pero ahora no.
+
+<Warning>
+**Archivar es el botón de borrar.** Se puede recuperar durante 30 días; pasado ese plazo, el producto se va para siempre y no hay forma de traerlo de vuelta.
+</Warning>
 
 ## Grupos
 

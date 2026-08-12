@@ -5,8 +5,10 @@ description: "Cuándo una oportunidad deja de ocupar lugar en el tablero — y p
 
 Un tablero del que nunca se va nada deja de servir. **Automatizaciones → Ciclo de vida** decide cuándo una oportunidad se corre — y a dónde va, que no es lo mismo en todos los casos.
 
-<img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Pestaña Ciclo de vida, con la línea de tiempo de una oportunidad a escala" />
-<img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Pestaña Ciclo de vida, con la línea de tiempo de una oportunidad a escala" />
+<Frame>
+  <img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Pestaña Ciclo de vida, con la línea de tiempo de una oportunidad a escala" />
+  <img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Pestaña Ciclo de vida, con la línea de tiempo de una oportunidad a escala" />
+</Frame>
 
 La línea de tiempo de la derecha está dibujada **a escala** con los plazos que elegiste, así que se ve de un vistazo si quedaron espaciados como pensabas.
 
@@ -23,6 +25,19 @@ La línea de tiempo de la derecha está dibujada **a escala** con los plazos que
 **Mover sola a «En contacto»** viene prendido: cuando el vendedor le escribe al cliente, o tacha el pendiente desde Mi día, la tarjeta se mueve sola. Si lo apagás, alguien tiene que arrastrar cada tarjeta a mano — que en la práctica significa que el tablero se despega de la realidad.
 
 ## Dónde terminan
+
+```mermaid
+flowchart LR
+    P([Pipeline]) --> U[Sin calificar<br/>el agente sigue hablando]
+    P --> N[Sin respuesta<br/>se apagó sola]
+    P --> A[Archivada<br/>alguien la descartó]
+
+    U -.cuando aparecen los datos.-> P
+    N -.el cliente escribe · o Reactivar.-> P
+    A -.Pasar al pipeline.-> P
+    A ==>|a los 30 días| DEL[Se borra para siempre]
+```
+
 
 Las oportunidades que se van del tablero quedan en **Oportunidades → Fuera del funnel**, repartidas en tres grupos que se comportan distinto:
 

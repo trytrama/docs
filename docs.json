@@ -51,7 +51,6 @@
                 "group": "The board",
                 "pages": [
                   "operations/mission-control",
-                  "operations/my-day",
                   "operations/opportunities",
                   "tracking/auto-status"
                 ]
@@ -153,7 +152,6 @@
                 "group": "El tablero",
                 "pages": [
                   "es/operations/mission-control",
-                  "es/operations/my-day",
                   "es/operations/opportunities",
                   "es/tracking/auto-status"
                 ]
@@ -255,7 +253,6 @@
                 "group": "O quadro",
                 "pages": [
                   "pt-BR/operations/mission-control",
-                  "pt-BR/operations/my-day",
                   "pt-BR/operations/opportunities",
                   "pt-BR/tracking/auto-status"
                 ]
@@ -468,6 +465,18 @@
     {
       "source": "/pt-BR/operations/campaigns",
       "destination": "/pt-BR/tools/ads"
+    },
+    {
+      "source": "/operations/my-day",
+      "destination": "/operations/mission-control"
+    },
+    {
+      "source": "/es/operations/my-day",
+      "destination": "/es/operations/mission-control"
+    },
+    {
+      "source": "/pt-BR/operations/my-day",
+      "destination": "/pt-BR/operations/mission-control"
     }
   ]
 }

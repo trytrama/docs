@@ -5,13 +5,17 @@ description: "Upload a flyer, the AI extracts every product in it, you review an
 
 The catalogue is what your agent knows how to sell. Everything it can quote, describe, or show a photo of comes from here — and nothing else does.
 
-<img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Catalogue list with items, type, status, price and duration" />
-<img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Catalogue list with items, type, status, price and duration" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Catalogue list with items, type, status, price and duration" />
+  <img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Catalogue list with items, type, status, price and duration" />
+</Frame>
 
 ## Loading: the flyer does the work
 
-<img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="New item panel, with the flyer or price list dropzone" />
-<img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="New item panel, with the flyer or price list dropzone" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="New item panel, with the flyer or price list dropzone" />
+  <img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="New item panel, with the flyer or price list dropzone" />
+</Frame>
 
 <Steps>
 <Step title="Drop the file">
@@ -19,7 +23,7 @@ A flyer, a price list, an operator's sheet. **JPG, PNG or WebP up to 15 MB · PD
 </Step>
 
 <Step title="It extracts everything, in the background">
-Not a summary: **if the flyer has twenty options, you get twenty products.** You can keep working while it runs; you'll get a notification when they're ready, and it survives a page refresh.
+Not a summary: **if the flyer has twenty options, you get twenty products.** You can keep working while it runs. You'll get a notification when they're ready, and if you close the tab and come back it's still going.
 </Step>
 
 <Step title="They land as drafts">
@@ -31,7 +35,7 @@ The draft opens in the same editor as any other item. Fix what came out wrong, c
 </Step>
 </Steps>
 
-There's also **Load manually**, next to the dropzone, for a one-off. That one is born active.
+There's also **Load manually**, next to the box where you drop the file, for a one-off. That one is born active.
 
 <Note>
 One flyer, two travel dates and the same hotel is **one product with variants**, not two products. A different destination or a different kind of trip is a new product. The extraction already works that way — worth knowing so you don't "fix" something that isn't broken.
@@ -39,8 +43,10 @@ One flyer, two travel dates and the same hotel is **one product with variants**,
 
 ## What each field changes
 
-<img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detail of a catalogue item" />
-<img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detail of a catalogue item" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detail of a catalogue item" />
+  <img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detail of a catalogue item" />
+</Frame>
 
 Only the title is required. But the fields are not equal — some steer how the agent sells and some are decoration.
 
@@ -50,7 +56,7 @@ Only the title is required. But the fields are not equal — some steer how the 
 |---|---|
 | **Title** | The main search anchor. A product named the way people ask for it gets found |
 | **Destinations** | The other axis of search. It matches by name and by country |
-| **Price, currency and mode** | Critical. **Without a price the agent has no number to give** — and if it invents one, a guard rewrites the message before it goes out |
+| **Price, currency and mode** | Critical. **Without a price the agent has no number to give** — and if it invents one, the system catches it and rewrites the message before it's sent |
 | **Price basis** ("per person, double occupancy") | Quoted right next to the amount. Leave it empty and the number goes out naked |
 | **Budget level** (economic / mid / premium) | Filters by what the customer said they can spend |
 | **Region tags** (`caribbean`, `all-inclusive`) | Thematic filter. These are themes, not places |
@@ -82,7 +88,11 @@ Three layers, and knowing them explains behavior that otherwise looks random:
 | **Draft** | No | No |
 | **Archived** | No | No |
 
-Pausing is for something you still sell but not right now. Archiving is the delete button — it's recoverable for **30 days** and then it's gone for good.
+Pausing is for something you still sell but not right now.
+
+<Warning>
+**Archiving is the delete button.** It's recoverable for 30 days; after that the product is gone for good and there's no way to bring it back.
+</Warning>
 
 ## Groups
 

@@ -3,24 +3,41 @@ title: "Automatic status updates"
 description: "When a card moves on its own, and what has to be true for that to happen."
 ---
 
-Available on **Pro** and **Business** plans (requires sales rep tracking).
+A board is only useful if it matches reality, and it won't if somebody has to remember to drag cards around. With your reps' WhatsApp numbers connected, Trama reads the conversations and moves the cards itself.
 
-## How it works
+Available on **Pro** and **Business**, because it needs [sales rep tracking](/tracking/sales-reps).
 
-When your sales reps' WhatsApp numbers are connected, Trama reads the conversations and detects status changes automatically:
+## What moves what
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    A : To contact
+    B : In contact
+    C : Quoted
+    W : Won
+    L : Lost
+
+    A --> B : the rep sends their first message
+    B --> C : sends a quote PDF
+    B --> C : says a price in the conversation
+    C --> L : the customer says they booked elsewhere
+    C --> L : 15 days silent after 3 touches
+    C --> W : only with the rep's confirmation
+```
 
 | What happens | What Trama does |
 |---|---|
-| Sales rep sends their first message to the customer | Moves from TO ATTEND to IN CONTACT |
-| Sales rep sends a quote PDF | Moves from IN CONTACT to QUOTED |
-| Sales rep sends a price in the conversation | Moves from IN CONTACT to QUOTED |
-| Customer says "I already booked with another business" | Moves to LOST (reason: competition) |
-| 15 days pass without response after 3 touches | Moves to LOST (reason: no response) |
+| The rep sends their first message | Moves from **To contact** to **In contact** |
+| The rep sends a quote PDF | Moves from **In contact** to **Quoted** |
+| The rep says a price in the conversation | Moves from **In contact** to **Quoted** |
+| The customer says they booked elsewhere | Moves to **Lost**, with the reason |
+| 15 days pass with no reply after three touches | Moves to **Lost**, no reply |
 
-## Transitions requiring confirmation
+<Warning>
+**Won never moves on its own.** Closing a sale is the one transition that always needs a person to confirm: either you move it on the board, or you tell the Trama Agent over WhatsApp. That's deliberate — a wrongly marked sale poisons every closing metric you have.
+</Warning>
 
-Not everything moves automatically. Won sales always require confirmation from the sales rep, either from Mission Control or by telling the agent "we closed Lucy's sale".
+## Without connected numbers
 
-## Without tracking
-
-Without connected WhatsApp numbers (Starter plan), the sales rep moves opportunities manually from Mission Control or tells the Trama agent via chat.
+On Starter, or if your reps haven't connected their WhatsApp, you move the cards yourself: by dragging them on the board, or by telling the Trama Agent.

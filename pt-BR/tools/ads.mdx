@@ -12,7 +12,7 @@ Uma linha por anúncio, com leads, qualificados, % de qualificados, ganhos e val
 Três coisas sobre esses números vale saber antes de tirar conclusões:
 
 - **"Qualificado" é estrito.** Conta apenas as oportunidades que o *agente* qualificou. O que um vendedor empurrou para o pipeline à mão não conta — senão o número mediria o otimismo da sua equipe em vez da qualidade do anúncio.
-- **É uma coorte, não uma janela.** Um lead que entrou hoje pode qualificar amanhã, então os números do período em curso continuam subindo. Comparar um período inacabado com um fechado sempre vai favorecer o fechado.
+- **Os números do período em curso continuam subindo.** Um lead que entrou hoje pode qualificar amanhã, e quando qualificar conta para o dia em que entrou. Por isso comparar um mês pela metade com um terminado sempre favorece o terminado.
 - **Sem conta do Meta conectada, os leads aparecem do mesmo jeito.** Eles saem dos seus próprios dados. O que some é o dinheiro: gasto, orçamento e custo por qualificado.
 
 <Note>
@@ -21,8 +21,10 @@ Três coisas sobre esses números vale saber antes de tirar conclusões:
 
 ## Medição de anúncios
 
-<img className="block dark:hidden" src="/images/anuncios/medicion-light.png" alt="Painel de medição de anúncios, desligado" />
-<img className="hidden dark:block" src="/images/anuncios/medicion-dark.png" alt="Painel de medição de anúncios, desligado" />
+<Frame>
+  <img className="block dark:hidden" src="/images/anuncios/medicion-light.png" alt="Painel de medição de anúncios, desligado" />
+  <img className="hidden dark:block" src="/images/anuncios/medicion-dark.png" alt="Painel de medição de anúncios, desligado" />
+</Frame>
 
 Esta é a parte que muda os resultados em vez de só reportá-los.
 
@@ -30,12 +32,12 @@ Com isso desligado, o Meta só sabe que alguém iniciou uma conversa. Então oti
 
 Ao ligar, a Trama avisa o Meta quando um lead **qualifica, é cotado ou compra**. O Meta para de buscar gente que conversa e começa a buscar gente parecida com quem compra de você.
 
-**O que se compartilha é um telefone com hash.** Nunca o nome, nunca a conversa.
+**A única coisa compartilhada é o telefone, convertido antes em um código ilegível.** Nem o Meta nem ninguém consegue tirar o número de volta dali. O nome e a conversa nunca saem.
 
 Vem desligada por padrão, de propósito: são dados dos seus clientes e ligar tem que ser decisão sua, não nossa.
 
 <Warning>
-**A venda quase nunca chega a tempo, e isso não é uma falha.** A janela de atribuição do Meta é de 7 dias, e uma viagem costuma fechar semanas depois da primeira mensagem. A qualificação e a cotação entram na janela — essas são as que de fato vão treinar suas campanhas.
+**A venda quase nunca chega a tempo, e isso não é uma falha.** O Meta só aceita saber o que aconteceu dentro de 7 dias do clique, e uma viagem costuma fechar semanas depois da primeira mensagem. A qualificação e a cotação entram na janela — essas são as que de fato vão treinar suas campanhas.
 </Warning>
 
 Para medir você precisa de um número de WhatsApp conectado: os eventos são reportados contra o número pelo qual a conversa entrou.

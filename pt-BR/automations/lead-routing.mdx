@@ -5,8 +5,37 @@ description: "As três decisões que definem qual vendedor recebe uma consulta n
 
 Quando entra uma consulta nova, alguém precisa atendê-la. Em **Automações → Distribuição** você define quem, em três passos avaliados em ordem.
 
-<img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Aba Distribuição, com as três decisões à esquerda e o caminho resultante à direita" />
-<img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Aba Distribuição, com as três decisões à esquerda e o caminho resultante à direita" />
+<Frame>
+  <img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Aba Distribuição, com as três decisões à esquerda e o caminho resultante à direita" />
+  <img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Aba Distribuição, com as três decisões à esquerda e o caminho resultante à direita" />
+</Frame>
+
+```mermaid
+flowchart TD
+    A([Entra uma consulta]) --> B{Já comprou antes?}
+    B -->|Não| POOL
+    B -->|Sim| C{O que você escolheu no passo 1}
+    C -->|Continua com o vendedor dele| D[Vai para quem já o atendia]
+    C -->|Só se cobrir o tema| E{Esse vendedor cobre<br/>especialidade e idioma?}
+    C -->|Distribui do zero| POOL
+    E -->|Sim| D
+    E -->|Não| POOL
+
+    POOL{{Passo 2 · quem pode receber}}
+    POOL -->|Idioma ou especialidade primeiro| P[Grupo de candidatos]
+    POOL -->|Os dois, sem exceção| X{Alguém cumpre os dois?}
+    X -->|Sim| P
+    X -->|Não| Z[Fica sem atribuição]
+
+    P --> Q{Passo 3 · qual deles}
+    Q -->|O mais leve| R[Menor carga ativa]
+    Q -->|Um a um| S[Há mais tempo sem receber]
+
+    D --> F([Vendedor atribuído])
+    R --> F
+    S --> F
+    Z -.é resgatada dentro de uma hora.-> F
+```
 
 O painel da direita não é uma ilustração: é o caminho que a sua configuração atual produz. Você muda uma opção e o caminho é redesenhado.
 
@@ -37,6 +66,6 @@ As especialidades e os idiomas de cada vendedor são carregados em [Equipe](/pt-
 - **O que está mais leve** — olha carga ativa, leads de hoje e o que deixou esfriar. As cotações abertas contam como carga.
 - **Um a um, por rodízio** — vai para quem há mais tempo não recebe. Não olha a carga.
 
-<Note>
+<Warning>
 Se uma consulta ficar sem atribuição, um processo a resgata dentro de uma hora. Ela não fica lá para sempre — mas fica por até uma hora, e essa é a razão para pensar duas vezes antes de usar "Os dois, sem exceção".
-</Note>
+</Warning>

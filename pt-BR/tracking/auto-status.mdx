@@ -3,24 +3,41 @@ title: "Atualização automática do status"
 description: "Quando um cartão se move sozinho, e o que precisa acontecer para isso."
 ---
 
-Disponível nos planos **Pro** e **Business** (requer rastreamento de vendedores).
+Um quadro só serve se refletir a realidade, e isso não acontece se alguém tiver que lembrar de arrastar cartões. Com os WhatsApp dos seus vendedores conectados, a Trama lê as conversas e move os cartões por conta própria.
 
-## Como funciona
+Disponível nos planos **Pro** e **Business**, porque precisa do [acompanhamento de vendedores](/pt-BR/tracking/sales-reps).
 
-Quando os WhatsApps dos seus vendedores estão conectados, Trama lê as conversas e detecta mudanças de status automaticamente:
+## O que move cada coisa
 
-| O que acontece | O que Trama faz |
+```mermaid
+stateDiagram-v2
+    direction LR
+    A : A atender
+    B : Em contato
+    C : Cotado
+    W : Ganho
+    L : Perdido
+
+    A --> B : o vendedor manda a primeira mensagem
+    B --> C : manda um PDF de cotação
+    B --> C : diz um preço na conversa
+    C --> L : o cliente avisa que reservou em outro lugar
+    C --> L : 15 dias sem resposta após 3 toques
+    C --> W : só com confirmação do vendedor
+```
+
+| O que acontece | O que a Trama faz |
 |---|---|
-| Vendedor envia sua primeira mensagem ao cliente | Move de A ATENDER para EM CONTATO |
-| Vendedor envia um PDF de cotação | Move de EM CONTATO para COTADO |
-| Vendedor envia um preço na conversa | Move de EM CONTATO para COTADO |
-| Cliente diz "já reservei com outro negócio" | Move para PERDIDO (motivo: concorrência) |
-| 15 dias passam sem resposta após 3 toques | Move para PERDIDO (motivo: sem resposta) |
+| O vendedor manda a primeira mensagem ao cliente | Move de **A atender** para **Em contato** |
+| O vendedor envia um PDF de cotação | Move de **Em contato** para **Cotado** |
+| O vendedor diz um preço na conversa | Move de **Em contato** para **Cotado** |
+| O cliente diz que já reservou em outro lugar | Move para **Perdido**, com o motivo |
+| Passam 15 dias sem resposta após três toques | Move para **Perdido**, sem resposta |
 
-## Transições que requerem confirmação
+<Warning>
+**Ganho nunca se move sozinho.** Fechar uma venda é a única transição que sempre pede confirmação de uma pessoa: ou você a move no quadro, ou avisa o Trama Agent pelo WhatsApp. É de propósito — uma venda marcada errado suja todas as suas métricas de fechamento.
+</Warning>
 
-Nem tudo se move automaticamente. As vendas ganhas sempre requerem confirmação do vendedor, seja no Mission Control ou dizendo ao agente "fechamos a venda de Lucia".
+## Sem os números conectados
 
-## Sem rastreamento
-
-Sem os WhatsApps conectados (plano Starter), o vendedor move as oportunidades manualmente no Mission Control ou informa ao agente Trama pelo chat.
+No plano Starter, ou se os seus vendedores não conectaram o WhatsApp, os cartões você move: arrastando no quadro, ou avisando o Trama Agent.

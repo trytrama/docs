@@ -5,8 +5,10 @@ description: "When an opportunity stops taking up space on the board — and why
 
 A board where nothing ever leaves stops being useful. **Automations → Lifecycle** decides when an opportunity steps aside — and where it goes, which is not the same for every case.
 
-<img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Lifecycle tab, with the timeline of an opportunity to scale" />
-<img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Lifecycle tab, with the timeline of an opportunity to scale" />
+<Frame>
+  <img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Lifecycle tab, with the timeline of an opportunity to scale" />
+  <img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Lifecycle tab, with the timeline of an opportunity to scale" />
+</Frame>
 
 The timeline on the right is drawn to scale with the deadlines you pick, which makes it easy to see whether they're actually spaced the way you meant.
 
@@ -23,6 +25,19 @@ The timeline on the right is drawn to scale with the deadlines you pick, which m
 **Move to "In contact" on its own** is on by default: when the rep writes to the customer, or ticks the reminder off in My day, the card moves by itself. Turn it off and somebody has to drag every card by hand — which in practice means the board drifts out of sync with reality.
 
 ## Where they end up
+
+```mermaid
+flowchart LR
+    P([Pipeline]) --> U[Unqualified<br/>the agent is still talking]
+    P --> N[No reply<br/>it went quiet on its own]
+    P --> A[Archived<br/>somebody discarded it]
+
+    U -.once the data shows up.-> P
+    N -.the customer writes · or Reactivate.-> P
+    A -.Move to pipeline.-> P
+    A ==>|after 30 days| DEL[Deleted for good]
+```
+
 
 Opportunities that leave the board go to **Opportunities → Out of funnel**, split into three buckets that behave differently:
 

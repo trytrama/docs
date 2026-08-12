@@ -5,8 +5,37 @@ description: "Las tres decisiones que definen a qué vendedor le toca una consul
 
 Cuando entra una consulta nueva, alguien la tiene que atender. En **Automatizaciones → Reparto** definís quién, en tres pasos que se evalúan en orden.
 
-<img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Pestaña Reparto, con las tres decisiones a la izquierda y el camino resultante a la derecha" />
-<img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Pestaña Reparto, con las tres decisiones a la izquierda y el camino resultante a la derecha" />
+<Frame>
+  <img className="block dark:hidden" src="/images/automatizaciones/reparto-light.png" alt="Pestaña Reparto, con las tres decisiones a la izquierda y el camino resultante a la derecha" />
+  <img className="hidden dark:block" src="/images/automatizaciones/reparto-dark.png" alt="Pestaña Reparto, con las tres decisiones a la izquierda y el camino resultante a la derecha" />
+</Frame>
+
+```mermaid
+flowchart TD
+    A([Entra una consulta]) --> B{¿Ya te compró antes?}
+    B -->|No| POOL
+    B -->|Sí| C{Qué elegiste en el paso 1}
+    C -->|Sigue con su vendedor| D[Va a quien ya lo atendía]
+    C -->|Sólo si cubre el tema| E{¿Ese vendedor cubre<br/>especialidad e idioma?}
+    C -->|Se reparte de cero| POOL
+    E -->|Sí| D
+    E -->|No| POOL
+
+    POOL{{Paso 2 · quiénes pueden recibirla}}
+    POOL -->|Idioma o especialidad primero| P[Grupo de candidatos]
+    POOL -->|Los dos, sin excepción| X{¿Alguien cumple los dos?}
+    X -->|Sí| P
+    X -->|No| Z[Queda sin asignar]
+
+    P --> Q{Paso 3 · a cuál le toca}
+    Q -->|Al más liviano| R[El de menor carga activa]
+    Q -->|Uno y uno| S[El que hace más que no recibe]
+
+    D --> F([Vendedor asignado])
+    R --> F
+    S --> F
+    Z -.la rescatan dentro de la hora.-> F
+```
 
 El panel de la derecha no es una ilustración: es el camino que produce tu configuración de hoy. Cambiás una opción y el camino se redibuja.
 
@@ -37,6 +66,6 @@ Las especialidades y los idiomas de cada vendedor se cargan en [Equipo](/es/team
 - **Al que está más liviano** — mira carga activa, leads de hoy y lo que dejó enfriar. Las cotizaciones abiertas cuentan como carga.
 - **Uno y uno, por turnos** — le toca a quien hace más tiempo que no recibe. No mira la carga.
 
-<Note>
+<Warning>
 Si una consulta queda sin asignar, un proceso la rescata dentro de la hora. No se queda ahí para siempre — pero se queda hasta una hora, y esa es la razón para pensarlo dos veces antes de usar «Los dos, sin excepción».
-</Note>
+</Warning>

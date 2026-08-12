@@ -5,13 +5,17 @@ description: "Você sobe um folheto, a IA extrai todos os produtos que tiver, vo
 
 O catálogo é o que o seu agente sabe vender. Tudo o que ele pode cotar, descrever ou mostrar em foto sai daqui — e de mais nada.
 
-<img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Lista do catálogo com itens, tipo, status, preço e duração" />
-<img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Lista do catálogo com itens, tipo, status, preço e duração" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Lista do catálogo com itens, tipo, status, preço e duração" />
+  <img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Lista do catálogo com itens, tipo, status, preço e duração" />
+</Frame>
 
 ## A carga: o folheto faz o trabalho
 
-<img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="Painel de novo item, com a área para soltar o folheto ou a lista de preços" />
-<img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="Painel de novo item, com a área para soltar o folheto ou a lista de preços" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="Painel de novo item, com a área para soltar o folheto ou a lista de preços" />
+  <img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="Painel de novo item, com a área para soltar o folheto ou a lista de preços" />
+</Frame>
 
 <Steps>
 <Step title="Você solta o arquivo">
@@ -19,7 +23,7 @@ Um folheto, uma lista de preços, a planilha do operador. **JPG, PNG ou WebP at�
 </Step>
 
 <Step title="Extrai tudo, em segundo plano">
-Não resume: **se o folheto tem vinte opções, você fica com vinte produtos.** Dá para seguir trabalhando enquanto roda; avisa quando estiverem prontos, e sobrevive a um F5.
+Não resume: **se o folheto tem vinte opções, você fica com vinte produtos.** Dá para seguir trabalhando enquanto roda. Avisa quando estiverem prontos, e se você fechar a aba e voltar, continua funcionando.
 </Step>
 
 <Step title="Ficam como rascunhos">
@@ -31,7 +35,7 @@ O rascunho abre no mesmo editor de qualquer item. Corrige o que saiu errado, com
 </Step>
 </Steps>
 
-Também tem **Carregar à mão**, ao lado da área de upload, para um item avulso. Esse nasce ativo.
+Também tem **Carregar à mão**, ao lado do quadro onde você solta o arquivo, para um item avulso. Esse nasce ativo.
 
 <Note>
 Um folheto, duas datas de saída e o mesmo hotel é **um produto com variantes**, não dois produtos. Outro destino ou outro tipo de viagem aí sim é um produto novo. A extração já funciona assim — vale saber para não "consertar" algo que não está quebrado.
@@ -39,8 +43,10 @@ Um folheto, duas datas de saída e o mesmo hotel é **um produto com variantes**
 
 ## O que cada campo muda
 
-<img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detalhe de um item do catálogo" />
-<img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detalhe de um item do catálogo" />
+<Frame>
+  <img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detalhe de um item do catálogo" />
+  <img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detalhe de um item do catálogo" />
+</Frame>
 
 O único campo obrigatório é o título. Mas os campos não são todos iguais: alguns governam como o agente vende e outros são decoração.
 
@@ -50,7 +56,7 @@ O único campo obrigatório é o título. Mas os campos não são todos iguais: 
 |---|---|
 | **Título** | É a âncora principal da busca. Um produto nomeado como as pessoas pedem é encontrado |
 | **Destinos** | O outro eixo da busca. Casa por nome e por país |
-| **Preço, moeda e modalidade** | Crítico. **Sem preço o agente não tem número para dar** — e se inventar um, uma trava reescreve a mensagem antes de sair |
+| **Preço, moeda e modalidade** | Crítico. **Sem preço o agente não tem número para dar** — e se inventar um, o sistema o segura e reescreve a mensagem antes de ela ser enviada |
 | **Base do preço** ("por pessoa, base dupla") | É citada colada ao valor. Se deixar vazio, o número sai nu |
 | **Nível de orçamento** (econômico / médio / premium) | Filtra pelo que o cliente disse que pode gastar |
 | **Tags temáticas** (`caribe`, `all-inclusive`) | Filtro por tema. São temas, não lugares |
@@ -82,7 +88,11 @@ Três camadas, e conhecê-las explica comportamentos que de outro modo parecem a
 | **Rascunho** | Não | Não |
 | **Arquivado** | Não | Não |
 
-Pausar é para algo que você continua vendendo mas não agora. Arquivar é o botão de excluir: dá para recuperar durante **30 dias** e depois some de vez.
+Pausar é para algo que você continua vendendo mas não agora.
+
+<Warning>
+**Arquivar é o botão de excluir.** Dá para recuperar durante 30 dias; passado esse prazo, o produto some de vez e não há como trazê-lo de volta.
+</Warning>
 
 ## Grupos
 

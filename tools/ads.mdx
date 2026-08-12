@@ -12,7 +12,7 @@ One row per ad, with leads, qualified, % qualified, won and value. If you connec
 Three things about those numbers are worth knowing before you draw conclusions:
 
 - **"Qualified" is strict.** It counts only opportunities the *agent* qualified. Anything a rep pushed into the pipeline by hand doesn't count — otherwise the number would measure your team's optimism instead of the ad's quality.
-- **It's a cohort, not a window.** A lead that arrived today may qualify tomorrow, so the current period's numbers keep going up. Comparing an unfinished period against a closed one will always flatter the closed one.
+- **The current period's numbers keep going up.** A lead that arrived today may qualify tomorrow, and when it does it counts back to the day it arrived. That's why comparing a half-finished month against a completed one always flatters the completed one.
 - **Without a connected Meta account you still get the leads.** Those come from your own data. What disappears is the money: spend, budget and cost per qualified.
 
 <Note>
@@ -21,8 +21,10 @@ Three things about those numbers are worth knowing before you draw conclusions:
 
 ## Ad measurement
 
-<img className="block dark:hidden" src="/images/anuncios/medicion-light.png" alt="Ad measurement panel, switched off" />
-<img className="hidden dark:block" src="/images/anuncios/medicion-dark.png" alt="Ad measurement panel, switched off" />
+<Frame>
+  <img className="block dark:hidden" src="/images/anuncios/medicion-light.png" alt="Ad measurement panel, switched off" />
+  <img className="hidden dark:block" src="/images/anuncios/medicion-dark.png" alt="Ad measurement panel, switched off" />
+</Frame>
 
 This is the part that changes results rather than just reporting them.
 
@@ -30,12 +32,12 @@ With it off, Meta only knows that someone started a conversation. So it optimize
 
 Switch it on and Trama tells Meta when a lead **qualifies, gets quoted or buys**. Meta stops looking for people who chat and starts looking for people who look like the ones who buy from you.
 
-**What gets shared is a hashed phone number.** Never the name, never the conversation.
+**The only thing shared is the phone number, turned into an unreadable code first.** Neither Meta nor anyone else can get the number back out of it. The name and the conversation never leave.
 
 It ships off by default, on purpose: it's your customers' data and turning it on should be your decision, not ours.
 
 <Warning>
-**The sale almost never makes it in time, and that's not a bug.** Meta's attribution window is 7 days, and a trip usually closes weeks after the first message. Qualification and quoting do arrive within the window — those are the ones that will actually train your campaigns.
+**The sale almost never makes it in time, and that's not a bug.** Meta only accepts news of what happened within 7 days of the click, and a trip usually closes weeks after the first message. Qualification and quoting do arrive within the window — those are the ones that will actually train your campaigns.
 </Warning>
 
 To measure you need a connected WhatsApp number: the events are reported against the number the conversation came in on.
