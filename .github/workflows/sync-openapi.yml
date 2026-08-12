@@ -1,0 +1,104 @@
+name: Sync OpenAPI spec
+
+# Mantiene en hora el tab de API Reference.
+#
+# EL PROBLEMA QUE RESUELVE. La spec no existe como archivo en ningún lado: la
+# genera `@hono/zod-openapi` en runtime desde las rutas de `apps/api`. Mintlify
+# la baja en BUILD TIME, y sólo buildea cuando hay un push a ESTE repo. O sea que
+# apuntando el `docs.json` a la URL, un cambio en la API no producía ningún push
+# acá y la referencia pública quedaba congelada en la versión del último build,
+# sin que fallara nada y sin que nadie se enterara.
+#
+# POR QUÉ ACÁ Y NO EN EL MONOREPO. Un step en `deploy-api.yml` necesitaría un
+# token con write sobre este repo, guardado como secret allá. Viviendo acá, el
+# workflow usa el `GITHUB_TOKEN` que GitHub le da solo para su propio repo: cero
+# secrets, cero permisos cruzados. El precio es latencia (hasta el próximo tick
+# en vez de minutos), que para documentación de API es intercambio barato.
+# `workflow_dispatch` está para forzarlo cuando shipeaste algo y lo querés ver ya.
+#
+# (La otra salida sería el endpoint Admin de Mintlify, pero es de plan pago: con
+# Starter devuelve 401 "Please upgrade to access this route".)
+
+on:
+  schedule:
+    # Cada 6 horas. La API no cambia tan seguido como para justificar más, y cada
+    # commit acá dispara un build de Mintlify.
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-openapi
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Traer la spec de producción y commitearla si cambió
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Descargar la spec
+        run: |
+          set -euo pipefail
+          curl -sS --fail --max-time 30 --retry 3 --retry-delay 5 \
+            https://api.trama.so/v1/openapi.json -o /tmp/openapi.raw.json
+
+      # Sin esto, un HTML de error de Cloudflare o una respuesta a medias se
+      # commitearía encima de una spec buena y rompería el build de las docs.
+      - name: Validar antes de tocar nada
+        run: |
+          set -euo pipefail
+
+          jq -e 'type == "object"' /tmp/openapi.raw.json > /dev/null \
+            || { echo "::error::La respuesta no es un objeto JSON."; exit 1; }
+
+          version=$(jq -r '.openapi // empty' /tmp/openapi.raw.json)
+          case "${version}" in
+            3.*) ;;
+            *) echo "::error::Falta el campo openapi o no es 3.x (leí '${version}')."; exit 1 ;;
+          esac
+
+          paths=$(jq '.paths | length' /tmp/openapi.raw.json)
+          if [ "${paths}" -lt 1 ]; then
+            echo "::error::La spec vino con 0 paths. No se commitea: sería borrar la referencia entera."
+            exit 1
+          fi
+
+          servers=$(jq -r '.servers[0].url // empty' /tmp/openapi.raw.json)
+          if [ "${servers}" != "https://api.trama.so" ]; then
+            echo "::error::El campo servers apunta a '${servers}' y no a producción. El playground mandaría los requests al lugar equivocado."
+            exit 1
+          fi
+
+          echo "Spec válida: ${paths} paths."
+
+      - name: Commitear si cambió
+        run: |
+          set -euo pipefail
+
+          # `jq -S` ordena las claves: sin eso, un reordenamiento del generador
+          # produce un diff y un rebuild sin cambio real de contrato.
+          jq -S . /tmp/openapi.raw.json > openapi.json
+
+          if git diff --quiet -- openapi.json; then
+            echo "Sin cambios en la spec."
+            exit 0
+          fi
+
+          echo "### Cambios en la API" >> "${GITHUB_STEP_SUMMARY}"
+          echo '```diff' >> "${GITHUB_STEP_SUMMARY}"
+          git diff --stat -- openapi.json >> "${GITHUB_STEP_SUMMARY}"
+          echo '```' >> "${GITHUB_STEP_SUMMARY}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add openapi.json
+          git commit \
+            -m "chore: sincronizar el OpenAPI de api.trama.so" \
+            -m "Automático. La spec la genera @hono/zod-openapi desde las rutas de apps/api; este commit es lo que hace que Mintlify rebuildee y que el tab de API Reference deje de mostrar la versión anterior."
+          git push
+          echo "Spec actualizada. El push dispara el rebuild de Mintlify."

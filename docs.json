@@ -105,7 +105,7 @@
           },
           {
             "tab": "API Reference",
-            "openapi": "https://api.trama.so/v1/openapi.json"
+            "openapi": "/openapi.json"
           }
         ]
       },

@@ -9,9 +9,11 @@ Documentación pública de Trama, en Mintlify. Repo **público**: nada interno a
   entradas a `docs.json`.
 - **`docs.json` es la única fuente de la navegación.** Un `.mdx` que no está
   referenciado ahí no aparece en el sitio.
-- **No escribas páginas de API a mano.** El tab de API se genera del OpenAPI de
-  `apps/api` (`https://api.trama.so/v1/openapi.json`). Si falta un endpoint, se
-  arregla en el monorepo, no acá.
+- **No escribas páginas de API a mano, ni edites `openapi.json`.** El tab de API
+  se genera de ese archivo, que lo sincroniza solo el cron
+  `.github/workflows/sync-openapi.yml` desde `api.trama.so/v1/openapi.json`. Un
+  cambio a mano te lo pisa el próximo tick. Si falta un endpoint, se arregla en
+  `apps/api` del monorepo.
 - **Colores: no toques `colors` sin mirar el contraste.** El amarillo de marca
   (`#FDC700`) da 1.57:1 sobre blanco — es un color de RELLENO, no de texto. Por
   eso `dark` (el color sobre fondo claro) usa `#733E0A`, que es el token

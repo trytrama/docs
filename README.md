@@ -20,12 +20,22 @@ dos tabs: **Documentación** y **API**.
 
 ## La API Reference se genera sola
 
-El tab de API NO se escribe a mano: sale del OpenAPI que publica `apps/api`
-(`@hono/zod-openapi`) en <https://api.trama.so/v1/openapi.json>.
+El tab de API NO se escribe a mano: sale de `openapi.json`, que es la spec que
+`apps/api` genera con `@hono/zod-openapi` y publica en
+<https://api.trama.so/v1/openapi.json>.
 
-> 🔴 Mintlify baja esa spec **en tiempo de build**. Un cambio en la API no
-> redeploya estas docs solo: hay que llamar al endpoint *Trigger deployment* de
-> Mintlify desde el CI que la publica (`deploy-api.yml` en el monorepo).
+Ese archivo **está versionado acá a propósito**, no linkeado. Mintlify baja una
+spec remota en tiempo de build y sólo buildea cuando hay un push a este repo:
+apuntando a la URL, un cambio en la API no producía ningún push y la referencia
+pública quedaba congelada sin que fallara nada.
+
+Lo mantiene en hora `.github/workflows/sync-openapi.yml`: cada 6 horas trae la
+spec de producción, la valida y la commitea **sólo si cambió**. Ese commit es lo
+que dispara el rebuild.
+
+> No edites `openapi.json` a mano: el cron te lo pisa. Si falta un endpoint, se
+> arregla en `apps/api` del monorepo. Para no esperar el tick, corré el workflow
+> con **Run workflow** (`workflow_dispatch`).
 
 ## Editar
 
