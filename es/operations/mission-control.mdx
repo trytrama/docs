@@ -1,35 +1,50 @@
 ---
 title: "Mission Control"
-description: "Mission Control es tu centro de operaciones. Es donde ves el estado de cada oportunidad, el rendimiento de tu equipo y el pipeline de ventas de tu negocio."
+description: "Tres pestañas que responden tres preguntas distintas: qué hago ahora, cómo viene la semana y cómo está la agencia."
 ---
 
-Mission Control es tu centro de operaciones. Es donde ves el estado de cada oportunidad, el rendimiento de tu equipo y el pipeline de ventas de tu negocio.
+Mission Control es donde arranca el día. No es el tablero — el tablero está en [Oportunidades](/es/operations/opportunities). Son tres lecturas distintas de la misma operación, y cada una es para un momento diferente.
 
-## El tablero (Kanban)
-
-El tablero organiza todas tus oportunidades en 5 columnas:
-
-| Columna | Qué significa | Quién la mueve |
+| Pestaña | Qué responde | Cuándo la abrís |
 |---|---|---|
-| **POR ATENDER** | El agente calificó al lead y lo derivó. El vendedor todavía no lo contactó. | El agente (automático) |
-| **EN CONTACTO** | El vendedor ya se comunicó con el cliente. Está en proceso de cotización. | El vendedor |
-| **COTIZADO** | Se envió cotización con precio concreto. Esperando respuesta del cliente. | El vendedor (o automático con tracking) |
-| **GANADO** | Venta confirmada. | El vendedor |
-| **PERDIDO** | No se concretó la venta. | El vendedor o automático |
+| **Mi día** | Qué tengo que hacer ahora | Todas las mañanas |
+| **Resumen** | Cómo viene la semana, en castellano | Una o dos veces por semana |
+| **Métricas** | Qué dicen los números duros | Cuando querés decidir algo |
 
-## Vistas del tablero
+## Mi día — la vista operativa
 
-El tablero de oportunidades tiene dos pestañas:
+Tu lista de pendientes de hoy: los recordatorios que te llegaron, las oportunidades de días anteriores que siguen abiertas, y lo que ya tachaste. Es personal — ves tu trabajo, no el del equipo.
 
-- **Pipeline:** el flujo activo con las 5 columnas (de POR ATENDER a PERDIDO). Es la vista por defecto y donde trabaja el equipo día a día. Podés filtrar por vendedor.
-- **Fuera del funnel:** las oportunidades que salieron del flujo activo, archivadas o dormidas por inactividad. Nada se borra: desde acá se reactiva cualquiera. Lo detallamos en la sección [Fuera del funnel](/es/operations/out-of-funnel).
+Tachar acá tiene un efecto que conviene saber: mueve la oportunidad sola a **En contacto**, si dejaste prendido el [avance automático](/es/automations/lifecycle).
 
-## Métricas
+## Resumen — la lectura comercial
 
-Desde Mission Control podés responder preguntas como:
+<img className="block dark:hidden" src="/images/mission-control/entra-light.png" alt="Pestaña Métricas, bloque de entrada: oportunidades creadas, por canal y por temperatura" />
+<img className="hidden dark:block" src="/images/mission-control/entra-dark.png" alt="Pestaña Métricas, bloque de entrada: oportunidades creadas, por canal y por temperatura" />
 
-- ¿Cuántas consultas recibimos este mes?
-- ¿Cuántas oportunidades están en cotización ahora?
-- ¿Cuánto podemos facturar si se cierran las ventas pendientes?
-- ¿Cuál es nuestra tasa de conversión?
-- ¿Por qué perdemos ventas? (precio, competencia, falta de seguimiento)
+Resumen es la inteligencia comercial de la semana — el pulso de la agencia, escrito. Trama lee lo que pasó y te lo cuenta en prosa: dónde está el cuello de botella, qué cotizaciones vienen con atraso, si el problema es generar demanda o cerrarla.
+
+Tarda unos segundos en aparecer, porque se escribe cada vez. Abajo tenés los números gruesos de la semana —ganadas, valor en juego, tiempo al primer contacto— y un diagrama de flujo que muestra cómo se repartieron las consultas que entraron, por canal y por estado del tablero.
+
+## Métricas — el dashboard duro
+
+<img className="block dark:hidden" src="/images/mission-control/atendiendo-light.png" alt="Pestaña Métricas: bloques de equipo y de cierre" />
+<img className="hidden dark:block" src="/images/mission-control/atendiendo-dark.png" alt="Pestaña Métricas: bloques de equipo y de cierre" />
+
+Métricas es un dashboard convencional, pero está organizado **por pregunta y no por métrica**, y cada bloque escribe su propia lectura — *"El pico fue alrededor del sábado 8 de agosto. La entrada viene en baja, conviene mirar la pauta."* No tenés que interpretar el gráfico; tenés que decidir qué hacer con eso.
+
+Cuatro preguntas, en el orden en que realmente se diagnostica un problema comercial:
+
+1. **¿Entra suficiente?** — oportunidades creadas en el tiempo, por canal y por temperatura.
+2. **¿Lo estamos atendiendo bien?** — oportunidades tomadas, tasa de seguimiento, tiempo al primer contacto.
+3. **¿Estamos cerrando?** — tiempo de cierre, ticket promedio, tasa de cierre, y dónde están las oportunidades *hoy*.
+4. **¿Qué pide el mercado?** — destinos más pedidos, composición de los grupos y por qué se pierden las ventas.
+
+<img className="block dark:hidden" src="/images/mission-control/mercado-light.png" alt="Pestaña Métricas: qué pide el mercado y el embudo de conversión" />
+<img className="hidden dark:block" src="/images/mission-control/mercado-dark.png" alt="Pestaña Métricas: qué pide el mercado y el embudo de conversión" />
+
+<Note>
+**«Dónde están hoy» y el embudo de conversión no son el mismo gráfico, y es fácil confundirlos.** El primero es una foto del tablero ahora mismo, así que suma tu total actual. El embudo cuenta todas las oportunidades que pasaron por cada etapa alguna vez, así que sus números son más grandes y sus porcentajes son la caída entre etapas.
+</Note>
+
+Métricas lo ve únicamente el **Dueño**.

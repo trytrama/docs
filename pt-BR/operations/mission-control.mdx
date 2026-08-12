@@ -1,35 +1,50 @@
 ---
 title: "Mission Control"
-description: "O Mission Control é seu centro de operações. É onde você vê o status de cada oportunidade, o desempenho da sua equipe e o pipeline de vendas do seu…"
+description: "Três abas que respondem três perguntas diferentes: o que faço agora, como está a semana e como está a agência."
 ---
 
-O Mission Control é seu centro de operações. É onde você vê o status de cada oportunidade, o desempenho da sua equipe e o pipeline de vendas do seu negócio.
+Mission Control é onde o dia começa. Não é o quadro — o quadro fica em [Oportunidades](/pt-BR/operations/opportunities). São três leituras diferentes da mesma operação, e cada uma serve para um momento.
 
-## O painel (Kanban)
-
-O painel organiza todas as suas oportunidades em 5 colunas:
-
-| Coluna | O que significa | Quem a move |
+| Aba | O que responde | Quando você abre |
 |---|---|---|
-| **A ATENDER** | O agente qualificou e transferiu o lead. O vendedor ainda não entrou em contato. | Agente (automático) |
-| **EM CONTATO** | O vendedor já se comunicou com o cliente. Está em processo de cotação. | Vendedor |
-| **COTADO** | Uma cotação com preço específico foi enviada. Aguardando resposta do cliente. | Vendedor (ou automático com rastreamento) |
-| **GANHO** | Venda confirmada. | Vendedor |
-| **PERDIDO** | Venda não foi concretizada. | Vendedor ou automático |
+| **Meu dia** | O que tenho que fazer agora | Toda manhã |
+| **Resumo** | Como está a semana, em português | Uma ou duas vezes por semana |
+| **Métricas** | O que dizem os números duros | Quando você quer decidir algo |
 
-## Visualizações do painel
+## Meu dia — a visão operacional
 
-O painel de oportunidades tem duas abas:
+Sua lista de pendências de hoje: os lembretes que chegaram, as oportunidades de dias anteriores que continuam abertas, e o que você já riscou. É pessoal — você vê o seu trabalho, não o da equipe.
 
-- **Pipeline:** o fluxo ativo com as 5 colunas (de A ATENDER a PERDIDO). É a visualização padrão e onde a equipe trabalha no dia a dia. Você pode filtrar por vendedor.
-- **Fora do funil:** as oportunidades que saíram do fluxo ativo, arquivadas ou adormecidas por inatividade. Nada é excluído: a partir daqui você reativa qualquer uma. Detalhamos na seção [Fora do funil](/pt-BR/operations/out-of-funnel).
+Riscar aqui tem um efeito que vale saber: move a oportunidade sozinha para **Em contato**, se você deixou ligado o [avanço automático](/pt-BR/automations/lifecycle).
 
-## Métricas
+## Resumo — a leitura comercial
 
-No Mission Control você pode responder perguntas como:
+<img className="block dark:hidden" src="/images/mission-control/entra-light.png" alt="Aba Métricas, bloco de entrada: oportunidades criadas, por canal e por temperatura" />
+<img className="hidden dark:block" src="/images/mission-control/entra-dark.png" alt="Aba Métricas, bloco de entrada: oportunidades criadas, por canal e por temperatura" />
 
-- Quantas consultas recebemos este mês?
-- Quantas oportunidades estão em cotação agora?
-- Quanto podemos faturar se as vendas pendentes fecharem?
-- Qual é nossa taxa de conversão?
-- Por que perdemos vendas? (preço, concorrência, falta de acompanhamento)
+Resumo é a inteligência comercial da semana — o pulso da agência, escrito. A Trama lê o que aconteceu e conta em prosa: onde está o gargalo, quais cotações estão atrasadas, se o problema é gerar demanda ou fechá-la.
+
+Demora alguns segundos para aparecer, porque é escrito a cada vez. Abaixo você tem os números gerais da semana —ganhas, valor em jogo, tempo até o primeiro contato— e um diagrama de fluxo mostrando como se distribuíram as consultas que entraram, por canal e por estado do quadro.
+
+## Métricas — o dashboard duro
+
+<img className="block dark:hidden" src="/images/mission-control/atendiendo-light.png" alt="Aba Métricas: blocos de equipe e de fechamento" />
+<img className="hidden dark:block" src="/images/mission-control/atendiendo-dark.png" alt="Aba Métricas: blocos de equipe e de fechamento" />
+
+Métricas é um dashboard convencional, mas está organizado **por pergunta e não por métrica**, e cada bloco escreve a própria leitura — *"O pico foi por volta de sábado, dia 8. A entrada está caindo, vale olhar a mídia paga."* Você não precisa interpretar o gráfico; precisa decidir o que fazer com ele.
+
+Quatro perguntas, na ordem em que um problema comercial realmente é diagnosticado:
+
+1. **Está entrando o suficiente?** — oportunidades criadas ao longo do tempo, por canal e por temperatura.
+2. **Estamos atendendo bem?** — oportunidades assumidas, taxa de acompanhamento, tempo até o primeiro contato.
+3. **Estamos fechando?** — tempo de fechamento, ticket médio, taxa de fechamento, e onde estão as oportunidades *hoje*.
+4. **O que o mercado está pedindo?** — destinos mais pedidos, composição dos grupos e por que as vendas se perdem.
+
+<img className="block dark:hidden" src="/images/mission-control/mercado-light.png" alt="Aba Métricas: o que o mercado pede e o funil de conversão" />
+<img className="hidden dark:block" src="/images/mission-control/mercado-dark.png" alt="Aba Métricas: o que o mercado pede e o funil de conversão" />
+
+<Note>
+**"Onde estão hoje" e o funil de conversão não são o mesmo gráfico, e é fácil confundir.** O primeiro é uma foto do quadro agora, então soma o seu total atual. O funil conta todas as oportunidades que passaram por cada etapa alguma vez, então seus números são maiores e suas porcentagens são a queda entre etapas.
+</Note>
+
+Métricas só é visível para o **Dono**.
