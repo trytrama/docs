@@ -1,0 +1,93 @@
+---
+title: "Catálogo"
+description: "Você sobe um folheto, a IA extrai todos os produtos que tiver, você revisa e publica. E o que cada campo realmente muda em como o agente vende."
+---
+
+O catálogo é o que o seu agente sabe vender. Tudo o que ele pode cotar, descrever ou mostrar em foto sai daqui — e de mais nada.
+
+<img className="block dark:hidden" src="/images/catalogo/lista-light.png" alt="Lista do catálogo com itens, tipo, status, preço e duração" />
+<img className="hidden dark:block" src="/images/catalogo/lista-dark.png" alt="Lista do catálogo com itens, tipo, status, preço e duração" />
+
+## A carga: o folheto faz o trabalho
+
+<img className="block dark:hidden" src="/images/catalogo/carga-light.png" alt="Painel de novo item, com a área para soltar o folheto ou a lista de preços" />
+<img className="hidden dark:block" src="/images/catalogo/carga-dark.png" alt="Painel de novo item, com a área para soltar o folheto ou a lista de preços" />
+
+<Steps>
+<Step title="Você solta o arquivo">
+Um folheto, uma lista de preços, a planilha do operador. **JPG, PNG ou WebP até 15 MB · PDF até 100 MB · DOCX ou XLSX até 25 MB.** Só arquivos: não dá para colar um link nem um bloco de texto.
+</Step>
+
+<Step title="Extrai tudo, em segundo plano">
+Não resume: **se o folheto tem vinte opções, você fica com vinte produtos.** Dá para seguir trabalhando enquanto roda; avisa quando estiverem prontos, e sobrevive a um F5.
+</Step>
+
+<Step title="Ficam como rascunhos">
+Esta é a parte que vale internalizar: **um produto extraído é invisível para o agente até que uma pessoa o publique.** A IA nunca coloca palavras na boca do seu agente por conta própria.
+</Step>
+
+<Step title="Você revisa e publica">
+O rascunho abre no mesmo editor de qualquer item. Corrige o que saiu errado, completa o que falta, publica. A partir daí o agente pode oferecer.
+</Step>
+</Steps>
+
+Também tem **Carregar à mão**, ao lado da área de upload, para um item avulso. Esse nasce ativo.
+
+<Note>
+Um folheto, duas datas de saída e o mesmo hotel é **um produto com variantes**, não dois produtos. Outro destino ou outro tipo de viagem aí sim é um produto novo. A extração já funciona assim — vale saber para não "consertar" algo que não está quebrado.
+</Note>
+
+## O que cada campo muda
+
+<img className="block dark:hidden" src="/images/catalogo/item-light.png" alt="Detalhe de um item do catálogo" />
+<img className="hidden dark:block" src="/images/catalogo/item-dark.png" alt="Detalhe de um item do catálogo" />
+
+O único campo obrigatório é o título. Mas os campos não são todos iguais: alguns governam como o agente vende e outros são decoração.
+
+**Estes mudam o que o agente encontra e o que diz:**
+
+| Campo | O que faz |
+|---|---|
+| **Título** | É a âncora principal da busca. Um produto nomeado como as pessoas pedem é encontrado |
+| **Destinos** | O outro eixo da busca. Casa por nome e por país |
+| **Preço, moeda e modalidade** | Crítico. **Sem preço o agente não tem número para dar** — e se inventar um, uma trava reescreve a mensagem antes de sair |
+| **Base do preço** ("por pessoa, base dupla") | É citada colada ao valor. Se deixar vazio, o número sai nu |
+| **Nível de orçamento** (econômico / médio / premium) | Filtra pelo que o cliente disse que pode gastar |
+| **Tags temáticas** (`caribe`, `all-inclusive`) | Filtro por tema. São temas, não lugares |
+| **Duração e capacidade** | Filtram, com tolerância: sete noites também casa com quem pede seis |
+| **Descrição curta** | É buscada sempre, e chega inteira ao agente |
+| **Descrição longa** | O agente pode citá-la, mas **só chegam os primeiros milhares de caracteres**. Coloque o que importa no começo |
+| **Inclui / Não inclui** | O que não inclui nunca é oferecido espontaneamente: só se o cliente perguntar |
+| **Notas de temporada** | São citadas **literalmente** na primeira oferta. Escreva como gostaria que fosse lido em voz alta |
+| **Condições especiais** | Mínimos, sinal, cancelamento. Vão como estão |
+
+**Estes não afetam o agente:** a foto de capa, a galeria e se aparece no seu Link de ofertas — isso é só o microsite público. E **as notas internas e o operador nunca chegam ao agente**, que é justamente por que são o lugar certo para o que você não quer que seja repetido a um cliente.
+
+**E um que surpreende:** o **tipo** (pacote, experiência, expedição, custom) é um rótulo para você. O agente deliberadamente não filtra por ele — filtrar por tipo escondia um quarto do catálogo em respostas que estavam perfeitas.
+
+## Como o agente realmente usa
+
+Três camadas, e conhecê-las explica comportamentos que de outro modo parecem aleatórios:
+
+1. **Um índice que ele carrega sempre** — títulos, destinos, duração e temporada de até cem produtos. Sem preços. É como o agente *sabe que algo existe*; não tem permissão de citar dali.
+2. **Uma busca, quando precisa do detalhe** — filtrada por destino, tema, orçamento, capacidade ou noites. Se não voltar nada, alarga a busca automaticamente em vez de dizer "não temos", e depois precisa verificar antes de oferecer.
+3. **Uma releitura fresca do produto em conversa**, a cada turno. Por isso uma mudança de preço faz efeito no meio da conversa em vez de o agente repetir um número velho.
+
+## Status
+
+| Status | O agente | Seu Link de ofertas |
+|---|---|---|
+| **Ativo** | Oferece | Sim |
+| **Pausado** | Não | Não |
+| **Rascunho** | Não | Não |
+| **Arquivado** | Não | Não |
+
+Pausar é para algo que você continua vendendo mas não agora. Arquivar é o botão de excluir: dá para recuperar durante **30 dias** e depois some de vez.
+
+## Grupos
+
+Os grupos permitem atribuir uma parte do catálogo a um agente específico: o agente um sabe só destes pacotes, o agente dois sabe daqueles. Serve quando você tem mais de um agente em canais diferentes.
+
+O comportamento padrão é generoso de propósito, e é o que evita que isso jogue contra: **um agente sem grupos atribuídos vê o catálogo todo, e um item sem grupo é visto por todos os agentes.** Criar um grupo não tira nada de ninguém até que você também o atribua a um agente.
+
+Os grupos são gerenciados a partir do próprio catálogo, não da ficha do agente.

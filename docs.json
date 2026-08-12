@@ -76,7 +76,7 @@
               {
                 "group": "Tools",
                 "pages": [
-                  "agent/catalog"
+                  "tools/catalog"
                 ]
               },
               {
@@ -184,7 +184,7 @@
               {
                 "group": "Herramientas",
                 "pages": [
-                  "es/agent/catalog"
+                  "es/tools/catalog"
                 ]
               },
               {
@@ -292,7 +292,7 @@
               {
                 "group": "Ferramentas",
                 "pages": [
-                  "pt-BR/agent/catalog"
+                  "pt-BR/tools/catalog"
                 ]
               },
               {
@@ -438,6 +438,18 @@
     {
       "source": "/pt-BR/agent/scheduling",
       "destination": "/pt-BR/agent/how-it-works"
+    },
+    {
+      "source": "/agent/catalog",
+      "destination": "/tools/catalog"
+    },
+    {
+      "source": "/es/agent/catalog",
+      "destination": "/es/tools/catalog"
+    },
+    {
+      "source": "/pt-BR/agent/catalog",
+      "destination": "/pt-BR/tools/catalog"
     }
   ]
 }
