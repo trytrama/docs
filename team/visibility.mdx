@@ -3,35 +3,27 @@ title: "Visibility"
 description: "The two switches that decide whether your team sees the whole book or only their own."
 ---
 
-## The customer assignee
+There's one decision no role settles on its own: **whether your reps see the entire operation or only their own**. The Owner makes it, with two switches, under **Settings → Permissions and visibility**.
 
-Each customer has an **assignee**: the member responsible for that relationship.
+## First: the owner of a customer
 
-- It's assigned automatically to the sales rep who takes the lead.
-- The Owner and the Admin can reassign it at any time.
-- Customers **without an assignee** stay visible to the whole team, so anyone can pick them up.
+Every customer has an **owner** — the person responsible for that relationship.
 
-This assignee is the basis of per-customer visibility: if the Owner limits visibility, each person sees only the customers (and the conversations of those customers) they're assigned to.
+- It's assigned automatically to the rep who takes that customer's first opportunity.
+- The Owner and Admin can reassign it at any time.
+- **A customer with no owner is visible to the whole team**, so anyone can pick them up.
 
-## The visibility settings
+That ownership is the basis for everything below: when visibility is limited, each person sees the customers they own, and nothing else.
 
-From the **Permissions and visibility** screen, the Owner turns on two settings (only the Owner can access this screen):
+## The two switches
 
-| Setting | When enabled | When disabled |
+| Switch | On | Off |
 |---|---|---|
-| **Opportunities** | Each sales rep sees only the opportunities assigned to them. | The whole team sees the entire pipeline. |
-| **Customers** | Each member or admin sees only the customers they're assigned to. | The whole team sees all customers. |
+| **Opportunities** | Each rep sees only the ones assigned to them | The whole team sees the full pipeline |
+| **Customers** | Each person sees only the customers they own | The whole team sees every customer |
 
-The Customers setting also covers the conversations in **Agents (Inquiries)**: if visibility is limited, each person sees only the conversations of their assigned customers. Conversations with no assigned customer stay visible to everyone.
+<Note>
+**The Customers switch reaches the Inbox too.** If you limit customer visibility, each person sees only the conversations of their own customers. Conversations that don't have a customer assigned yet stay visible to everyone — otherwise nobody could pick up a new lead.
+</Note>
 
-## Summary by section
-
-| Section | Owner | Admin | Sales rep |
-|---|---|---|---|
-| **Mission Control** | Whole business + weekly email | View of their own performance | View of their own performance |
-| **Opportunities** | Full pipeline + metrics + filter | Pipeline (per config) + metrics + filter | Pipeline (per config), no metrics |
-| **Customers** | All + metrics + reassign | Assigned or all (per config) + metrics + reassign | Their assigned customers, no metrics |
-| **Team** | Full access | Full access | No access |
-| **Catalog** | Create / edit / delete + metrics | Create / edit / delete + metrics | View only, no metrics |
-| **Agents (Inquiries)** | View + Summary/Config + metrics | View + Summary/Config + metrics | View only, no config or metrics |
-| **Permissions and visibility** | Exclusive access | No access | No access |
+The full table of what each role sees in each section is in [Roles and permissions](/team/roles).
