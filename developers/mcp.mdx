@@ -49,24 +49,51 @@ That's the only URL you'll need. Authentication happens via OAuth 2.1: when you 
   The shortest path is to open **Settings → Connect with AI** in the Trama dashboard: there you'll find a button that opens Claude with the connector already loaded, and the address ready to copy into ChatGPT.
 </Note>
 
-## Connect from Claude
+## Connecting it
 
-1. Open **Settings** → **Connectors** in Claude.ai or the desktop app.
-2. Click **Add custom connector**.
-3. Paste the URL `https://ai.trama.so/mcp` and confirm.
-4. Claude redirects you to Trama to sign in. Use the same account you log in to the dashboard with.
-5. Authorize access to your active organization.
-6. Done. In any conversation you can now ask Claude to use the Trama tool.
+<Tabs>
+<Tab title="Claude">
+<Warning>
+You need a paid Claude plan — Pro, Max, Team or Enterprise. Free accounts can't add connectors.
+</Warning>
 
-You need a paid Claude plan (Pro, Max, Team, or Enterprise): Free accounts can't add connectors.
+<Steps>
+<Step title="Open connectors">
+In Claude.ai or the desktop app, go to **Settings → Connectors**.
+</Step>
+<Step title="Add the connector">
+Hit **Add custom connector** and paste `https://ai.trama.so/mcp`.
+</Step>
+<Step title="Sign in to Trama">
+Claude redirects you. Use the same account you log in to the dashboard with.
+</Step>
+<Step title="Authorize">
+You grant access to your active organization. Done — in any conversation you can ask it to use Trama.
+</Step>
+</Steps>
+</Tab>
 
-## Connect from ChatGPT
+<Tab title="ChatGPT">
+<Warning>
+Connectors are only on paid ChatGPT plans. On team accounts, developer mode is enabled by a workspace admin.
+</Warning>
 
-1. In ChatGPT, go to **Settings** → **Connectors** (available on paid plans).
-2. Open **Advanced settings** and turn on **Developer mode**. On team accounts, a workspace admin enables it.
-3. Choose **Create** and enter the URL `https://ai.trama.so/mcp`, with **OAuth** authentication.
-4. ChatGPT opens the OAuth flow against Trama. Sign in and authorize.
-5. Once connected, the `ask_trama` tool is available in any chat or as part of a custom GPT.
+<Steps>
+<Step title="Open connectors">
+Under **Settings → Connectors**.
+</Step>
+<Step title="Turn on developer mode">
+It's in **Advanced settings**.
+</Step>
+<Step title="Create the connector">
+Choose **Create**, paste `https://ai.trama.so/mcp` and pick **OAuth** authentication.
+</Step>
+<Step title="Sign in and authorize">
+ChatGPT opens the flow against Trama. After that it's available in any chat, or inside a custom GPT.
+</Step>
+</Steps>
+</Tab>
+</Tabs>
 
 ## Permissions and security
 

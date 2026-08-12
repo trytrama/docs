@@ -49,24 +49,51 @@ Esa es la única URL que vas a necesitar. La autenticación ocurre vía OAuth 2.
   El camino más corto es entrar a **Configuración → Conectar con IA** en el panel de Trama: ahí tenés un botón que abre Claude con el conector ya cargado, y la dirección lista para copiar en ChatGPT.
 </Note>
 
-## Conectar desde Claude
+## Conectarlo
 
-1. Abrí **Settings** → **Connectors** en Claude.ai o en la app de escritorio.
-2. Hacé click en **Add custom connector**.
-3. Pegá la URL `https://ai.trama.so/mcp` y confirmá.
-4. Claude te redirige a Trama para iniciar sesión. Usá la misma cuenta con la que entrás al panel.
-5. Autorizá el acceso a tu organización activa.
-6. Listo. En cualquier conversación vas a poder pedirle a Claude que use la herramienta de Trama.
+<Tabs>
+<Tab title="Claude">
+<Warning>
+Necesitás un plan pago de Claude — Pro, Max, Team o Enterprise. Las cuentas gratuitas no permiten agregar conectores.
+</Warning>
 
-Necesitás un plan pago de Claude (Pro, Max, Team o Enterprise): las cuentas Free no permiten agregar conectores.
+<Steps>
+<Step title="Abrí los conectores">
+En Claude.ai o en la app de escritorio, entrá a **Settings → Connectors**.
+</Step>
+<Step title="Agregá el conector">
+Tocá **Add custom connector** y pegá `https://ai.trama.so/mcp`.
+</Step>
+<Step title="Iniciá sesión en Trama">
+Claude te redirige. Usá la misma cuenta con la que entrás al panel.
+</Step>
+<Step title="Autorizá">
+Le das acceso a tu organización activa. Listo: en cualquier conversación podés pedirle que use Trama.
+</Step>
+</Steps>
+</Tab>
 
-## Conectar desde ChatGPT
+<Tab title="ChatGPT">
+<Warning>
+Los conectores están sólo en los planes pagos de ChatGPT. En cuentas de equipo, el modo desarrollador lo habilita un administrador del workspace.
+</Warning>
 
-1. En ChatGPT, entrá a **Settings** → **Connectors** (disponible en planes pagos).
-2. Abrí **Advanced settings** y activá el **Developer mode**. En cuentas de equipo lo habilita un administrador del workspace.
-3. Elegí **Create** e ingresá la URL `https://ai.trama.so/mcp`, con autenticación **OAuth**.
-4. ChatGPT abre el flujo de OAuth contra Trama. Iniciá sesión y autorizá.
-5. Una vez conectado, la herramienta `ask_trama` queda disponible en cualquier chat o como parte de un GPT personalizado.
+<Steps>
+<Step title="Abrí los conectores">
+En **Settings → Connectors**.
+</Step>
+<Step title="Activá el modo desarrollador">
+Está en **Advanced settings**.
+</Step>
+<Step title="Creá el conector">
+Elegí **Create**, pegá `https://ai.trama.so/mcp` y marcá autenticación **OAuth**.
+</Step>
+<Step title="Iniciá sesión y autorizá">
+ChatGPT abre el flujo contra Trama. Después queda disponible en cualquier chat, o dentro de un GPT personalizado.
+</Step>
+</Steps>
+</Tab>
+</Tabs>
 
 ## Permisos y seguridad
 
