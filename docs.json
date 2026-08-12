@@ -34,8 +34,7 @@
                 "group": "The agent",
                 "pages": [
                   "agent/how-it-works",
-                  "agent/configuration",
-                  "agent/scheduling"
+                  "agent/configuration"
                 ]
               },
               {
@@ -143,8 +142,7 @@
                 "group": "El agente",
                 "pages": [
                   "es/agent/how-it-works",
-                  "es/agent/configuration",
-                  "es/agent/scheduling"
+                  "es/agent/configuration"
                 ]
               },
               {
@@ -252,8 +250,7 @@
                 "group": "O agente",
                 "pages": [
                   "pt-BR/agent/how-it-works",
-                  "pt-BR/agent/configuration",
-                  "pt-BR/agent/scheduling"
+                  "pt-BR/agent/configuration"
                 ]
               },
               {
@@ -429,6 +426,18 @@
     {
       "source": "/pt-BR/operations/out-of-funnel",
       "destination": "/pt-BR/automations/lifecycle"
+    },
+    {
+      "source": "/agent/scheduling",
+      "destination": "/agent/how-it-works"
+    },
+    {
+      "source": "/es/agent/scheduling",
+      "destination": "/es/agent/how-it-works"
+    },
+    {
+      "source": "/pt-BR/agent/scheduling",
+      "destination": "/pt-BR/agent/how-it-works"
     }
   ]
 }
