@@ -97,8 +97,7 @@
               {
                 "group": "Plans",
                 "pages": [
-                  "plans/overview",
-                  "plans/add-ons"
+                  "plans/overview"
                 ]
               },
               {
@@ -198,8 +197,7 @@
               {
                 "group": "Planes",
                 "pages": [
-                  "es/plans/overview",
-                  "es/plans/add-ons"
+                  "es/plans/overview"
                 ]
               },
               {
@@ -299,8 +297,7 @@
               {
                 "group": "Planos",
                 "pages": [
-                  "pt-BR/plans/overview",
-                  "pt-BR/plans/add-ons"
+                  "pt-BR/plans/overview"
                 ]
               },
               {
@@ -477,6 +474,18 @@
     {
       "source": "/pt-BR/operations/my-day",
       "destination": "/pt-BR/operations/mission-control"
+    },
+    {
+      "source": "/plans/add-ons",
+      "destination": "/plans/overview"
+    },
+    {
+      "source": "/es/plans/add-ons",
+      "destination": "/es/plans/overview"
+    },
+    {
+      "source": "/pt-BR/plans/add-ons",
+      "destination": "/pt-BR/plans/overview"
     }
   ]
 }
