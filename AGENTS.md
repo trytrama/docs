@@ -76,3 +76,102 @@ traducción.
 - Callouts: `<Note>` para aclaraciones, `<Info>` para features en beta.
 - Los links internos llevan el prefijo del idioma: `/es/...`, `/pt-BR/...`, y
   sin prefijo para inglés.
+
+## Glosario canónico
+
+**La app es la fuente de verdad.** Si la doc y la interfaz no coinciden, la que
+está mal es la doc. Esto no es pedantería: la documentación acumuló nombres de
+una versión anterior del producto y hoy manda al lector a buscar secciones que
+no existen con ese nombre.
+
+### Secciones (los nombres de la barra de navegación)
+
+| Canónico (es) | en | pt-BR | Qué es |
+|---|---|---|---|
+| **Mission Control** | Mission Control | Mission Control | Vista diaria. Pestañas: **Mi día**, **Resumen**, **Métricas**. **No** es el tablero |
+| **Oportunidades** | Opportunities | Oportunidades | El tablero Kanban. Pestañas **Pipeline** y **Fuera del funnel** |
+| **Inbox** | Inbox | Inbox | Donde llegan y se leen las consultas. Es el nombre en la interfaz: no lo llames "Conversaciones" ni "Consultas" |
+| **Clientes** | Customers | Clientes | |
+| **Herramientas** | Tools | Ferramentas | Menú: Catálogo, Cotizaciones, Link de ofertas, Anuncios |
+| **Agentes** | Agents | Agentes | Los agentes de la organización |
+| **Automatizaciones** | Automations | Automações | Pestañas: Reparto, Recordatorios, Ciclo de vida, Respuestas |
+| **Equipo** | Team | Equipe | |
+| **Canales** | Channels | Canais | Chat web, WhatsApp, Instagram, Messenger, Gmail |
+| **Configuración** | Settings | Configurações | |
+
+**Mi día es una pestaña de Mission Control, no una sección.** Y las columnas del
+tablero son **Por atender · En contacto · Cotizado · Ganado · Perdido**, escritas
+así — ni en mayúsculas ni traducidas literalmente ("TO ATTEND" es calco: en
+inglés va **To contact**).
+
+### Los dos agentes — la confusión más cara del sitio
+
+Son dos productos distintos y hoy comparten cuatro nombres entre sí:
+
+- **Agente de Consultas** (*Inquiry Agent*): el que atiende a quien escribe. Vive
+  en **Agentes**, tiene nombre propio (en la demo, Tramy) y se configura en cinco
+  pestañas: Identidad, Tu agencia, Reglas, Turnos, Cierre.
+- **Trama Agent**: el copiloto del equipo, en el número central de Trama. Es a
+  quien el vendedor le pregunta "¿qué tengo pendiente hoy?".
+
+Nunca escribas "Trama agent" en minúscula para referirte al primero, ni
+"Operations Agent" / "Agente Operativo" para el segundo. Un solo nombre cada uno,
+en los tres idiomas.
+
+### Las personas
+
+| Rol | Canónico (es) | en | Nunca |
+|---|---|---|---|
+| Quien escribe | **cliente** | customer | traveler, passenger, visitor, lead, pasajero, viajero |
+| Quien vende | **vendedor** | sales rep | seller, advisor, asesor |
+| Roles del producto | **Dueño / Administrador / Vendedor** | Owner / Admin / Member | Traducir a medias ("solo Owner o Admin" en una página en español) |
+
+Excepción: **lead** sigue siendo válido cuando se habla de anuncios y medición
+(la pantalla de Anuncios cuenta "leads"), no como sinónimo de cliente.
+
+### Score y temperatura
+
+Una sola cosa con dos representaciones: un **score** numérico sobre 100 y una
+**temperatura** derivada (**Caliente / Tibio / Frío**, más **Sin score** cuando
+todavía no se calculó). No inventes un cuarto valor: "descartada" es un estado
+del Inbox, no una temperatura.
+
+### Posicionamiento
+
+Trama es **un CRM que se llena solo**. Esa es la fórmula, y va igual en las tres
+versiones. No escribas "no es un CRM" en una página y "el CRM está incluido" en
+otra, que es lo que pasaba.
+
+## Capturas de pantalla
+
+Las capturas salen de la organización demo **Trama Tourism**, nunca de una cuenta
+real. Antes de commitear una imagen, mirala: el repo es público y una vez que la
+imagen entra, queda en el historial de git aunque después la borres. Revisá que
+no aparezcan nombres de clientes reales, emails, teléfonos, IDs de anuncios de
+Meta, ni la pantalla de **Facturación** (queda fuera de la doc por decisión de
+producto).
+
+- Van en `images/<seccion>/<pagina>-<n>.png` y se referencian con **path
+  absoluto desde la raíz del repo** (`/images/...`). Los paths relativos no
+  funcionan en Mintlify.
+- **Par claro/oscuro.** La app tiene switch de tema, así que se capturan las dos
+  y se sirven con las clases de Tailwind:
+
+  ```mdx
+  <img className="block dark:hidden" src="/images/agente/identidad-light.png" alt="..." />
+  <img className="hidden dark:block" src="/images/agente/identidad-dark.png" alt="..." />
+  ```
+
+- Viewport fijo **1440×900** y zoom 100%, para que todas las imágenes del sitio
+  tengan la misma escala tipográfica.
+- Para movimiento, **`.webm`**, no GIF: pesa entre 10 y 50 veces menos, y el GIF
+  además no admite par claro/oscuro. Ya hay un precedente en
+  `channels/whatsapp-setup.mdx`.
+- La interfaz de la plataforma **sólo existe en español**. Las capturas van en
+  español también en `en/` y `pt-BR/`; es una decisión consciente, no un olvido.
+
+## Antes de dar por buena una página
+
+Abrí la pantalla que documenta y comparala. Las páginas de este repo
+describieron durante meses una organización de secciones que el producto ya no
+tiene, y nada falló: no hay test que agarre eso.

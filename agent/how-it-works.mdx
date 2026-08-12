@@ -1,37 +1,62 @@
 ---
 title: "How the agent works"
-description: "The Inbound Agent is the heart of Trama. It lives on your business's WhatsApp and handles everything that happens from when a traveler writes to when a…"
+description: "The Inquiry Agent lives on your WhatsApp and covers everything between a customer's first message and the moment a sales rep takes over."
 ---
 
-The Inbound Agent is the heart of Trama. It lives on your business's WhatsApp and handles everything that happens from when a traveler writes to when a sales rep takes the opportunity.
+The **Inquiry Agent** is the heart of Trama. It lives on your business's WhatsApp and covers everything that happens between a customer's first message and the moment a sales rep takes the opportunity.
 
-## How it works
+## The cycle, step by step
 
-1. **A traveler writes on WhatsApp.** They might come from a Meta ad, your website, or because someone shared your number.
+<Steps>
+<Step title="A customer writes">
+They might arrive from a Meta ad, from your website, or because somebody passed your number along.
+</Step>
 
-2. **The agent responds instantly.** It greets them, introduces itself as part of your team, and starts naturally conversing about what the traveler needs.
+<Step title="The agent replies instantly">
+It greets them, introduces itself as part of your team, and starts a normal conversation about what they need.
+</Step>
 
-3. **Extracts key data.** Throughout the conversation, the agent gathers the information your team needs to quote: destination, travel dates, number and ages of passengers, approximate budget, city of origin.
+<Step title="It pulls out the key data">
+Along the way it gathers what your team needs in order to quote: destination, travel dates, number and ages of passengers, approximate budget, city of origin.
+</Step>
 
-4. **Qualifies the lead.** With the gathered data, the agent determines whether it's a real sales opportunity (hot, warm, or cold) using an automatic scoring system.
+<Step title="It qualifies the inquiry">
+With that data it works out whether this is a real sales opportunity, and assigns a score out of 100 that translates into a temperature: **Hot**, **Warm**, or **Cold**.
+</Step>
 
-5. **Creates the opportunity.** When the lead is qualified, the agent creates an opportunity in Mission Control with all the structured data.
+<Step title="It creates the opportunity">
+Once qualified, the inquiry becomes a card on the board in **Opportunities**, with every field already filled in.
+</Step>
 
-6. **Notifies the sales rep.** The assigned sales rep receives a notification with the complete lead summary, ready to take over the conversation and quote.
+<Step title="It notifies the sales rep">
+The assigned rep gets the full summary, ready to pick up the conversation and quote.
+</Step>
+</Steps>
+
+## When it hands off
+
+The agent passes the conversation to the sales rep when:
+
+- It has gathered enough to qualify the inquiry — destination, dates, and passengers, at minimum
+- The customer asks to speak to a person
+- The customer asks something the agent can't answer
+- The conversation needs negotiation or personalized attention
+
+You set these rules yourself, in **Agents**, along with everything below.
 
 ## What the agent knows
 
-Your agent knows everything you load about your business:
+Only what you load about your business:
 
-- Destinations you handle and their main features
-- Services you offer (packages, flights, hotels, transfers, excursions)
-- Team business hours
-- General policies (payment methods, cancellations, required documentation)
-- Any additional information you want it to use in conversations
+- The destinations you work with and what characterizes each one
+- The services you sell (packages, flights, hotels, transfers, excursions)
+- Your team's business hours
+- General policies: payment methods, cancellations, required documentation
+- Anything else you want it to use in conversation
 
-## What the agent does NOT do
+## What the agent does not do
 
-- **It doesn't make up information.** If it doesn't have a piece of data, it doesn't invent it. It says it will check with the team.
-- **It doesn't quote.** It doesn't give prices or build budgets. That's the sales rep's job.
-- **It doesn't book trips or process payments.** It doesn't make hotel, flight, or service reservations, and it doesn't ask for card details. It can schedule a call with an advisor when your business enables Appointment scheduling.
-- **It doesn't replace the sales rep.** When the lead is ready, it passes them to the human.
+- **It doesn't make things up.** If it's missing a piece of data, it says it will check with the team rather than inventing an answer.
+- **It doesn't quote.** No prices, no budgets. That's the sales rep's job.
+- **It doesn't book or take payments.** No hotel, flight, or service reservations, and it never asks for card details. It can, however, schedule a call with a sales rep when your business turns on [Appointment scheduling](/agent/scheduling).
+- **It doesn't replace the sales rep.** Once the inquiry is ready, it hands over to a human.

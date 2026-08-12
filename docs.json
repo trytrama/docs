@@ -34,8 +34,6 @@
                 "group": "The agent",
                 "pages": [
                   "agent/how-it-works",
-                  "agent/handoff",
-                  "agent/catalog",
                   "agent/scheduling"
                 ]
               },
@@ -51,24 +49,39 @@
                 ]
               },
               {
-                "group": "Operations",
+                "group": "The board",
                 "pages": [
                   "operations/mission-control",
-                  "operations/opportunities",
-                  "operations/conversations",
-                  "operations/out-of-funnel",
                   "operations/my-day",
-                  "operations/follow-ups",
-                  "operations/customers",
-                  "operations/campaigns",
-                  "operations/broadcasts"
+                  "operations/opportunities",
+                  "tracking/auto-status"
                 ]
               },
               {
-                "group": "Sales tracking",
+                "group": "Inbox and customers",
                 "pages": [
-                  "tracking/sales-reps",
-                  "tracking/auto-status"
+                  "operations/conversations",
+                  "operations/customers"
+                ]
+              },
+              {
+                "group": "Automations",
+                "pages": [
+                  "operations/follow-ups",
+                  "operations/out-of-funnel"
+                ]
+              },
+              {
+                "group": "Tools",
+                "pages": [
+                  "agent/catalog"
+                ]
+              },
+              {
+                "group": "Outbound",
+                "pages": [
+                  "operations/campaigns",
+                  "operations/broadcasts"
                 ]
               },
               {
@@ -76,21 +89,21 @@
                 "pages": [
                   "team/managing",
                   "team/roles",
-                  "team/visibility"
-                ]
-              },
-              {
-                "group": "Plans & billing",
-                "pages": [
-                  "plans/overview",
-                  "plans/add-ons",
-                  "plans/faq"
+                  "team/visibility",
+                  "tracking/sales-reps"
                 ]
               },
               {
                 "group": "Developers",
                 "pages": [
                   "developers/mcp"
+                ]
+              },
+              {
+                "group": "Plans",
+                "pages": [
+                  "plans/overview",
+                  "plans/add-ons"
                 ]
               },
               {
@@ -127,8 +140,6 @@
                 "group": "El agente",
                 "pages": [
                   "es/agent/how-it-works",
-                  "es/agent/handoff",
-                  "es/agent/catalog",
                   "es/agent/scheduling"
                 ]
               },
@@ -144,24 +155,39 @@
                 ]
               },
               {
-                "group": "Operación",
+                "group": "El tablero",
                 "pages": [
                   "es/operations/mission-control",
-                  "es/operations/opportunities",
-                  "es/operations/conversations",
-                  "es/operations/out-of-funnel",
                   "es/operations/my-day",
-                  "es/operations/follow-ups",
-                  "es/operations/customers",
-                  "es/operations/campaigns",
-                  "es/operations/broadcasts"
+                  "es/operations/opportunities",
+                  "es/tracking/auto-status"
                 ]
               },
               {
-                "group": "Tracking",
+                "group": "Inbox y clientes",
                 "pages": [
-                  "es/tracking/sales-reps",
-                  "es/tracking/auto-status"
+                  "es/operations/conversations",
+                  "es/operations/customers"
+                ]
+              },
+              {
+                "group": "Automatizaciones",
+                "pages": [
+                  "es/operations/follow-ups",
+                  "es/operations/out-of-funnel"
+                ]
+              },
+              {
+                "group": "Herramientas",
+                "pages": [
+                  "es/agent/catalog"
+                ]
+              },
+              {
+                "group": "Marketing saliente",
+                "pages": [
+                  "es/operations/campaigns",
+                  "es/operations/broadcasts"
                 ]
               },
               {
@@ -169,21 +195,21 @@
                 "pages": [
                   "es/team/managing",
                   "es/team/roles",
-                  "es/team/visibility"
-                ]
-              },
-              {
-                "group": "Planes",
-                "pages": [
-                  "es/plans/overview",
-                  "es/plans/add-ons",
-                  "es/plans/faq"
+                  "es/team/visibility",
+                  "es/tracking/sales-reps"
                 ]
               },
               {
                 "group": "Desarrolladores",
                 "pages": [
                   "es/developers/mcp"
+                ]
+              },
+              {
+                "group": "Planes",
+                "pages": [
+                  "es/plans/overview",
+                  "es/plans/add-ons"
                 ]
               },
               {
@@ -220,8 +246,6 @@
                 "group": "O agente",
                 "pages": [
                   "pt-BR/agent/how-it-works",
-                  "pt-BR/agent/handoff",
-                  "pt-BR/agent/catalog",
                   "pt-BR/agent/scheduling"
                 ]
               },
@@ -237,24 +261,39 @@
                 ]
               },
               {
-                "group": "Operação",
+                "group": "O quadro",
                 "pages": [
                   "pt-BR/operations/mission-control",
-                  "pt-BR/operations/opportunities",
-                  "pt-BR/operations/conversations",
-                  "pt-BR/operations/out-of-funnel",
                   "pt-BR/operations/my-day",
-                  "pt-BR/operations/follow-ups",
-                  "pt-BR/operations/customers",
-                  "pt-BR/operations/campaigns",
-                  "pt-BR/operations/broadcasts"
+                  "pt-BR/operations/opportunities",
+                  "pt-BR/tracking/auto-status"
                 ]
               },
               {
-                "group": "Tracking",
+                "group": "Inbox e clientes",
                 "pages": [
-                  "pt-BR/tracking/sales-reps",
-                  "pt-BR/tracking/auto-status"
+                  "pt-BR/operations/conversations",
+                  "pt-BR/operations/customers"
+                ]
+              },
+              {
+                "group": "Automações",
+                "pages": [
+                  "pt-BR/operations/follow-ups",
+                  "pt-BR/operations/out-of-funnel"
+                ]
+              },
+              {
+                "group": "Ferramentas",
+                "pages": [
+                  "pt-BR/agent/catalog"
+                ]
+              },
+              {
+                "group": "Marketing de saída",
+                "pages": [
+                  "pt-BR/operations/campaigns",
+                  "pt-BR/operations/broadcasts"
                 ]
               },
               {
@@ -262,21 +301,21 @@
                 "pages": [
                   "pt-BR/team/managing",
                   "pt-BR/team/roles",
-                  "pt-BR/team/visibility"
-                ]
-              },
-              {
-                "group": "Planos",
-                "pages": [
-                  "pt-BR/plans/overview",
-                  "pt-BR/plans/add-ons",
-                  "pt-BR/plans/faq"
+                  "pt-BR/team/visibility",
+                  "pt-BR/tracking/sales-reps"
                 ]
               },
               {
                 "group": "Desenvolvedores",
                 "pages": [
                   "pt-BR/developers/mcp"
+                ]
+              },
+              {
+                "group": "Planos",
+                "pages": [
+                  "pt-BR/plans/overview",
+                  "pt-BR/plans/add-ons"
                 ]
               },
               {
@@ -332,5 +371,31 @@
       "website": "https://trama.so",
       "linkedin": "https://linkedin.com/company/trama-so"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/plans/faq",
+      "destination": "/reference/faq"
+    },
+    {
+      "source": "/es/plans/faq",
+      "destination": "/es/reference/faq"
+    },
+    {
+      "source": "/pt-BR/plans/faq",
+      "destination": "/pt-BR/reference/faq"
+    },
+    {
+      "source": "/agent/handoff",
+      "destination": "/agent/how-it-works"
+    },
+    {
+      "source": "/es/agent/handoff",
+      "destination": "/es/agent/how-it-works"
+    },
+    {
+      "source": "/pt-BR/agent/handoff",
+      "destination": "/pt-BR/agent/how-it-works"
+    }
+  ]
 }

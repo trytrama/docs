@@ -1,37 +1,62 @@
 ---
 title: "Cómo funciona el agente"
-description: "El Agente Inbound es el corazón de Trama. Vive en el WhatsApp de tu negocio y se encarga de todo lo que pasa entre que un pasajero escribe y un vendedor…"
+description: "El Agente de Consultas vive en tu WhatsApp y cubre todo lo que pasa entre el primer mensaje de un cliente y el momento en que un vendedor toma la oportunidad."
 ---
 
-El Agente Inbound es el corazón de Trama. Vive en el WhatsApp de tu negocio y se encarga de todo lo que pasa entre que un pasajero escribe y un vendedor toma la oportunidad.
+El **Agente de Consultas** es el corazón de Trama. Vive en el WhatsApp de tu negocio y cubre todo lo que pasa entre el primer mensaje de un cliente y el momento en que un vendedor toma la oportunidad.
 
-## Cómo funciona
+## El ciclo, paso a paso
 
-1. **Un pasajero escribe por WhatsApp.** Puede ser desde un anuncio de Meta, desde tu sitio web, o porque alguien le pasó tu número.
+<Steps>
+<Step title="Un cliente escribe">
+Puede llegar desde un anuncio de Meta, desde tu sitio, o porque alguien le pasó tu número.
+</Step>
 
-2. **El agente responde al instante.** Saluda, se presenta como parte de tu equipo, y empieza a conversar naturalmente sobre lo que el pasajero necesita.
+<Step title="El agente responde al instante">
+Saluda, se presenta como parte de tu equipo y arranca una conversación normal sobre lo que la persona necesita.
+</Step>
 
-3. **Extrae los datos clave.** A lo largo de la conversación, el agente obtiene la información que tu equipo necesita para cotizar: destino, fechas de viaje, cantidad y edades de los pasajeros, presupuesto aproximado, ciudad de origen.
+<Step title="Saca los datos clave">
+Sobre la marcha junta lo que tu equipo necesita para cotizar: destino, fechas de viaje, cantidad y edades de los pasajeros, presupuesto aproximado, ciudad de origen.
+</Step>
 
-4. **Califica al lead.** Con los datos obtenidos, el agente determina si es una oportunidad real de venta (caliente, tibia o fría) usando un sistema de scoring automático.
+<Step title="Califica la consulta">
+Con esos datos determina si es una oportunidad real de venta, y le asigna un score sobre 100 que se traduce en una temperatura: **Caliente**, **Tibio** o **Frío**.
+</Step>
 
-5. **Crea la oportunidad.** Cuando el lead está calificado, el agente crea una oportunidad en Mission Control con todos los datos estructurados.
+<Step title="Crea la oportunidad">
+Ya calificada, la consulta pasa a ser una tarjeta del tablero en **Oportunidades**, con todos los campos ya cargados.
+</Step>
 
-6. **Notifica al vendedor.** El vendedor asignado recibe una notificación con el resumen completo del lead, listo para tomar la conversación y cotizar.
+<Step title="Avisa al vendedor">
+El vendedor asignado recibe el resumen completo, listo para tomar la conversación y cotizar.
+</Step>
+</Steps>
+
+## Cuándo deriva
+
+El agente le pasa la conversación al vendedor cuando:
+
+- Ya juntó lo suficiente para calificar la consulta — destino, fechas y pasajeros, como mínimo
+- El cliente pide hablar con una persona
+- El cliente pregunta algo que el agente no puede responder
+- La conversación necesita negociación o atención personalizada
+
+Esas reglas las definís vos, en **Agentes**, junto con todo lo que sigue.
 
 ## Qué sabe el agente
 
-Tu agente conoce todo lo que le cargues sobre tu negocio:
+Sólo lo que vos le cargues sobre tu negocio:
 
-- Destinos que manejás y sus características principales
-- Servicios que ofrecés (paquetes, aéreos, hoteles, transfers, excursiones)
-- Horarios de atención del equipo
-- Políticas generales (formas de pago, cancelaciones, documentación necesaria)
-- Cualquier información adicional que quieras que use en las conversaciones
+- Los destinos que manejás y qué caracteriza a cada uno
+- Los servicios que vendés (paquetes, aéreos, hoteles, transfers, excursiones)
+- Los horarios de atención de tu equipo
+- Las políticas generales: formas de pago, cancelaciones, documentación necesaria
+- Cualquier otra cosa que quieras que use en la conversación
 
 ## Qué NO hace el agente
 
-- **No inventa información.** Si no tiene un dato, no lo inventa. Dice que va a consultar con el equipo.
-- **No cotiza.** No da precios ni arma presupuestos. Eso es trabajo del vendedor.
-- **No reserva viajes ni procesa pagos.** No hace reservas de hoteles, vuelos ni servicios, y no pide datos de tarjeta. Sí puede agendar una llamada con un asesor cuando tu negocio activa el Agendamiento de llamadas.
-- **No reemplaza al vendedor.** Cuando el lead está listo, lo pasa al humano.
+- **No inventa.** Si le falta un dato, dice que lo consulta con el equipo en vez de improvisar una respuesta.
+- **No cotiza.** Ni precios ni presupuestos. Eso es trabajo del vendedor.
+- **No reserva ni cobra.** No hace reservas de hoteles, vuelos ni servicios, y nunca pide datos de tarjeta. Sí puede agendar una llamada con un vendedor cuando tu negocio activa el [Agendamiento de llamadas](/es/agent/scheduling).
+- **No reemplaza al vendedor.** Cuando la consulta está lista, se la pasa a un humano.
