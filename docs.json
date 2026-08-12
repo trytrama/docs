@@ -81,13 +81,6 @@
                 ]
               },
               {
-                "group": "Outbound",
-                "pages": [
-                  "operations/campaigns",
-                  "operations/broadcasts"
-                ]
-              },
-              {
                 "group": "Team",
                 "pages": [
                   "team/managing",
@@ -190,13 +183,6 @@
                 ]
               },
               {
-                "group": "Marketing saliente",
-                "pages": [
-                  "es/operations/campaigns",
-                  "es/operations/broadcasts"
-                ]
-              },
-              {
                 "group": "Equipo",
                 "pages": [
                   "es/team/managing",
@@ -296,13 +282,6 @@
                   "pt-BR/tools/catalog",
                   "pt-BR/tools/offers-link",
                   "pt-BR/tools/ads"
-                ]
-              },
-              {
-                "group": "Marketing de saída",
-                "pages": [
-                  "pt-BR/operations/campaigns",
-                  "pt-BR/operations/broadcasts"
                 ]
               },
               {
@@ -465,6 +444,30 @@
     {
       "source": "/pt-BR/channels/offers-link",
       "destination": "/pt-BR/tools/offers-link"
+    },
+    {
+      "source": "/operations/broadcasts",
+      "destination": "/tools/ads"
+    },
+    {
+      "source": "/operations/campaigns",
+      "destination": "/tools/ads"
+    },
+    {
+      "source": "/es/operations/broadcasts",
+      "destination": "/es/tools/ads"
+    },
+    {
+      "source": "/es/operations/campaigns",
+      "destination": "/es/tools/ads"
+    },
+    {
+      "source": "/pt-BR/operations/broadcasts",
+      "destination": "/pt-BR/tools/ads"
+    },
+    {
+      "source": "/pt-BR/operations/campaigns",
+      "destination": "/pt-BR/tools/ads"
     }
   ]
 }
