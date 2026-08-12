@@ -1,0 +1,71 @@
+---
+title: "Configurar o agente"
+description: "As cinco abas que definem quem é o seu agente, o que ele sabe, o que pode prometer e quando transfere."
+---
+
+Tudo o que o seu Agente de Consultas faz sai de uma única tela: **Agentes → seu agente**. Ela é dividida em cinco abas, e cada uma responde a uma pergunta diferente.
+
+Duas coisas antes de começar. O agente sabe apenas o que você carregar aqui — nunca preenche lacunas por conta própria. E cada mudança atualiza o diagrama à direita, então você vê a consequência antes de um cliente.
+
+## O diagrama mostra o que você realmente configurou
+
+O painel da direita não é decoração. É o caminho real que uma consulta percorre com a sua configuração atual, e destaca a etapa correspondente à aba em que você está.
+
+<img className="block dark:hidden" src="/images/agente/identidad-light.png" alt="O configurador do agente, aba Identidade, com o diagrama de atendimento à direita" />
+<img className="hidden dark:block" src="/images/agente/identidad-dark.png" alt="O configurador do agente, aba Identidade, com o diagrama de atendimento à direita" />
+
+Veja a legenda embaixo: **o que sempre acontece**, **o que depende do caso** e **ainda não usado**. O terceiro estado é o mais útil — uma etapa em cinza é algo que você não configurou, e o diagrama está avisando que o agente vai pulá-la.
+
+## Identidade
+
+Quem é o seu agente: nome, o endereço onde os clientes o encontram, nacionalidade, gênero e como soa a voz.
+
+Dois ajustes pesam mais do que parecem:
+
+- **Endereço.** É a URL pública do agente. Se você mudar, quebra todos os links que já compartilhou.
+- **Nacionalidade.** Não é cosmética: define o registro da linguagem, não só a bandeira.
+
+Velocidade e timbre afetam apenas as notas de voz. Um timbre mais expressivo com velocidade pausada soa menos robótico — use **Ouvir** para comparar antes de decidir.
+
+## Sua agência
+
+<img className="block dark:hidden" src="/images/agente/agencia-light.png" alt="Aba Sua agência, com a descrição do negócio e os dados-chave" />
+<img className="hidden dark:block" src="/images/agente/agencia-dark.png" alt="Aba Sua agência, com a descrição do negócio e os dados-chave" />
+
+São dois blocos com funções diferentes:
+
+**O que a sua agência faz** é contexto livre. O que você vende, no que se especializa, o que explicitamente não faz. O agente usa isso para raciocinar, não para citar literalmente.
+
+**Dados-chave** é o oposto: respostas que o agente repete *literalmente* quando o tema aparece — onde você fica, como se paga, quais são os seus prazos. Use para tudo o que precisa sair sempre igual.
+
+## Regras
+
+<img className="block dark:hidden" src="/images/agente/reglas-light.png" alt="Aba Regras, com regras classificadas como verificáveis ou apenas orientação" />
+<img className="hidden dark:block" src="/images/agente/reglas-dark.png" alt="Aba Regras, com regras classificadas como verificáveis ou apenas orientação" />
+
+Você escreve as regras com as suas palavras e a Trama mostra como as entendeu, embaixo de **Entendemos assim** — leia essa linha, porque é essa interpretação que de fato se aplica.
+
+Cada regra é classificada em um de dois tipos, e a diferença é real:
+
+- **Verificável** — pode ser conferida contra dados, então é aplicada. "Os preços que ele disser têm que sair do catálogo" é verificável.
+- **Apenas orientação** — uma preferência que guia a redação mas não pode ser checada mecanicamente. "Sempre pergunte se as datas já estão fechadas" é orientação.
+
+Não espere que uma preferência funcione como uma barreira. Se algo nunca pode acontecer, escreva de um jeito que possa ser verificado.
+
+## Turnos
+
+<img className="block dark:hidden" src="/images/agente/turnos-light.png" alt="Aba Turnos, com os horários de atendimento por dia" />
+<img className="hidden dark:block" src="/images/agente/turnos-dark.png" alt="Aba Turnos, com os horários de atendimento por dia" />
+
+Os horários da sua equipe, dia a dia, no seu fuso, com quantas faixas por dia você precisar. Fora desse horário o agente continua trabalhando — o que muda é que avisa ao cliente quando uma pessoa vai assumir, em vez de dar a entender que alguém está prestes a responder.
+
+## Encerramento
+
+<img className="block dark:hidden" src="/images/agente/cierre-light.png" alt="Aba Encerramento, para anexar um link ou um PDF" />
+<img className="hidden dark:block" src="/images/agente/cierre-dark.png" alt="Aba Encerramento, para anexar um link ou um PDF" />
+
+O que o cliente recebe no momento em que a consulta passa para a sua equipe: um link, um PDF, ou os dois. Sai em toda transferência, assim que o agente termina de escrever — um catálogo, um folheto, um formulário de reserva.
+
+<Note>
+Para que algo disso chegue a alguém, o agente precisa estar atendendo um canal. Se você vir um aviso no topo do configurador, ele está dizendo que ninguém pode escrever para ele ainda: conecte um canal em [Canais](/pt-BR/channels/overview).
+</Note>

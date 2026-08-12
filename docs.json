@@ -34,6 +34,7 @@
                 "group": "The agent",
                 "pages": [
                   "agent/how-it-works",
+                  "agent/configuration",
                   "agent/scheduling"
                 ]
               },
@@ -140,6 +141,7 @@
                 "group": "El agente",
                 "pages": [
                   "es/agent/how-it-works",
+                  "es/agent/configuration",
                   "es/agent/scheduling"
                 ]
               },
@@ -246,6 +248,7 @@
                 "group": "O agente",
                 "pages": [
                   "pt-BR/agent/how-it-works",
+                  "pt-BR/agent/configuration",
                   "pt-BR/agent/scheduling"
                 ]
               },
