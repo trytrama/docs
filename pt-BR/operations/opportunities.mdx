@@ -1,39 +1,60 @@
 ---
 title: "Oportunidades"
-description: "Uma oportunidade é cada consulta que o agente qualificou como potencial venda. É a unidade básica de trabalho em Trama."
+description: "O quadro onde a venda acontece: cinco colunas, os filtros que importam, e o que tem dentro de um cartão quando você abre."
 ---
 
-Uma oportunidade é cada consulta que o agente qualificou como potencial venda. É a unidade básica de trabalho em Trama.
+Oportunidades é o quadro. Cinco colunas que acompanham uma venda desde que o agente qualifica uma consulta até que ela fecha, para um lado ou para o outro.
 
-## Dados da oportunidade
+<img className="block dark:hidden" src="/images/oportunidades/pipeline-light.png" alt="O quadro de oportunidades com as cinco colunas" />
+<img className="hidden dark:block" src="/images/oportunidades/pipeline-dark.png" alt="O quadro de oportunidades com as cinco colunas" />
 
-Cada oportunidade tem estes dados (a maioria preenchida automaticamente):
-
-| Dado | Como é obtido | Exemplo |
+| Coluna | O que significa | Quem move |
 |---|---|---|
-| Nome do lead | Extraído pelo agente | "Lucia" |
-| Destino | Extraído pelo agente | "Porto de Galinhas" |
-| Datas de viagem | Extraído pelo agente | "10-17 de julho" |
-| Passageiros | Extraído pelo agente | "2 adultos, 1 menor (8)" |
-| Orçamento | Extraído pelo agente (se mencionado) | "USD 1500 por pessoa" |
-| Cidade de origem | Extraído pelo agente | "São Paulo" |
-| Temperatura | Calculada automaticamente | Quente / Morno / Frio |
-| Vendedor designado | Designado pelo sistema ou manualmente | "Nicolas" |
-| Valor cotado | Inserido pelo vendedor | "USD 3800" |
-| Status | Coluna do Kanban | "Cotado" |
-| Motivo de perda | Inserido pelo vendedor (se aplicável) | "Preço" |
-| Resumo | Gerado pelo agente | Resumo da conversa |
-| Data de criação | Automático | "2 de abril, 10:23" |
-| Link da conversa | Automático | Link para o chat completo |
+| **A atender** | Qualificada, atribuída, ninguém respondeu ainda | O agente coloca |
+| **Em contato** | O vendedor já está falando | Move sozinha quando o vendedor escreve |
+| **Cotado** | Já saiu um preço | O vendedor |
+| **Ganho** / **Perdido** | Fechada | O vendedor |
 
-## Nome da oportunidade
+Cada cartão mostra a temperatura, o canal de entrada, há quanto tempo está parada, o vendedor atribuído e a primeira linha do que o cliente pediu. É de propósito: você tem que conseguir decidir o que abrir sem abrir nada.
 
-Gerado automaticamente com o formato: **[Nome do lead] - [Destino]**
+## Os filtros
 
-Exemplos: "Lucia - Porto de Galinhas", "Roberto - Cancún", "+55 11 9... - Sem destino"
+- **Do catálogo / Sob medida** — se a oportunidade foi montada a partir de um item do catálogo ou do zero. É um filtro e nada mais: não muda como a oportunidade se comporta. Serve para uma pergunta pontual — quanto o catálogo está rendendo.
+- **Atividade** e **Vendedor** — os cortes de sempre. O filtro por vendedor só é visto pelo Dono e pelo Administrador.
 
-O vendedor pode editá-lo se quiser.
+## A temperatura não é uma opinião
 
-## Anexos
+O rótulo **Quente / Morno / Frio** não é a impressão do agente sobre o quanto a pessoa parecia empolgada. Sai de uma pontuação de 0 a 100 que mede **quão completos estão os dados**: destino, datas, quantidade de passageiros, noites, cidade de origem e se há algum sinal de orçamento.
 
-Você pode anexar arquivos a cada oportunidade: PDFs de cotação, comprovantes de pagamento, imagens, documentos. Podem ser enviados via chat para o agente ou carregados diretamente no Mission Control.
+Duas consequências, ambas úteis:
+
+- **A precisão vale em dobro.** Um destino concreto pontua mais que um vago; datas exatas pontuam mais que "no verão". A mesma conversa com respostas mais afiadas pontua mais alto.
+- **O sistema sabe exatamente o que falta.** Por isso uma consulta em [Fora do funil](/pt-BR/automations/lifecycle) diz *"faltam datas ao menos aproximadas · tem quantidade de passageiros"* em vez de só "não qualificada". É a mesma medição lida ao contrário, e é o que o agente usa para pedir a uma ou duas coisas que mudariam o quadro.
+
+## Dentro de um cartão
+
+<img className="block dark:hidden" src="/images/oportunidades/detalle-light.png" alt="Detalhe de uma oportunidade, aba Resumo" />
+<img className="hidden dark:block" src="/images/oportunidades/detalle-dark.png" alt="Detalhe de uma oportunidade, aba Resumo" />
+
+Três abas. Em **Resumo** você vai viver:
+
+- **Quem está trabalhando** — o vendedor que responde a este cliente.
+- **Ritmo da conversa** — quando escreveu pela última vez, quantas mensagens mandou, em quanto tempo costuma responder, há quanto está nesta etapa. É o bloco que diz se vale a pena insistir.
+- **Entendimento do viajante** — ocasião, interesses e por que viaja. O que o agente inferiu, além dos dados duros.
+- **O que sabemos** — o resumo que o agente monta com o que foi surgindo, em um parágrafo.
+- **Produtos do catálogo** — o que o agente mostrou, ou o que o cliente marcou como interessante.
+
+Mais os anexos, e a cotação se houver.
+
+## Histórico
+
+<img className="block dark:hidden" src="/images/oportunidades/historial-light.png" alt="Detalhe de uma oportunidade, aba Histórico" />
+<img className="hidden dark:block" src="/images/oportunidades/historial-dark.png" alt="Detalhe de uma oportunidade, aba Histórico" />
+
+Tudo o que aconteceu com esta oportunidade, quem fez e quando. Não só mudanças de estado: as edições de campos trazem um expansor **O que mudou** com o antes e o depois.
+
+Vale ler quando algo não fecha. Entradas como *"A Trama passou para a equipe de vendas — a partir daqui quem segue é uma pessoa, não o agente"* ou *"Entrou no pipeline — o cliente respondeu 4 vezes: há interesse real"* explicam decisões que de outro modo parecem vir do nada.
+
+## Fora do funil
+
+A segunda aba do quadro. As oportunidades que saíram de cena —não qualificadas, sem resposta ou arquivadas— e cada grupo se comporta de um jeito. Está explicado em [Ciclo de vida](/pt-BR/automations/lifecycle).

@@ -1,39 +1,60 @@
 ---
 title: "Oportunidades"
-description: "Una oportunidad es cada consulta que el agente calificó como potencial venta. Es la unidad básica de trabajo en Trama."
+description: "El tablero donde pasa la venta: cinco columnas, los filtros que importan, y qué hay adentro de una tarjeta cuando la abrís."
 ---
 
-Una oportunidad es cada consulta que el agente calificó como potencial venta. Es la unidad básica de trabajo en Trama.
+Oportunidades es el tablero. Cinco columnas que siguen una venta desde que el agente califica una consulta hasta que se cierra, para un lado o para el otro.
 
-## Datos de la oportunidad
+<img className="block dark:hidden" src="/images/oportunidades/pipeline-light.png" alt="El tablero de oportunidades con sus cinco columnas" />
+<img className="hidden dark:block" src="/images/oportunidades/pipeline-dark.png" alt="El tablero de oportunidades con sus cinco columnas" />
 
-Cada oportunidad tiene estos datos (la mayoría se llenan automáticamente):
-
-| Dato | Cómo se obtiene | Ejemplo |
+| Columna | Qué significa | Quién la mueve |
 |---|---|---|
-| Nombre del lead | Extraído por el agente | "Lucía" |
-| Destino | Extraído por el agente | "Porto de Galinhas" |
-| Fechas de viaje | Extraído por el agente | "10-17 julio" |
-| Pasajeros | Extraído por el agente | "2 adultos, 1 menor (8)" |
-| Presupuesto | Extraído por el agente (si lo menciona) | "USD 1500 por persona" |
-| Ciudad de origen | Extraído por el agente | "Córdoba" |
-| Temperatura | Calculada automáticamente | Caliente / Tibio / Frío |
-| Vendedor asignado | Asignado por el sistema o manualmente | "Nicolás" |
-| Monto cotizado | Ingresado por el vendedor | "USD 3800" |
-| Estado | Columna del Kanban | "Cotizado" |
-| Motivo de pérdida | Ingresado por el vendedor (si aplica) | "Precio" |
-| Resumen | Generado por el agente | Resumen de la conversación |
-| Fecha de creación | Automático | "2 de abril, 10:23" |
-| Link a la conversación | Automático | Link al chat completo |
+| **Por atender** | Calificada, asignada, nadie contestó todavía | La pone el agente |
+| **En contacto** | El vendedor ya está hablando | Se mueve sola cuando el vendedor escribe |
+| **Cotizado** | Ya salió un precio | El vendedor |
+| **Ganado** / **Perdido** | Cerrada | El vendedor |
 
-## Nombre de la oportunidad
+Cada tarjeta muestra la temperatura, el canal por el que entró, hace cuánto está quieta, el vendedor asignado y la primera línea de lo que pidió el cliente. Es a propósito: tenés que poder decidir qué abrir sin abrir nada.
 
-Se genera automáticamente con el formato: **[Nombre del lead] - [Destino]**
+## Los filtros
 
-Ejemplos: "Lucía - Porto de Galinhas", "Roberto - Cancún", "+54 9 351... - Sin destino"
+- **Del catálogo / A medida** — si la oportunidad se armó a partir de un ítem del catálogo o desde cero. Es un filtro y nada más: no cambia cómo se comporta la oportunidad. Sirve para una pregunta puntual — cuánto te está rindiendo el catálogo.
+- **Actividad** y **Vendedor** — los cortes de siempre. El filtro por vendedor lo ven sólo el Dueño y el Administrador.
 
-El vendedor puede editarlo si quiere.
+## La temperatura no es una opinión
 
-## Archivos adjuntos
+La etiqueta **Caliente / Tibio / Frío** no es la impresión del agente sobre qué entusiasmada sonaba la persona. Sale de un score sobre 100 que mide **qué tan completos están los datos**: destino, fechas, cantidad de pasajeros, noches, ciudad de origen y si hay alguna señal de presupuesto.
 
-Podés adjuntar archivos a cada oportunidad: PDFs de cotización, comprobantes de pago, imágenes, documentos. Se pueden enviar por chat al agente o subir directamente desde Mission Control.
+De ahí se desprenden dos cosas, y las dos sirven:
+
+- **La precisión vale doble.** Un destino concreto puntúa más que uno vago; fechas exactas puntúan más que "en verano". La misma conversación con respuestas más filosas puntúa más alto.
+- **El sistema sabe exactamente qué falta.** Por eso una consulta que está en [Fuera del funnel](/es/automations/lifecycle) te dice *"falta fechas al menos aproximadas · tiene cantidad de pasajeros"* en vez de sólo "sin calificar". Es la misma medición leída al revés, y es lo que usa el agente para pedir la una o dos cosas que moverían la aguja.
+
+## Adentro de una tarjeta
+
+<img className="block dark:hidden" src="/images/oportunidades/detalle-light.png" alt="Detalle de una oportunidad, pestaña Resumen" />
+<img className="hidden dark:block" src="/images/oportunidades/detalle-dark.png" alt="Detalle de una oportunidad, pestaña Resumen" />
+
+Tres pestañas. En **Resumen** vas a vivir:
+
+- **Quién la trabaja** — el vendedor que le responde a este cliente.
+- **Ritmo de la conversación** — cuándo escribió por última vez, cuántos mensajes mandó, en cuánto suele contestar, hace cuánto está en esta etapa. Este es el bloque que te dice si vale la pena empujar.
+- **Entendimiento del viajero** — ocasión, intereses y por qué viaja. Lo que el agente infirió, más allá de los datos duros.
+- **Lo que sabemos** — el resumen que arma el agente con lo que fue surgiendo, en un párrafo.
+- **Productos del catálogo** — lo que el agente le mostró, o lo que el cliente marcó como interesante.
+
+Más los adjuntos, y la cotización si la hay.
+
+## Historial
+
+<img className="block dark:hidden" src="/images/oportunidades/historial-light.png" alt="Detalle de una oportunidad, pestaña Historial" />
+<img className="hidden dark:block" src="/images/oportunidades/historial-dark.png" alt="Detalle de una oportunidad, pestaña Historial" />
+
+Todo lo que le pasó a esta oportunidad, quién lo hizo y cuándo. No sólo cambios de estado: las ediciones de campos traen un desplegable **Qué cambió** con el antes y el después.
+
+Vale leerlo cuando algo no cierra. Entradas como *"Trama se la pasó al equipo de ventas — a partir de acá la sigue una persona, no el agente"* o *"Entró al pipeline — el cliente contestó 4 veces: hay interés real"* explican decisiones que si no parecen salidas de la nada.
+
+## Fuera del funnel
+
+La segunda pestaña del tablero. Las oportunidades que se corrieron —sin calificar, sin respuesta o archivadas— y cada grupo se comporta distinto. Está explicado en [Ciclo de vida](/es/automations/lifecycle).
