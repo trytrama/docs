@@ -388,6 +388,159 @@
         ],
         "type": "object"
       },
+      "Conversation": {
+        "properties": {
+          "activityState": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "channel": {
+            "example": "whatsapp",
+            "type": "string"
+          },
+          "contact": {
+            "description": "The identifier on its channel — a phone number, a handle.",
+            "type": "string"
+          },
+          "contactName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "controlledBy": {
+            "description": "Who holds the thread: the agent, or a person on the team who took over.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "customerId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "customerName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lastMessageAt": {
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "activityState",
+          "channel",
+          "contact",
+          "contactName",
+          "controlledBy",
+          "createdAt",
+          "customerId",
+          "customerName",
+          "id",
+          "language",
+          "lastMessageAt"
+        ],
+        "type": "object"
+      },
+      "ConversationList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/Conversation"
+            },
+            "type": "array"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
+          }
+        },
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object"
+      },
+      "ConversationMessage": {
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "conversationId": {
+            "description": "Which thread this message came from. It matters when the reply stitches rotated threads together: without it, two stretches months apart read as one continuous chat.",
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "direction": {
+            "example": "inbound",
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "messageType": {
+            "type": "string"
+          },
+          "senderName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "conversationId",
+          "createdAt",
+          "direction",
+          "id",
+          "messageType",
+          "senderName"
+        ],
+        "type": "object"
+      },
+      "ConversationTranscript": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/ConversationMessage"
+            },
+            "type": "array"
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "type": "object"
+      },
       "Customer": {
         "properties": {
           "city": {
@@ -544,6 +697,180 @@
         ],
         "type": "object"
       },
+      "Opportunity": {
+        "properties": {
+          "budgetCurrency": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "budgetMax": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "budgetMin": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "checkInDate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "customerId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "customerName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "destination": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "lastActivityAt": {
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nights": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "passengerCount": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "qualifiedAt": {
+            "description": "When the opportunity became qualified. Null means it never entered the pipeline.",
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "salesStage": {
+            "type": "string"
+          },
+          "sellerMemberId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sellerName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "shortRef": {
+            "description": "Short human-readable reference the agency uses to name it.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stage": {
+            "description": "Key of the pipeline column it currently sits in. This is the key, not a title: each agency renames its columns, so the key is the stable thing to branch on.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "temperature": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "budgetCurrency",
+          "budgetMax",
+          "budgetMin",
+          "checkInDate",
+          "createdAt",
+          "customerId",
+          "customerName",
+          "destination",
+          "id",
+          "lastActivityAt",
+          "nights",
+          "passengerCount",
+          "qualifiedAt",
+          "salesStage",
+          "sellerMemberId",
+          "sellerName",
+          "shortRef",
+          "stage",
+          "stageId",
+          "temperature",
+          "title",
+          "updatedAt"
+        ],
+        "type": "object"
+      },
+      "OpportunityList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/Opportunity"
+            },
+            "type": "array"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
+          }
+        },
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object"
+      },
       "Pagination": {
         "properties": {
           "limit": {
@@ -560,6 +887,239 @@
           "limit",
           "offset",
           "total"
+        ],
+        "type": "object"
+      },
+      "Quote": {
+        "properties": {
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "currency": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "customerId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "customerName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "destination": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "firstOpenedAt": {
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "lastOpenedAt": {
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "openCount": {
+            "description": "How many times the traveller opened it. 0 = never seen.",
+            "type": "integer"
+          },
+          "opportunityId": {
+            "type": "string"
+          },
+          "price": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "publishedAt": {
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "published",
+              "disabled"
+            ],
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "token": {
+            "description": "Token of the public quote link. Use it to build the URL the traveller sees — that is what lets an integration deliver the quote through its own channel.",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "createdAt",
+          "currency",
+          "customerId",
+          "customerName",
+          "destination",
+          "firstOpenedAt",
+          "id",
+          "lastOpenedAt",
+          "openCount",
+          "opportunityId",
+          "price",
+          "publishedAt",
+          "status",
+          "title",
+          "token",
+          "updatedAt"
+        ],
+        "type": "object"
+      },
+      "QuoteAttachment": {
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "sizeBytes": {
+            "type": "integer"
+          },
+          "url": {
+            "description": "SIGNED download URL, and short-lived by design — it is a download credential, not a permanent link. Fetch the file when you receive it; do not store the URL.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "fileName",
+          "id",
+          "kind",
+          "mimeType",
+          "sizeBytes",
+          "url"
+        ],
+        "type": "object"
+      },
+      "QuoteAttachmentList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/QuoteAttachment"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "QuoteList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/Quote"
+            },
+            "type": "array"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
+          }
+        },
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object"
+      },
+      "TeamMember": {
+        "properties": {
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "isAssignable": {
+            "description": "Whether they take part in the automatic assignment of opportunities.",
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "roles": {
+            "description": "A LIST, not a single value: a member holds a base role plus optional add-ons.",
+            "example": [
+              "owner"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "userId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "createdAt",
+          "email",
+          "id",
+          "isAssignable",
+          "name",
+          "roles",
+          "userId"
+        ],
+        "type": "object"
+      },
+      "TeamMemberList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/TeamMember"
+            },
+            "type": "array"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
+          }
+        },
+        "required": [
+          "data",
+          "pagination"
         ],
         "type": "object"
       }
@@ -1498,6 +2058,242 @@
         ]
       }
     },
+    "/v1/conversations": {
+      "get": {
+        "description": "Returns the organization's conversations, most recent message first.",
+        "parameters": [
+          {
+            "description": "How many items to return. Maximum 100.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "description": "How many items to return. Maximum 100.",
+              "example": 25,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "How many items to skip from the beginning.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "description": "How many items to skip from the beginning.",
+              "example": 0,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "activityState",
+            "required": false,
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "schema": {
+              "example": "whatsapp",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "customerId",
+            "required": false,
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Matches against the contact name and the channel identifier.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "description": "Matches against the contact name and the channel identifier.",
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationList"
+                }
+              }
+            },
+            "description": "The requested page."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "List conversations",
+        "tags": [
+          "Conversations"
+        ]
+      }
+    },
+    "/v1/conversations/{conversationId}/messages": {
+      "get": {
+        "description": "Oldest first — the order of a transcript, so it reads the way it was spoken.\n\nTakes `limit` but no `offset`, and that is deliberate rather than an omission: messages live in two different stores depending on how the channel arrived (WhatsApp, Instagram and Messenger come through the provider; the web chat is handled by the agent runtime), and the reply also stitches together rotated threads. There is no single ordering to offset into, so offering one would return wrong pages. Ask for the number of messages you need.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "conversationId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "How many messages to return. Maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "description": "How many messages to return. Maximum 200.",
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationTranscript"
+                }
+              }
+            },
+            "description": "The transcript."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "Get the transcript of a conversation",
+        "tags": [
+          "Conversations"
+        ]
+      }
+    },
     "/v1/customers": {
       "get": {
         "description": "Returns the organization's non-archived customers, most recently updated first.",
@@ -2110,6 +2906,539 @@
         "summary": "Update a customer",
         "tags": [
           "Customers"
+        ]
+      }
+    },
+    "/v1/opportunities": {
+      "get": {
+        "description": "Returns the organization's non-archived opportunities, most recently updated first.",
+        "parameters": [
+          {
+            "description": "How many items to return. Maximum 100.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "description": "How many items to return. Maximum 100.",
+              "example": 25,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "How many items to skip from the beginning.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "description": "How many items to skip from the beginning.",
+              "example": 0,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          {
+            "description": "Matches against the title, short reference and destination.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "description": "Matches against the title, short reference and destination.",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "salesStage",
+            "required": false,
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Id of a pipeline column, to fetch just that stage.",
+            "in": "query",
+            "name": "stageId",
+            "required": false,
+            "schema": {
+              "description": "Id of a pipeline column, to fetch just that stage.",
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OpportunityList"
+                }
+              }
+            },
+            "description": "The requested page."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "List opportunities",
+        "tags": [
+          "Opportunities"
+        ]
+      }
+    },
+    "/v1/opportunities/{opportunityId}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "opportunityId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Opportunity"
+                }
+              }
+            },
+            "description": "The opportunity."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "Get an opportunity",
+        "tags": [
+          "Opportunities"
+        ]
+      }
+    },
+    "/v1/quotes": {
+      "get": {
+        "description": "Returns the organization's non-archived quotes, most recently updated first.",
+        "parameters": [
+          {
+            "description": "How many items to return. Maximum 100.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "description": "How many items to return. Maximum 100.",
+              "example": 25,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "How many items to skip from the beginning.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "description": "How many items to skip from the beginning.",
+              "example": 0,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "opportunityId",
+            "required": false,
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Matches against the title and destination.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "description": "Matches against the title and destination.",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "enum": [
+                "draft",
+                "published",
+                "disabled"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuoteList"
+                }
+              }
+            },
+            "description": "The requested page."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "List quotes",
+        "tags": [
+          "Quotes"
+        ]
+      }
+    },
+    "/v1/quotes/{quoteId}/attachments": {
+      "get": {
+        "description": "Each attachment comes with a SIGNED, short-lived download URL. Fetch the file when you receive it; do not store the URL — it expires. Unlike catalog images, which live in a public bucket, quote attachments are private.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "quoteId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuoteAttachmentList"
+                }
+              }
+            },
+            "description": "The attachments, with signed URLs."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "List the attachments of a quote",
+        "tags": [
+          "Quotes"
+        ]
+      }
+    },
+    "/v1/team": {
+      "get": {
+        "parameters": [
+          {
+            "description": "How many items to return. Maximum 100.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "description": "How many items to return. Maximum 100.",
+              "example": 25,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "How many items to skip from the beginning.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "description": "How many items to skip from the beginning.",
+              "example": 0,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamMemberList"
+                }
+              }
+            },
+            "description": "The requested page."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request is not valid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key is missing or not valid."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The resource does not exist in this organization."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict with the current state of the resource."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The API key exceeded its request limit. Retry later."
+          }
+        },
+        "summary": "List team members",
+        "tags": [
+          "Team"
         ]
       }
     }
