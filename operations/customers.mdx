@@ -1,18 +1,49 @@
 ---
 title: "Customers"
-description: "Each opportunity is linked to a customer. If a customer inquires several times about different trips, all their opportunities are linked to their profile."
+description: "The book that fills itself: what Trama infers about each person, the tags it writes on its own, and what happens when the same person appears twice."
 ---
 
-Each opportunity is linked to a customer. If a customer inquires several times about different trips, all their opportunities are linked to their profile.
+Every person who wrote to you ends up here, with everything the agent picked up along the way. You don't load this — it loads itself.
 
-## What's saved about the customer
+<img className="block dark:hidden" src="/images/clientes/lista-light.png" alt="Customer list with tags and last contact" />
+<img className="hidden dark:block" src="/images/clientes/lista-dark.png" alt="Customer list with tags and last contact" />
 
-- Name
-- Phone
-- Email (if provided)
-- Opportunity history (all inquiries they've made)
-- Origin channel (WhatsApp, Instagram, email)
+## What we know
 
-## Reactivation
+<img className="block dark:hidden" src="/images/clientes/facts-light.png" alt="What we know section, with facts inferred from the conversation" />
+<img className="hidden dark:block" src="/images/clientes/facts-dark.png" alt="What we know section, with facts inferred from the conversation" />
 
-A customer who inquired 6 months ago and didn't travel may contact you again. Trama recognizes them and links the new inquiry with their previous history. Your sales rep can see that "Lucy inquired about Porto de Galinhas in July and didn't close due to price" and use that information for the new quote.
+This is the best part of the section, and it's easy to miss. Trama reads the conversations and writes down what it learned as separate facts: *"Travels with her teenage daughter"*, *"Compares three or four agencies before closing"*, *"Prefers voice notes over long texts"*, *"Cares more about the pool than the hotel's star rating"*.
+
+They're not a summary paragraph — each one stands alone, so you can delete the one that's wrong without losing the rest. You can add your own too, tagged by category.
+
+Read together, they're a sales briefing. Someone who compares four agencies and prefers voice notes needs a different follow-up than someone who books on the spot.
+
+## Tags
+
+<img className="block dark:hidden" src="/images/clientes/tags-light.png" alt="Tag filter applied to the customer list" />
+<img className="hidden dark:block" src="/images/clientes/tags-dark.png" alt="Tag filter applied to the customer list" />
+
+The agent writes tags as it talks: occasion (`honeymoon`, `anniversary`), trip type (`beach`, `snow`), destinations of interest (`caribbean`), and preferences (`all-inclusive`, `low-cost`). Only what the customer said or what's clearly implied.
+
+They're normalized on the way in — lowercase, no accents, hyphens instead of spaces — which is why you see `15th-birthday` and not `15th Birthday`. That's what makes them work as filters.
+
+Click any tag above the table to filter by it. You can also edit tags by hand on the customer's record, and add ones the agent would never infer.
+
+## The record
+
+Personal details, location, channels the customer wrote from, the history of every opportunity they've had, and where the lead originally came from.
+
+Also **who's responsible** for them: it's assigned on its own to the rep who takes their first opportunity. That's not just a label — by default each person sees only their own book, plus anyone with no owner assigned, so that a loose lead can be picked up by whoever gets to it first.
+
+## When the same person appears twice
+
+It happens constantly: they write from WhatsApp, then fill in the web form, then a colleague loads them by hand.
+
+Trama merges them on its own **only when there's a shared verifiable identifier** — the same phone, the same email, the same verified identity. **Never by name**: too many real, different people share one.
+
+When it isn't sure, it doesn't decide. It proposes: a "Possible duplicates" list where you compare both records side by side and choose. You can also merge two by hand from the record itself.
+
+<Note>
+Merging loses nothing and deletes nothing. Conversations, opportunities and history all move to the surviving record, the tags of both are combined rather than replaced, and you can **undo it for 30 days**.
+</Note>

@@ -1,26 +1,48 @@
 ---
-title: "Conversations"
-description: "Conversations is where you see all the chats between your agent and travelers. You access it from the inbound agent (Agents → your agent)."
+title: "Inbox"
+description: "Where every inquiry lands: how the tabs are divided, what the score means, and what the thumbs actually do."
 ---
 
-Conversations is where you see all the chats between your agent and travelers. You access it from the inbound agent (Agents → your agent).
+The Inbox is the raw material. Every conversation the agent has had is here, whole, with the score it earned and why.
 
-## What you see
+<img className="block dark:hidden" src="/images/inbox/lista-light.png" alt="Inbox list with tabs, temperature and score for each conversation" />
+<img className="hidden dark:block" src="/images/inbox/lista-dark.png" alt="Inbox list with tabs, temperature and score for each conversation" />
 
-- The list of conversations on the left and the full transcript on the right.
-- Each message with its time and who wrote it (the traveler or the agent).
-- In the conversation panel: contact data (phone, channel, first message, last activity), the files and links that were exchanged (photos, audio, documents), and the linked opportunities with their summary and trip data. From there a sales rep can "Take" an opportunity.
+## The tabs are not the cuts you'd guess
 
-The view is read-only: Conversations is for reviewing and understanding the conversation, not for replying to the traveler. Replying is the agent's job, and when a person is needed, it hands off to the sales rep through their WhatsApp.
+| Tab | What's in it |
+|---|---|
+| **All** | Everything **except** the inactive ones. It isn't literally all |
+| **Qualified** | Anything with a temperature — and that **includes Cold**. The only ones missing are those with no score yet |
+| **Pending** | The agent is still talking but there's no score yet: not enough data |
+| **Discarded** | Only two reasons put a conversation here: **spam** and **wrong number**. A supplier, a journalist or someone asking for a job is not discarded — it gets tagged and stays |
+| **Inactive** | Gone quiet: seven days with no activity, or forty-eight hours if it never became an opportunity. **It comes back on its own the moment the customer writes** |
 
-## Qualification at a glance
+## The score, read from the list
 
-The header of each conversation shows qualification signals: the temperature (hot, warm, cold, or discarded), the type of interlocutor when it's not a traveler (vendor, press, job seeker, after-sales), the score of the hottest opportunity, and a notice if the lead is "untaken".
+Each row shows a temperature and a number out of 100. That number measures **how complete the data is**, not enthusiasm — the full explanation is in [Opportunities](/operations/opportunities).
 
-## Feedback to the agent
+What's useful from here: **Pending is not Cold.** Cold means "we know things and it's still not going anywhere". Pending means "we don't know anything yet". Treating them as the same thing is how you end up discarding leads that just hadn't answered the second question.
 
-You can rate each agent response with 👍 or 👎. The 👍 is saved instantly; the 👎 opens a box to indicate how serious it was and leave a comment. That feedback is used to improve the agent. On numbers in coexistence mode (a sales rep's WhatsApp), feedback doesn't apply, because there the person is the one replying, not the AI.
+## Inside a conversation
 
-## Who has access
+<img className="block dark:hidden" src="/images/inbox/conversacion-light.png" alt="Conversation detail with the full transcript and the feedback thumbs" />
+<img className="hidden dark:block" src="/images/inbox/conversacion-dark.png" alt="Conversation detail with the full transcript and the feedback thumbs" />
 
-The whole team can see the conversations. The Owner and the Admin also see the Summary and Configuration tabs and the agent's metrics.
+The full thread, with photos, documents, and voice notes transcribed to text so you can read instead of listen.
+
+**It's read-only. You can't reply from here** — that's deliberate, and the badge at the top says so. What you *can* do is three things:
+
+- **Take** the opportunity, which assigns it to you, moves it to In contact, and **stops the AI agent from replying in that thread**. From that point it's yours.
+- **Rate the agent's replies** with 👍 / 👎.
+- **Hand the conversation back to the agent** if a person had taken over.
+
+## What the thumbs actually do
+
+Only the agent's messages can be rated — not what a person wrote by hand.
+
+👎 opens a short dialog asking how bad it was and what went wrong. That comment is the valuable part.
+
+<Note>
+**Your feedback doesn't retrain your agent by itself.** It goes to Trama's team, who read it and use it to calibrate the agent in future versions. A 👎 with a written comment is worth far more than one without: the comment is what says *what should have happened*, and that's the part nobody can guess from the thumb alone.
+</Note>

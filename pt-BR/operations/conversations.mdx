@@ -1,26 +1,48 @@
 ---
-title: "Conversas"
-description: "Conversas é onde você vê todas as conversas entre seu agente e os passageiros. Acessa-se a partir do agente inbound (Agentes → seu agente)."
+title: "Inbox"
+description: "Onde cai toda consulta: como as abas se dividem, o que significa a pontuação e o que os polegares realmente fazem."
 ---
 
-Conversas é onde você vê todas as conversas entre seu agente e os passageiros. Acessa-se a partir do agente inbound (Agentes → seu agente).
+O Inbox é a matéria-prima. Todas as conversas que o agente teve estão aqui, inteiras, com a pontuação que tiraram e o porquê.
 
-## O que você vê
+<img className="block dark:hidden" src="/images/inbox/lista-light.png" alt="Lista do Inbox com as abas, a temperatura e a pontuação de cada conversa" />
+<img className="hidden dark:block" src="/images/inbox/lista-dark.png" alt="Lista do Inbox com as abas, a temperatura e a pontuação de cada conversa" />
 
-- A lista de conversas à esquerda e a transcrição completa à direita.
-- Cada mensagem com seu horário e quem a escreveu (o passageiro ou o agente).
-- No painel da conversa: dados do contato (telefone, canal, primeira mensagem, última atividade), os arquivos e links que foram trocados (fotos, áudios, documentos) e as oportunidades vinculadas com seu resumo e dados de viagem. A partir daí, um vendedor pode "Assumir" uma oportunidade.
+## As abas não são os cortes que você imaginaria
 
-A visualização é somente leitura: Conversas serve para revisar e entender a conversa, não para responder ao passageiro. De responder se encarrega o agente e, quando é preciso uma pessoa, transfere para o vendedor pelo seu WhatsApp.
+| Aba | O que tem dentro |
+|---|---|
+| **Todas** | Tudo **menos** as inativas. Não é literalmente todas |
+| **Qualificadas** | Tudo que tem temperatura — e **inclui as Frias**. As únicas que faltam são as que ainda não têm pontuação |
+| **Pendentes** | O agente segue conversando mas ainda não há pontuação: os dados não bastam |
+| **Descartadas** | Só dois motivos mandam uma conversa para cá: **spam** e **número errado**. Um fornecedor, um jornalista ou alguém pedindo emprego não é descartado: é etiquetado e fica |
+| **Inativas** | Apagaram: sete dias sem atividade, ou quarenta e oito horas se nunca virou oportunidade. **Volta sozinha assim que o cliente escreve** |
 
-## Qualificação à vista
+## A pontuação, lida da lista
 
-O cabeçalho de cada conversa mostra sinais de qualificação: a temperatura (quente, morno, frio ou descartado), o tipo de interlocutor quando não é um passageiro (fornecedor, imprensa, emprego, pós-venda), a pontuação da oportunidade mais quente e um aviso se o lead está "sem assumir".
+Cada linha mostra uma temperatura e um número de 0 a 100. Esse número mede **quão completos estão os dados**, não o entusiasmo — a explicação completa está em [Oportunidades](/pt-BR/operations/opportunities).
 
-## Feedback ao agente
+O que serve daqui: **Pendente não é Frio.** Frio quer dizer "sabemos coisas e mesmo assim não avança". Pendente quer dizer "ainda não sabemos nada". Tratar os dois igual é o jeito de acabar descartando leads que só não responderam a segunda pergunta.
 
-Você pode avaliar cada resposta do agente com 👍 ou 👎. O 👍 é salvo na hora; o 👎 abre uma caixa para indicar quão grave foi e deixar um comentário. Esse feedback é usado para melhorar o agente. Em números em modo coexistência (o WhatsApp de um vendedor), o feedback não se aplica, porque ali quem responde é a pessoa, não a IA.
+## Dentro de uma conversa
 
-## Quem acessa
+<img className="block dark:hidden" src="/images/inbox/conversacion-light.png" alt="Detalhe de uma conversa com a transcrição completa e os polegares de feedback" />
+<img className="hidden dark:block" src="/images/inbox/conversacion-dark.png" alt="Detalhe de uma conversa com a transcrição completa e os polegares de feedback" />
 
-Toda a equipe pode ver as conversas. O Dono e o Administrador veem além disso as abas de Resumo e Configuração e as métricas do agente.
+O fio completo, com fotos, documentos e os áudios transcritos em texto para você ler em vez de ouvir.
+
+**É somente leitura. Daqui não se responde** — é de propósito, e o badge no topo diz isso. O que dá para fazer são três coisas:
+
+- **Assumir** a oportunidade, o que a atribui a você, move para Em contato e **faz o agente de IA parar de responder naquele fio**. A partir daí é sua.
+- **Avaliar as respostas do agente** com 👍 / 👎.
+- **Devolver a conversa ao agente** se uma pessoa tinha assumido o controle.
+
+## O que os polegares realmente fazem
+
+Só dá para avaliar as mensagens do agente, não o que uma pessoa escreveu à mão.
+
+O 👎 abre um diálogo curto perguntando o quão grave foi e o que deu errado. Esse comentário é a parte valiosa.
+
+<Note>
+**Seu feedback não retreina o seu agente sozinho.** Ele chega à equipe da Trama, que o lê e usa para calibrar o agente nas próximas versões. Um 👎 com comentário escrito vale muito mais do que um sem: o comentário é o que diz *o que deveria ter acontecido*, e essa é a parte que ninguém consegue adivinhar só pelo polegar.
+</Note>

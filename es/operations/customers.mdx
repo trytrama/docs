@@ -1,18 +1,49 @@
 ---
 title: "Clientes"
-description: "Cada oportunidad está vinculada a un cliente. Si un cliente consulta varias veces por distintos viajes, todas sus oportunidades quedan vinculadas a su…"
+description: "El libro que se llena solo: qué infiere Trama de cada persona, los tags que escribe por su cuenta, y qué pasa cuando la misma persona aparece dos veces."
 ---
 
-Cada oportunidad está vinculada a un cliente. Si un cliente consulta varias veces por distintos viajes, todas sus oportunidades quedan vinculadas a su perfil.
+Toda persona que te escribió termina acá, con todo lo que el agente fue juntando en el camino. Esto no lo cargás vos: se carga solo.
 
-## Qué se guarda del cliente
+<img className="block dark:hidden" src="/images/clientes/lista-light.png" alt="Lista de clientes con tags y último contacto" />
+<img className="hidden dark:block" src="/images/clientes/lista-dark.png" alt="Lista de clientes con tags y último contacto" />
 
-- Nombre
-- Teléfono
-- Email (si lo proporciona)
-- Historial de oportunidades (todas las consultas que hizo)
-- Canal de origen (WhatsApp, Instagram, email)
+## Lo que sabemos
 
-## Reactivación
+<img className="block dark:hidden" src="/images/clientes/facts-light.png" alt="Sección Lo que sabemos, con hechos inferidos de la conversación" />
+<img className="hidden dark:block" src="/images/clientes/facts-dark.png" alt="Sección Lo que sabemos, con hechos inferidos de la conversación" />
 
-Un cliente que consultó hace 6 meses y no viajó puede volver a contactarte. Trama lo reconoce y vincula la nueva consulta con su historial anterior. Tu vendedor puede ver que "Lucía consultó por Porto de Galinhas en julio y no cerró por precio" y usar esa información para la nueva cotización.
+Esta es la mejor parte de la sección, y es fácil que pase desapercibida. Trama lee las conversaciones y anota lo que aprendió como hechos sueltos: *"Viaja con su hija adolescente"*, *"Compara tres o cuatro agencias antes de cerrar"*, *"Prefiere audios antes que textos largos"*, *"Le importa más la pileta que la categoría del hotel"*.
+
+No son un párrafo de resumen: cada uno se sostiene solo, así que podés borrar el que está mal sin perder el resto. También podés agregar los tuyos, clasificados por categoría.
+
+Leídos juntos son un briefing de venta. Alguien que compara cuatro agencias y prefiere audios necesita un seguimiento distinto que alguien que reserva en el acto.
+
+## Tags
+
+<img className="block dark:hidden" src="/images/clientes/tags-light.png" alt="Filtro por tag aplicado sobre la lista de clientes" />
+<img className="hidden dark:block" src="/images/clientes/tags-dark.png" alt="Filtro por tag aplicado sobre la lista de clientes" />
+
+El agente escribe los tags mientras conversa: ocasión (`luna-de-miel`, `aniversario`), tipo de viaje (`playa`, `nieve`), destinos de interés (`caribe`) y preferencias (`all-inclusive`, `low-cost`). Sólo lo que el cliente dijo o lo que es claramente inferible.
+
+Se normalizan al entrar —minúsculas, sin tildes, guiones en vez de espacios—, y por eso ves `festejo-15-anos` y no `Festejo 15 años`. Eso es lo que los vuelve útiles como filtro.
+
+Tocá cualquier tag de arriba de la tabla para filtrar por él. También podés editar los tags a mano en la ficha del cliente, y agregar los que el agente nunca inferiría.
+
+## La ficha
+
+Datos personales, ubicación, los canales por los que escribió, el historial de todas sus oportunidades y de dónde salió el lead originalmente.
+
+Y **quién es su encargado**: se asigna solo al vendedor que toma su primera oportunidad. No es sólo una etiqueta — por defecto cada persona ve únicamente su propio libro, más los clientes sin encargado, para que un lead suelto lo pueda levantar el que llegue primero.
+
+## Cuando la misma persona aparece dos veces
+
+Pasa todo el tiempo: escribe por WhatsApp, después completa el formulario de la web, después un compañero la carga a mano.
+
+Trama las une sola **sólo cuando hay un identificador compartido y verificable** — el mismo teléfono, el mismo email, la misma identidad verificada. **Nunca por nombre**: hay demasiadas personas reales y distintas que comparten uno.
+
+Cuando no está segura, no decide: propone. Es la lista de "Posibles duplicados", donde comparás las dos fichas lado a lado y elegís. También podés combinar dos a mano desde la ficha.
+
+<Note>
+Combinar no pierde ni borra nada. Las conversaciones, las oportunidades y el historial pasan a la ficha que queda, los tags de las dos se unen en vez de reemplazarse, y **lo podés deshacer durante 30 días**.
+</Note>

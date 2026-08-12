@@ -1,26 +1,48 @@
 ---
-title: "Consultas"
-description: "Consultas es donde ves todas las conversaciones entre tu agente y los pasajeros. Se accede desde el agente inbound (Agentes → tu agente)."
+title: "Inbox"
+description: "Donde cae toda consulta: cómo se dividen las pestañas, qué significa el score y qué hacen realmente los pulgares."
 ---
 
-Consultas es donde ves todas las conversaciones entre tu agente y los pasajeros. Se accede desde el agente inbound (Agentes → tu agente).
+El Inbox es la materia prima. Todas las conversaciones que tuvo el agente están acá, enteras, con el score que sacaron y por qué.
 
-## Qué ves
+<img className="block dark:hidden" src="/images/inbox/lista-light.png" alt="Lista del Inbox con las pestañas, la temperatura y el score de cada conversación" />
+<img className="hidden dark:block" src="/images/inbox/lista-dark.png" alt="Lista del Inbox con las pestañas, la temperatura y el score de cada conversación" />
 
-- La lista de conversaciones a la izquierda y la transcripción completa a la derecha.
-- Cada mensaje con su hora y quién lo escribió (el pasajero o el agente).
-- En el panel de la conversación: datos del contacto (teléfono, canal, primer mensaje, última actividad), los archivos y links que se intercambiaron (fotos, audios, documentos) y las oportunidades vinculadas con su resumen y datos de viaje. Desde ahí un vendedor puede "Tomar" una oportunidad.
+## Las pestañas no son los cortes que uno supondría
 
-La vista es de lectura: Consultas sirve para revisar y entender la conversación, no para responderle al pasajero. De responder se encarga el agente y, cuando hace falta una persona, deriva al vendedor por su WhatsApp.
+| Pestaña | Qué tiene adentro |
+|---|---|
+| **Todas** | Todo **menos** las inactivas. No es literalmente todas |
+| **Calificadas** | Todo lo que tiene temperatura — e **incluye las Frías**. Las únicas que faltan son las que todavía no tienen score |
+| **Pendientes** | El agente sigue conversando pero todavía no hay score: no alcanzan los datos |
+| **Descartadas** | Sólo dos motivos mandan una conversación acá: **spam** y **número equivocado**. Un proveedor, un periodista o alguien que pide trabajo no se descarta: se etiqueta y se queda |
+| **Inactivas** | Se apagaron: siete días sin actividad, o cuarenta y ocho horas si nunca llegó a ser oportunidad. **Vuelve sola apenas el cliente escribe** |
 
-## Calificación a la vista
+## El score, leído desde la lista
 
-El encabezado de cada conversación muestra señales de calificación: la temperatura (caliente, tibio, frío o descartado), el tipo de interlocutor cuando no es un pasajero (proveedor, prensa, empleo, postventa), el puntaje de la oportunidad más caliente y un aviso si el lead está "sin tomar".
+Cada fila muestra una temperatura y un número sobre 100. Ese número mide **qué tan completos están los datos**, no el entusiasmo — la explicación completa está en [Oportunidades](/es/operations/opportunities).
 
-## Feedback al agente
+Lo que sirve desde acá: **Pendiente no es Frío.** Frío quiere decir "sabemos cosas y aun así no avanza". Pendiente quiere decir "todavía no sabemos nada". Tratarlos igual es la forma de terminar descartando leads que sólo no habían contestado la segunda pregunta.
 
-Podés calificar cada respuesta del agente con 👍 o 👎. El 👍 se guarda al instante; el 👎 abre un cuadro para indicar qué tan grave fue y dejar un comentario. Ese feedback se usa para mejorar al agente. En números en modo coexistencia (el WhatsApp de un vendedor), el feedback no aplica, porque ahí quien responde es la persona, no la IA.
+## Adentro de una conversación
 
-## Quién accede
+<img className="block dark:hidden" src="/images/inbox/conversacion-light.png" alt="Detalle de una conversación con la transcripción completa y los pulgares de feedback" />
+<img className="hidden dark:block" src="/images/inbox/conversacion-dark.png" alt="Detalle de una conversación con la transcripción completa y los pulgares de feedback" />
 
-Todo el equipo puede ver las conversaciones. El Dueño y el Administrador ven además las pestañas de Resumen y Configuración y las métricas del agente.
+El hilo completo, con fotos, documentos y las notas de voz transcriptas a texto para que puedas leer en vez de escuchar.
+
+**Es sólo lectura. Desde acá no se responde** — es a propósito, y el badge de arriba lo dice. Lo que sí podés hacer son tres cosas:
+
+- **Tomar** la oportunidad, que te la asigna, la mueve a En contacto y **hace que el agente de IA deje de responder ese hilo**. A partir de ahí es tuya.
+- **Calificar las respuestas del agente** con 👍 / 👎.
+- **Devolverle la conversación al agente** si una persona había tomado el control.
+
+## Qué hacen realmente los pulgares
+
+Sólo se pueden calificar los mensajes del agente, no lo que escribió una persona a mano.
+
+El 👎 abre un diálogo corto que pregunta qué tan grave fue y qué estuvo mal. Ese comentario es la parte valiosa.
+
+<Note>
+**Tu feedback no reentrena tu agente por sí solo.** Llega al equipo de Trama, que lo lee y lo usa para calibrar el agente en las próximas versiones. Un 👎 con comentario escrito vale muchísimo más que uno sin: el comentario es el que dice *qué tendría que haber pasado*, y esa es la parte que nadie puede adivinar del pulgar solo.
+</Note>

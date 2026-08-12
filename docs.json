@@ -44,8 +44,7 @@
                   "channels/whatsapp-setup",
                   "channels/whatsapp-troubleshooting",
                   "channels/whatsapp-costs",
-                  "channels/web-widget",
-                  "channels/offers-link"
+                  "channels/web-widget"
                 ]
               },
               {
@@ -76,7 +75,9 @@
               {
                 "group": "Tools",
                 "pages": [
-                  "tools/catalog"
+                  "tools/catalog",
+                  "tools/offers-link",
+                  "tools/ads"
                 ]
               },
               {
@@ -152,8 +153,7 @@
                   "es/channels/whatsapp-setup",
                   "es/channels/whatsapp-troubleshooting",
                   "es/channels/whatsapp-costs",
-                  "es/channels/web-widget",
-                  "es/channels/offers-link"
+                  "es/channels/web-widget"
                 ]
               },
               {
@@ -184,7 +184,9 @@
               {
                 "group": "Herramientas",
                 "pages": [
-                  "es/tools/catalog"
+                  "es/tools/catalog",
+                  "es/tools/offers-link",
+                  "es/tools/ads"
                 ]
               },
               {
@@ -260,8 +262,7 @@
                   "pt-BR/channels/whatsapp-setup",
                   "pt-BR/channels/whatsapp-troubleshooting",
                   "pt-BR/channels/whatsapp-costs",
-                  "pt-BR/channels/web-widget",
-                  "pt-BR/channels/offers-link"
+                  "pt-BR/channels/web-widget"
                 ]
               },
               {
@@ -292,7 +293,9 @@
               {
                 "group": "Ferramentas",
                 "pages": [
-                  "pt-BR/tools/catalog"
+                  "pt-BR/tools/catalog",
+                  "pt-BR/tools/offers-link",
+                  "pt-BR/tools/ads"
                 ]
               },
               {
@@ -450,6 +453,18 @@
     {
       "source": "/pt-BR/agent/catalog",
       "destination": "/pt-BR/tools/catalog"
+    },
+    {
+      "source": "/channels/offers-link",
+      "destination": "/tools/offers-link"
+    },
+    {
+      "source": "/es/channels/offers-link",
+      "destination": "/es/tools/offers-link"
+    },
+    {
+      "source": "/pt-BR/channels/offers-link",
+      "destination": "/pt-BR/tools/offers-link"
     }
   ]
 }
