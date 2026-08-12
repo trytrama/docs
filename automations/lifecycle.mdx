@@ -3,7 +3,7 @@ title: "Lifecycle"
 description: "When an opportunity stops taking up space on the board — and why nothing is ever deleted."
 ---
 
-A board where nothing ever leaves stops being useful. **Automations → Lifecycle** decides when an opportunity steps aside. Nothing is deleted, ever: it's put away, and it comes back on its own if the customer writes.
+A board where nothing ever leaves stops being useful. **Automations → Lifecycle** decides when an opportunity steps aside — and where it goes, which is not the same for every case.
 
 <img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Lifecycle tab, with the timeline of an opportunity to scale" />
 <img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Lifecycle tab, with the timeline of an opportunity to scale" />
@@ -22,6 +22,14 @@ The timeline on the right is drawn to scale with the deadlines you pick, which m
 
 **Move to "In contact" on its own** is on by default: when the rep writes to the customer, or ticks the reminder off in My day, the card moves by itself. Turn it off and somebody has to drag every card by hand — which in practice means the board drifts out of sync with reality.
 
-<Note>
-Nothing here deletes anything. An opportunity that's asleep comes back to the board on its own the moment the customer writes again, with its history intact.
-</Note>
+## Where they end up
+
+Opportunities that leave the board go to **Opportunities → Out of funnel**, split into three buckets that behave differently:
+
+- **Unqualified** — the agent is still talking to them but there's no real intent yet. Each row states what's missing ("no dates, has passenger count"). They enter the pipeline on their own once it's there, or you move them.
+- **No reply** — they went quiet on their own for lack of movement. Stored whole, and **they come back to the pipeline by themselves the moment the customer writes**. There's a Reactivate button if you don't want to wait.
+- **Archived** — somebody on the team discarded them on purpose, with a reason attached.
+
+<Warning>
+Archived is the one exception to "nothing gets deleted": **archived opportunities are permanently deleted after 30 days.** Until then you can restore them with **Move to pipeline**, and the row tells you exactly how long is left ("deleted in 11 days"). Asleep opportunities, on the other hand, are never deleted.
+</Warning>

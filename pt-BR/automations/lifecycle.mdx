@@ -3,7 +3,7 @@ title: "Ciclo de vida"
 description: "Quando uma oportunidade deixa de ocupar espaço no quadro — e por que nada é apagado."
 ---
 
-Um quadro do qual nada nunca sai deixa de servir. **Automações → Ciclo de vida** decide quando uma oportunidade sai de cena. Nada é apagado, nunca: é guardado, e volta sozinho se o cliente escrever.
+Um quadro do qual nada nunca sai deixa de servir. **Automações → Ciclo de vida** decide quando uma oportunidade sai de cena — e para onde vai, que não é o mesmo em todos os casos.
 
 <img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Aba Ciclo de vida, com a linha do tempo de uma oportunidade em escala" />
 <img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Aba Ciclo de vida, com a linha do tempo de uma oportunidade em escala" />
@@ -22,6 +22,14 @@ A linha do tempo da direita é desenhada **em escala** com os prazos que você e
 
 **Mover sozinha para "Em contato"** vem ligado: quando o vendedor escreve para o cliente, ou risca o pendente em Meu dia, o cartão se move sozinho. Se você desligar, alguém tem que arrastar cada cartão à mão — o que na prática significa que o quadro se descola da realidade.
 
-<Note>
-Aqui nada é apagado. Uma oportunidade adormecida volta sozinha ao quadro assim que o cliente escreve de novo, com o histórico intacto.
-</Note>
+## Onde elas terminam
+
+As oportunidades que saem do quadro ficam em **Oportunidades → Fora do funil**, divididas em três grupos que se comportam de formas diferentes:
+
+- **Não qualificadas** — o agente continua conversando, mas ainda não há intenção real. Cada linha diz o que falta ("faltam datas ao menos aproximadas · tem quantidade de passageiros"). Entram no pipeline sozinhas quando houver, ou você as passa.
+- **Sem resposta** — apagaram sozinhas por falta de movimento. São guardadas inteiras e **voltam ao pipeline assim que o cliente escrever**. Há um botão Reativar se você não quiser esperar.
+- **Arquivadas** — alguém da equipe as descartou de propósito, com um motivo escrito.
+
+<Warning>
+Arquivadas é a única exceção a "nada é apagado": **são excluídas para sempre depois de 30 dias.** Até lá você as restaura com **Passar para o pipeline**, e a linha mostra quanto falta ("excluída em 11 dias"). As adormecidas, por outro lado, nunca são excluídas.
+</Warning>

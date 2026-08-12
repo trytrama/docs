@@ -3,7 +3,7 @@ title: "Ciclo de vida"
 description: "Cuándo una oportunidad deja de ocupar lugar en el tablero — y por qué nunca se borra nada."
 ---
 
-Un tablero del que nunca se va nada deja de servir. **Automatizaciones → Ciclo de vida** decide cuándo una oportunidad se corre. No se borra nunca nada: se guarda, y vuelve sola si el cliente escribe.
+Un tablero del que nunca se va nada deja de servir. **Automatizaciones → Ciclo de vida** decide cuándo una oportunidad se corre — y a dónde va, que no es lo mismo en todos los casos.
 
 <img className="block dark:hidden" src="/images/automatizaciones/ciclo-light.png" alt="Pestaña Ciclo de vida, con la línea de tiempo de una oportunidad a escala" />
 <img className="hidden dark:block" src="/images/automatizaciones/ciclo-dark.png" alt="Pestaña Ciclo de vida, con la línea de tiempo de una oportunidad a escala" />
@@ -22,6 +22,14 @@ La línea de tiempo de la derecha está dibujada **a escala** con los plazos que
 
 **Mover sola a «En contacto»** viene prendido: cuando el vendedor le escribe al cliente, o tacha el pendiente desde Mi día, la tarjeta se mueve sola. Si lo apagás, alguien tiene que arrastrar cada tarjeta a mano — que en la práctica significa que el tablero se despega de la realidad.
 
-<Note>
-Acá no se borra nada. Una oportunidad dormida vuelve sola al tablero apenas el cliente vuelve a escribir, con su historia intacta.
-</Note>
+## Dónde terminan
+
+Las oportunidades que se van del tablero quedan en **Oportunidades → Fuera del funnel**, repartidas en tres grupos que se comportan distinto:
+
+- **Sin calificar** — el agente sigue conversando pero todavía no hay intención real. Cada fila dice qué falta ("falta fechas al menos aproximadas · tiene cantidad de pasajeros"). Entran al pipeline solas cuando la haya, o las pasás vos.
+- **Sin respuesta** — se apagaron solas por falta de movimiento. Se guardan enteras y **vuelven al pipeline apenas el cliente escriba**. Hay un botón Reactivar si no querés esperar.
+- **Archivadas** — alguien del equipo las descartó a propósito, con un motivo escrito.
+
+<Warning>
+Archivadas es la única excepción a «no se borra nada»: **se borran para siempre a los 30 días.** Hasta entonces las restaurás con **Pasar al pipeline**, y la fila te dice cuánto queda ("se borra en 11 días"). Las dormidas, en cambio, no se borran nunca.
+</Warning>
