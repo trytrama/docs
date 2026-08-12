@@ -18,8 +18,8 @@ Documentación pública de Trama, en Mintlify. Repo **público**: nada interno a
   `apps/api` del monorepo.
 - **Colores: no toques `colors` sin mirar el contraste.** El amarillo de marca
   (`#FDC700`) da 1.57:1 sobre blanco — es un color de RELLENO, no de texto. Por
-  eso `dark` (el color sobre fondo claro) usa `#733E0A`, que es el token
-  `--primary-foreground` de `@trama/ui`.
+  eso `dark` (el color sobre fondo claro) usa `#733E0A`, que es el mismo marrón
+  que la plataforma usa para texto sobre amarillo.
 - **Validá antes de pushear:** `bunx mint broken-links`. Un push a `main` deploya
   directo a producción.
 

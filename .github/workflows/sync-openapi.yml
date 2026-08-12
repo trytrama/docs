@@ -16,8 +16,8 @@ name: Sync OpenAPI spec
 # en vez de minutos), que para documentación de API es intercambio barato.
 # `workflow_dispatch` está para forzarlo cuando shipeaste algo y lo querés ver ya.
 #
-# (La otra salida sería el endpoint Admin de Mintlify, pero es de plan pago: con
-# Starter devuelve 401 "Please upgrade to access this route".)
+# (La otra salida sería el endpoint Admin de Mintlify, pero requiere un plan que
+# no tenemos.)
 
 on:
   schedule:
