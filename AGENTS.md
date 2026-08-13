@@ -96,7 +96,7 @@ no existen con ese nombre.
 | **Agentes** | Agents | Agentes | Los agentes de la organización |
 | **Automatizaciones** | Automations | Automações | Pestañas: Reparto, Recordatorios, Ciclo de vida, Respuestas |
 | **Equipo** | Team | Equipe | |
-| **Canales** | Channels | Canais | Chat web, WhatsApp, Instagram, Messenger, Gmail |
+| **Canales** | Channels | Canais | Chat web, WhatsApp, Instagram, Messenger |
 | **Configuración** | Settings | Configurações | |
 
 **Mi día es una pestaña de Mission Control, no una sección.** Y las columnas del
