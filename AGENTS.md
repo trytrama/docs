@@ -76,6 +76,11 @@ traducción.
 - Callouts: `<Note>` para aclaraciones, `<Info>` para features en beta.
 - Los links internos llevan el prefijo del idioma: `/es/...`, `/pt-BR/...`, y
   sin prefijo para inglés.
+- **Las direcciones de mail no se traducen.** El soporte es siempre
+  **`support@trama.so`**, igual en las tres versiones. Ya pasó una vez que la
+  traducción localizó el buzón (`soporte@`, `suporte@`) y mandó a la mitad de
+  los lectores a una dirección que no existe. Lo mismo vale para cualquier
+  handle, dominio o nombre de producto.
 
 ## Glosario canónico
 
