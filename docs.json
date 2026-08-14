@@ -86,7 +86,7 @@
                   "team/roles",
                   "team/visibility",
                   "tracking/sales-reps",
-        "team/coexistence"
+                  "team/coexistence"
                 ]
               },
               {
@@ -187,7 +187,7 @@
                   "es/team/roles",
                   "es/team/visibility",
                   "es/tracking/sales-reps",
-        "es/team/coexistence"
+                  "es/team/coexistence"
                 ]
               },
               {
@@ -288,7 +288,7 @@
                   "pt-BR/team/roles",
                   "pt-BR/team/visibility",
                   "pt-BR/tracking/sales-reps",
-        "pt-BR/team/coexistence"
+                  "pt-BR/team/coexistence"
                 ]
               },
               {
@@ -325,7 +325,7 @@
     "links": [
       {
         "label": "Soporte",
-        "href": "mailto:soporte@trama.so"
+        "href": "mailto:support@trama.so"
       }
     ],
     "primary": {
@@ -490,5 +490,19 @@
       "source": "/pt-BR/plans/add-ons",
       "destination": "/pt-BR/plans/overview"
     }
-  ]
+  ],
+  "fonts": {
+    "heading": {
+      "family": "Lora"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#FBFBF9",
+      "dark": "#0C0C09"
+    }
+  }
 }
