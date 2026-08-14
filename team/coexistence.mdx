@@ -1,0 +1,124 @@
+---
+title: "Coexistence"
+description: "What Trama stores from a rep's WhatsApp, what it doesn't, how it's switched on and how it's switched off."
+---
+
+Coexistence means connecting the WhatsApp **someone already works from**, so Trama can read and store what's said there. Nobody changes number or app: the sales rep keeps selling from their usual phone, and the board fills itself with what happens in those conversations.
+
+It's what makes [sales rep tracking](/tracking/sales-reps) and [automatic status updates](/tracking/auto-status) possible. Available on **Pro** and **Business** plans.
+
+<Note>
+**The agent doesn't reply there.** On a coexistence number a human is doing the talking and Trama only watches and records. The one that answers on its own is the [Inquiry Agent](/agent/how-it-works), and it lives on your agency's number, not the rep's.
+</Note>
+
+## What gets stored
+
+From that phone's **one-to-one** chats:
+
+- **The text of every message**, with date, direction, and whether the person typed it on the phone or it went out through the API.
+- **Photos, audio, video and documents**, copied to our storage. They are not transcribed.
+- **The phone number, name and profile picture** of each person on the other end.
+- **The list of numbers** that WhatsApp has been in contact with.
+- **Up to 6 months of history from before the connection**: Meta replays it on connect.
+
+<Warning>
+**Every one-to-one chat comes in, not just the work ones.** Trama doesn't tell a customer apart from a relative: everything on that phone comes in. That's why the notice is read and accepted by **the person who owns the phone**, and nobody can accept it for them — not even the account owner.
+</Warning>
+
+## What doesn't get stored
+
+This isn't a Trama limitation: it's what Meta doesn't share over this channel.
+
+| What stays out | Why |
+|---|---|
+| **Groups** | WhatsApp doesn't share them. They don't sync, even if the customer writes there |
+| **Voice and video calls** | They leave no trace: not even a notification arrives |
+| **Disappearing and "view once" messages** | They delete themselves on the phone, so they never arrive |
+| **Broadcast lists** | They don't sync either |
+| **Your address book names** | Meta sends the number, not the address book. A contact with no name shows up as their phone number |
+
+<Warning>
+**Old attachments don't come through.** Past a certain age Meta delivers the message but no longer the file. The window it states is 14 days, but **we measured an 8-day-old audio it refused as well**: treat 14 days as a ceiling, not a guarantee.
+
+What it means in practice: in a test with 1,489 messages of history, 54 arrived without their file — **3.7%**. In Trama each message says whether its file made it, so a gap is distinguishable from a conversation that never happened.
+</Warning>
+
+## What changes on the person's phone
+
+<Warning>
+On activation, **Meta turns off disappearing messages and "view once" in ALL of that phone's one-to-one chats**, and turns off broadcast lists. Groups and calls stay the same.
+
+It's a change to somebody's own device: we don't control it, it can't be undone from Trama, and it has to be clear **before** switching it on, not after.
+</Warning>
+
+## How it's switched on
+
+From **Team → Members**, opening the person's record. There are two paths, and the difference isn't cosmetic: Meta's screen asks for permission over one person's WhatsApp account, so **only that person can accept it**.
+
+<Tabs>
+<Tab title="It's my number">
+Meta's screen opens right there. You read the notice, tick the box and connect.
+
+Meta shows its own QR code inside the flow to pair the WhatsApp Business app, so it works fine from a desktop.
+</Tab>
+
+<Tab title="It's someone else's">
+Trama emails them a request. That person opens the notice, accepts it in their own name and confirms on Meta's screen, **from their phone**.
+
+Until they do, nothing is captured. What goes out isn't an access link you hand over: it's a request they can turn down.
+</Tab>
+</Tabs>
+
+<Warning>
+**The emailed link works for whoever opens it.** Whoever opens that link connects **their** phone in the slot of the person it was sent to — it has happened, and the wrong number replaced the right one for hours.
+
+The rule, stated positively: **each person opens their own link, from their own phone**. Don't forward it and don't open it yourself to help. If it went to the wrong address, discard the activation from the member's record and start over.
+</Warning>
+
+While the request is unaccepted, the record shows the activation as **Waiting**: there's no number yet, nothing is captured and nothing is charged. From there you can resend it or discard it.
+
+## How current what you see is
+
+It isn't read live. We copy what's said on each phone **every 15 minutes**, so the latest messages can take a while to show up. In exchange, what's copied stays even if the phone is disconnected later.
+
+The first backfill of a freshly connected phone takes about a minute and brings in the 6 months of history.
+
+## Who can see it
+
+It's someone's personal WhatsApp, so access **isn't inherited from the role**: it's restricted on purpose.
+
+| Who | What they see |
+|---|---|
+| **The account Owner** | Every phone the team connected in coexistence |
+| **Each team member** | Only their own — we ask their permission to read what they say, so they have to be able to see what we store |
+| **Admins** | None |
+
+<Note>
+**Admins seeing none is a decision, not a forgotten permission.** There's no notion of a "team" inside an agency today: an Admin administers the whole agency, so handing them this screen would mean letting them read every colleague's personal WhatsApp. The rest of the permissions are in [Roles and permissions](/team/roles).
+</Note>
+
+Observed conversations are read in **Team → Coexistence**. It's read-only from there: you don't reply from someone else's number.
+
+## How it's billed
+
+A coexistence number **doesn't consume a channel** from your plan: it's counted separately, on its own meter, and billed as an add-on.
+
+And it **doesn't count twice**. While the phone is in coexistence it stops taking up a *Trama Agent on reps' WhatsApp* slot: it's a single device, and the person keeps getting notifications and talking to the Trama Agent on that same number.
+
+Prices are at [trama.so/pricing](https://trama.so/pricing), and everything else your plan counts is in [Plans](/plans/overview).
+
+## How it's switched off
+
+**Only the person holding the phone**, from their WhatsApp Business: *Settings → Account → Business Platform → Disconnect*.
+
+There's no button in Trama, and that's not an oversight: Meta doesn't allow disconnecting a coexistence from outside the phone, and a button that can't deliver is worse than no button.
+
+<Warning>
+**The disconnection doesn't always reach the panel on its own.** Verified: after disconnecting from the app, Trama can keep showing the number as connected for quite a while, even though nothing new is coming in. It's reported to the provider.
+
+If you disconnected a phone, tell the account Owner and write to [Support](/reference/support) so it doesn't stay listed as connected.
+</Warning>
+
+<Note>
+**What was already stored, stays.** The WhatsApp Business number belongs to the agency, so what was said there is its commercial record: it stays and keeps being read even if the phone is disconnected or the person stops working there. How an account's data gets deleted is in [Privacy and data](/reference/faq).
+</Note>

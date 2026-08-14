@@ -1,0 +1,124 @@
+---
+title: "Coexistência"
+description: "O que a Trama guarda do WhatsApp de um vendedor, o que não guarda, como se ativa e como se corta."
+---
+
+Coexistência é conectar o WhatsApp **do qual a pessoa já trabalha**, para que a Trama leia e guarde o que se fala ali. Ninguém troca de número nem de aplicativo: o vendedor continua vendendo do telefone de sempre, e o quadro se preenche sozinho com o que acontece nessas conversas.
+
+É o que torna possível o [rastreamento de vendedores](/pt-BR/tracking/sales-reps) e a [atualização automática do status](/pt-BR/tracking/auto-status). Disponível nos planos **Pro** e **Business**.
+
+<Note>
+**O agente não responde ali.** Em um número em coexistência quem fala é uma pessoa, e a Trama só observa e registra. Quem responde sozinho é o [Agente de Consultas](/pt-BR/agent/how-it-works), e ele vive no número da sua agência, não no do vendedor.
+</Note>
+
+## O que é guardado
+
+Das conversas **individuais** desse telefone:
+
+- **O texto de cada mensagem**, com data, direção e se a pessoa escreveu do telefone ou se saiu pela API.
+- **As fotos, áudios, vídeos e documentos**, que são copiados para o nosso armazenamento. Não são transcritos.
+- **O telefone, o nome e a foto de perfil** de cada interlocutor.
+- **A lista de números** com os quais esse WhatsApp teve contato.
+- **Até 6 meses de histórico anterior à conexão**: a Meta reenvia ao conectar.
+
+<Warning>
+**Entram todas as conversas individuais, não só as de trabalho.** A Trama não distingue um cliente de um familiar: entra tudo o que estiver nesse telefone. Por isso o aviso é lido e aceito **pela pessoa dona do telefone**, e ninguém pode aceitar por ela — nem o dono da conta.
+</Warning>
+
+## O que não é guardado
+
+Não é uma limitação da Trama: são as coisas que a Meta não compartilha por essa via.
+
+| O que fica de fora | Por quê |
+|---|---|
+| **Os grupos** | O WhatsApp não os compartilha. Não sincronizam, mesmo que o cliente escreva ali |
+| **As chamadas de voz e de vídeo** | Não deixam rastro: não chega nem o aviso |
+| **As mensagens temporárias e as de "ver uma vez"** | Se apagam sozinhas no telefone, então nunca chegam |
+| **As listas de transmissão** | Também não sincronizam |
+| **Os nomes da sua agenda** | A Meta manda o número, não a agenda. Um contato sem nome aparece pelo telefone |
+
+<Warning>
+**Os anexos antigos não vêm.** Passado certo tempo, a Meta entrega a mensagem, mas já não o arquivo. A janela que ela declara é de 14 dias, mas **medimos um áudio de 8 dias que também não foi entregue**: trate os 14 dias como um teto, não como uma garantia.
+
+Quanto isso pesa na prática: em um teste com 1.489 mensagens de histórico, 54 chegaram sem o arquivo — **3,7%**. Na Trama cada mensagem diz se o arquivo chegou ou não, então um buraco se distingue de uma conversa que nunca existiu.
+</Warning>
+
+## O que muda no telefone da pessoa
+
+<Warning>
+Ao ativar, **a Meta desliga as mensagens temporárias e o "ver uma vez" em TODAS as conversas individuais** desse telefone, e desliga as listas de transmissão. Os grupos e as chamadas continuam iguais.
+
+É uma mudança no aparelho de alguém: não controlamos, não dá para reverter pela Trama, e tem que estar claro **antes** de ativar, não depois.
+</Warning>
+
+## Como se ativa
+
+Pela seção **Equipe → Membros**, abrindo a ficha da pessoa. São dois caminhos, e a diferença não é cosmética: a tela da Meta pede permissão sobre a conta de WhatsApp de uma pessoa, então **só essa pessoa pode aceitar**.
+
+<Tabs>
+<Tab title="É o meu número">
+A tela da Meta abre ali mesmo. Você lê o aviso, marca a caixa e conecta.
+
+A Meta mostra o próprio QR dentro do fluxo para parear o app do WhatsApp Business, então dá para fazer pelo computador.
+</Tab>
+
+<Tab title="É o de outra pessoa">
+A Trama manda um pedido por e-mail. Essa pessoa abre o aviso, aceita em nome dela e confirma na tela da Meta, **do telefone dela**.
+
+Enquanto ela não fizer isso, nada é capturado. O que sai não é um acesso que você entrega: é um pedido que ela pode recusar.
+</Tab>
+</Tabs>
+
+<Warning>
+**O link do e-mail vale para quem o abrir.** Quem abrir esse acesso conecta **o próprio** telefone no lugar da pessoa para quem ele foi enviado — já aconteceu, e o número errado substituiu o certo por horas.
+
+A regra, no positivo: **cada pessoa abre o próprio acesso, do próprio telefone**. Não reencaminhe e não abra você para ajudar. Se foi para o e-mail errado, descarte a ativação pela ficha do membro e comece de novo.
+</Warning>
+
+Enquanto o pedido não é aceito, a ficha mostra a ativação como **Aguardando**: ainda não há número, nada é capturado e nada é cobrado. Dali você pode reenviar ou descartar.
+
+## De quando é o que você vê
+
+Não é lido ao vivo. Copiamos o que se fala em cada telefone **a cada 15 minutos**, então o mais recente pode demorar um pouco para aparecer. Em troca, o que foi copiado fica mesmo que o telefone seja desconectado depois.
+
+O primeiro backfill de um telefone recém-conectado leva cerca de um minuto e traz os 6 meses de histórico.
+
+## Quem vê
+
+É o WhatsApp pessoal de uma pessoa, então o acesso **não é herdado do cargo**: é limitado de propósito.
+
+| Quem | O que vê |
+|---|---|
+| **O Dono da conta** | Todos os telefones que a equipe conectou em coexistência |
+| **Cada pessoa da equipe** | Só o seu — pedimos permissão para ler o que ela fala, ela precisa poder ver o que guardamos |
+| **Os Administradores** | Nenhum |
+
+<Note>
+**Os Administradores não verem nenhum é uma decisão, não uma permissão esquecida.** Hoje não existe o conceito de "equipe" dentro de uma agência: um Administrador administra a agência inteira, então dar essa tela a ele seria deixá-lo ler o WhatsApp pessoal de todos os colegas. O resto das permissões está em [Cargos e permissões](/pt-BR/team/roles).
+</Note>
+
+As conversas observadas são lidas em **Equipe → Coexistência**. Dali só se lê: não se responde do número de outra pessoa.
+
+## O que é cobrado
+
+Um número em coexistência **não consome um canal** do seu plano: é contado à parte, no medidor dele, e é cobrado como adicional.
+
+E **não conta duas vezes**. Enquanto o telefone está em coexistência, ele deixa de ocupar uma vaga de *Trama Agent no WhatsApp dos vendedores*: é um único aparelho, e a pessoa continua recebendo avisos e falando com o Trama Agent por esse mesmo número.
+
+Os valores estão em [trama.so/pricing](https://trama.so/pricing), e o resto do que o seu plano conta está em [Planos](/pt-BR/plans/overview).
+
+## Como se dá baixa
+
+**Só a pessoa que tem o telefone**, pelo WhatsApp Business dela: *Configurações → Conta → Business Platform → Desconectar*.
+
+Não há botão na Trama, e isso não é um esquecimento: a Meta não permite desconectar uma coexistência de fora do telefone, e um botão que não pode cumprir é pior do que nenhum botão.
+
+<Warning>
+**A baixa nem sempre chega sozinha ao painel.** Verificado: depois de desconectar pelo app, a Trama pode continuar mostrando o número como conectado por um bom tempo, mesmo que nada de novo entre. Está reportado ao provedor.
+
+Se você desconectou um telefone, avise o Dono da conta e escreva para o [Suporte](/pt-BR/reference/support) para que ele não continue figurando como conectado.
+</Warning>
+
+<Note>
+**O que já foi guardado, fica.** O número de WhatsApp Business é da agência, então o que foi falado ali é o registro comercial dela: continua existindo e continua sendo lido mesmo que o telefone seja desconectado ou a pessoa deixe de trabalhar lá. Como os dados de uma conta são apagados está em [Privacidade e dados](/pt-BR/reference/faq).
+</Note>

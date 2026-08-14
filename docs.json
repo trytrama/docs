@@ -85,7 +85,8 @@
                   "team/managing",
                   "team/roles",
                   "team/visibility",
-                  "tracking/sales-reps"
+                  "tracking/sales-reps",
+        "team/coexistence"
                 ]
               },
               {
@@ -185,7 +186,8 @@
                   "es/team/managing",
                   "es/team/roles",
                   "es/team/visibility",
-                  "es/tracking/sales-reps"
+                  "es/tracking/sales-reps",
+        "es/team/coexistence"
                 ]
               },
               {
@@ -285,7 +287,8 @@
                   "pt-BR/team/managing",
                   "pt-BR/team/roles",
                   "pt-BR/team/visibility",
-                  "pt-BR/tracking/sales-reps"
+                  "pt-BR/tracking/sales-reps",
+        "pt-BR/team/coexistence"
                 ]
               },
               {
