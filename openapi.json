@@ -1149,6 +1149,7 @@
     "/v1/catalog/products": {
       "get": {
         "description": "Returns the organization's non-archived products, most recently updated first.",
+        "operationId": "listCatalogProducts",
         "parameters": [
           {
             "description": "How many items to return. Maximum 100.",
@@ -1300,6 +1301,7 @@
         ]
       },
       "post": {
+        "operationId": "createCatalogProduct",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1647,6 +1649,7 @@
     "/v1/catalog/products/{productId}": {
       "delete": {
         "description": "ARCHIVES the product: it leaves the active catalog and can be restored from the dashboard for 30 days, after which it is purged. Deliberately not an immediate delete — a buggy integration should not be able to destroy an agency's catalog.",
+        "operationId": "deleteCatalogProduct",
         "parameters": [
           {
             "in": "path",
@@ -1725,6 +1728,7 @@
         ]
       },
       "get": {
+        "operationId": "getCatalogProduct",
         "parameters": [
           {
             "in": "path",
@@ -1804,6 +1808,7 @@
       },
       "patch": {
         "description": "Only touches the fields present in the body. Sending `null` clears a field; omitting it leaves it unchanged. Variants cannot be patched — send them on create, or the whole list would be replaced by a partial one.",
+        "operationId": "updateCatalogProduct",
         "parameters": [
           {
             "in": "path",
@@ -2061,6 +2066,7 @@
     "/v1/conversations": {
       "get": {
         "description": "Returns the organization's conversations, most recent message first.",
+        "operationId": "listConversations",
         "parameters": [
           {
             "description": "How many items to return. Maximum 100.",
@@ -2203,6 +2209,7 @@
     "/v1/conversations/{conversationId}/messages": {
       "get": {
         "description": "Oldest first — the order of a transcript, so it reads the way it was spoken.\n\nTakes `limit` but no `offset`, and that is deliberate rather than an omission: messages live in two different stores depending on how the channel arrived (WhatsApp, Instagram and Messenger come through the provider; the web chat is handled by the agent runtime), and the reply also stitches together rotated threads. There is no single ordering to offset into, so offering one would return wrong pages. Ask for the number of messages you need.",
+        "operationId": "listConversationMessages",
         "parameters": [
           {
             "in": "path",
@@ -2297,6 +2304,7 @@
     "/v1/customers": {
       "get": {
         "description": "Returns the organization's non-archived customers, most recently updated first.",
+        "operationId": "listCustomers",
         "parameters": [
           {
             "description": "How many items to return. Maximum 100.",
@@ -2418,6 +2426,7 @@
       },
       "post": {
         "description": "Fails if any of the contacts already belongs to another customer in the organization: one person is ONE record, and duplicating it splits their history in two.",
+        "operationId": "createCustomer",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2583,6 +2592,7 @@
     "/v1/customers/{customerId}": {
       "delete": {
         "description": "ARCHIVES the customer: they leave the active book and the listings, but their history is not destroyed. Deliberate — a buggy integration should not be able to wipe an agency's customer base.",
+        "operationId": "archiveCustomer",
         "parameters": [
           {
             "in": "path",
@@ -2661,6 +2671,7 @@
         ]
       },
       "get": {
+        "operationId": "getCustomer",
         "parameters": [
           {
             "in": "path",
@@ -2740,6 +2751,7 @@
       },
       "patch": {
         "description": "Only touches the fields present in the body. `contacts`, when present, REPLACES the whole list; when absent, the existing list is preserved.",
+        "operationId": "updateCustomer",
         "parameters": [
           {
             "in": "path",
@@ -2912,6 +2924,7 @@
     "/v1/opportunities": {
       "get": {
         "description": "Returns the organization's non-archived opportunities, most recently updated first.",
+        "operationId": "listOpportunities",
         "parameters": [
           {
             "description": "How many items to return. Maximum 100.",
@@ -3045,6 +3058,7 @@
     },
     "/v1/opportunities/{opportunityId}": {
       "get": {
+        "operationId": "getOpportunity",
         "parameters": [
           {
             "in": "path",
@@ -3126,6 +3140,7 @@
     "/v1/quotes": {
       "get": {
         "description": "Returns the organization's non-archived quotes, most recently updated first.",
+        "operationId": "listQuotes",
         "parameters": [
           {
             "description": "How many items to return. Maximum 100.",
@@ -3262,6 +3277,7 @@
     "/v1/quotes/{quoteId}/attachments": {
       "get": {
         "description": "Each attachment comes with a SIGNED, short-lived download URL. Fetch the file when you receive it; do not store the URL — it expires. Unlike catalog images, which live in a public bucket, quote attachments are private.",
+        "operationId": "listQuoteAttachments",
         "parameters": [
           {
             "in": "path",
@@ -3342,6 +3358,7 @@
     },
     "/v1/team": {
       "get": {
+        "operationId": "listTeamMembers",
         "parameters": [
           {
             "description": "How many items to return. Maximum 100.",
